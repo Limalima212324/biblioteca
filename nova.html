@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📚 Mini Biblioteca de Estudos</title>
+  <style>
+    /* ====================== ESTILIZAÇÃO BÁSICA ====================== */
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0 1rem;
+      background-color: #f4f4f4;
+    }
+
+    header, nav, main, footer, aside {
+      margin: 1rem 0;
+      padding: 0.5rem;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.2rem;
+    }
+
+    nav button {
+      margin-right: 0.5rem;
+      padding: 0.4rem 0.8rem;
+      cursor: pointer;
+      border: 1px solid #333;
+      border-radius: 4px;
+      background-color: #eee;
+    }
+
+    nav button:hover {
+      background-color: #ddd;
+    }
+
+    section {
+      margin-top: 1rem;
+    }
+
+    code {
+      background-color: #eee;
+      padding: 0.1rem 0.3rem;
+      border-radius: 3px;
+      font-family: monospace;
+    }
+
+    pre {
+      background-color: #e1e1e1;
+      padding: 0.5rem;
+      overflow-x: auto;
+      border-radius: 4px;
+    }
+
+    h2 {
+      color: #333;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 0.3rem;
+    }
+
+    footer p {
+      text-align: center;
+      font-style: italic;
+    }
+
+    aside {
+      background-color: #fff3cd;
+    }
+
+    aside h4 {
+      margin-top: 0;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- ====================== HEADER ====================== -->
+  <header>
+    <h1>📚 Mini Biblioteca de Estudos</h1>
+    <p>Resumo completo de HTML, CSS e JavaScript — com exemplos e observações de aprendizado.</p>
+  </header>
+
+  <!-- ====================== MENU DE SEÇÕES ====================== -->
+  <nav>
+    <button onclick="mostrarConteudo('html')">HTML</button>
+    <button onclick="mostrarConteudo('css')">CSS</button>
+    <button onclick="mostrarConteudo('js')">JavaScript</button>
+  </nav>
+
+  <section>
+    <h3><a href="base das cessoes.html" target="_blank">AQUI VAI A LÓGICA DAS 3 SEÇÕES </a></h3>
+  </section>
+  <!-- ====================== CONTEÚDO PRINCIPAL ====================== -->
+  <main>
+    <!-- ====================== SEÇÃO HTML ====================== -->
+    <section id="html" style="display:block;">
+      <h2>HTML</h2>
+      <p>HTML é a linguagem de marcação usada para estruturar o conteúdo de uma página web.</p>
+
+      <!-- ======== ESTRUTURA BÁSICA DO HTML ======== -->
+      <h3>📘 Estrutura Básica de um Documento HTML</h3>
+      <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Título da Página&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    <!-- Conteúdo visível -->
+  &lt;/body&gt;
+&lt;/html&gt;
+      </code></pre>
+      <p><strong>💬 Observação:</strong> O <code>&lt;!DOCTYPE html&gt;</code> indica a versão do HTML, o <code>&lt;html&gt;</code> envolve todo o documento, o <code>&lt;head&gt;</code> contém informações invisíveis e o <code>&lt;body&gt;</code> contém o conteúdo visível.</p>
+
+      <!-- ======== ATRIBUTOS GENÉRICOS ======== -->
+      <h4>⚙️ Atributos comuns</h4>
+      <ul>
+        <li><code>id="..."</code> — Identificador único do elemento;</li>
+        <li><code>class="..."</code> — Permite agrupar elementos em classes;</li>
+        <li><code>style="..."</code> — Permite adicionar CSS diretamente;</li>
+        <li><code>lang="..."</code> — Define o idioma do elemento;</li>
+        <li><code>title="..."</code> — Texto descritivo ao passar o mouse;</li>
+        <li><code>alt="..."</code> — Texto alternativo de imagens;</li>
+        <li><code>hidden</code> — Oculta o elemento;</li>
+        <li><code>align="..."</code> — Alinhamento do conteúdo;</li>
+        <li><code>width / height</code> — Dimensões de elementos.</li>
+      </ul>
+
+      <!-- ======== TAGS SEMÂNTICAS ======== -->
+      <h4>🏗️ Tags Semânticas</h4>
+      <ul>
+        <li><code>&lt;header&gt;</code> — Cabeçalho da página ou seção;</li>
+        <li><code>&lt;main&gt;</code> — Conteúdo principal;</li>
+        <li><code>&lt;footer&gt;</code> — Rodapé da página;</li>
+        <li><code>&lt;section&gt;</code> — Sessão de conteúdo;</li>
+        <li><code>&lt;article&gt;</code> — Artigo independente;</li>
+        <li><code>&lt;aside&gt;</code> — Conteúdo tangencial ou complementar;</li>
+        <li><code>&lt;nav&gt;</code> — Menu de navegação;</li>
+        <li><code>&lt;div&gt;</code> — Container sem valor semântico.</li>
+      </ul>
+
+      <!-- ======== TAGS DE TEXTO ======== -->
+      <h4>✏️ Tags de Texto</h4>
+      <ul>
+        <li><code>&lt;h1&gt;...&lt;/h1&gt;</code> a <code>&lt;h6&gt;...&lt;/h6&gt;</code> — Títulos hierárquicos;</li>
+        <li><code>&lt;p&gt;...&lt;/p&gt;</code> — Parágrafos;</li>
+        <li><code>&lt;span&gt;...&lt;/span&gt;</code> — Pequenos trechos de texto;</li>
+        <li><code>&lt;b&gt;...&lt;/b&gt;</code> — Negrito;</li>
+        <li><code>&lt;i&gt;...&lt;/i&gt;</code> — Itálico;</li>
+        <li><code>&lt;br&gt;</code> — Quebra de linha;</li>
+        <li><code>&lt;hr&gt;</code> — Linha horizontal;</li>
+        <li><code>&lt;pre&gt;...&lt;/pre&gt;</code> — Texto pré-formatado (ex.: código).</li>
+      </ul>
+
+      <!-- ======== LINKS ======== -->
+      <h4>🔗 Links</h4>
+      <ul>
+        <li><code>&lt;a href="url"&gt;Texto&lt;/a&gt;</code> — Cria um link;</li>
+        <li><code>&lt;a href="mailto:email"&gt;Texto&lt;/a&gt;</code> — Cria link de e-mail.</li>
+      </ul>
+
+      <!-- ======== MULTIMÍDIA ======== -->
+      <h4>🎥 Multimídia</h4>
+      <ul>
+        <li><code>&lt;img src="imagem.jpg" alt="Descrição"&gt;</code> — Imagem;</li>
+        <li><code>&lt;video controls&gt;&lt;source src="video.mp4" type="video/mp4"&gt;&lt;/video&gt;</code> — Vídeo;</li>
+        <li><code>&lt;audio controls&gt;&lt;source src="musica.mp3" type="audio/mpeg"&gt;&lt;/audio&gt;</code> — Áudio;</li>
+        <li><code>&lt;iframe src="pagina.html"&gt;&lt;/iframe&gt;</code> — Página externa embutida.</li>
+      </ul>
+
+      <!-- ======== LISTAS ======== -->
+      <h4>📋 Listas</h4>
+      <ul>
+        <li><code>&lt;ol&gt;&lt;/ol&gt;</code> — Lista ordenada;</li>
+        <li><code>&lt;ul&gt;&lt;/ul&gt;</code> — Lista não ordenada;</li>
+        <li><code>&lt;li&gt;&lt;/li&gt;</code> — Item da lista.</li>
+      </ul>
+
+      <!-- ======== FORMULÁRIOS ======== -->
+      <h4>📝 Formulários</h4>
+      <ul>
+        <li><code>&lt;form&gt;...&lt;/form&gt;</code> — Cria formulário;</li>
+        <li><code>&lt;input type="text"&gt;</code> — Campo de texto;</li>
+        <li><code>&lt;input type="email"&gt;</code> — Campo de e-mail;</li>
+        <li><code>&lt;input type="submit"&gt;</code> — Botão de envio;</li>
+        <li><code>&lt;textarea&gt;...&lt;/textarea&gt;</code> — Área de texto.</li>
+      </ul>
+
+      <!-- ======== EXEMPLO PRÁTICO HTML COMPLETO ======== -->
+      <h4>💡 Exemplo Prático Completo</h4>
+      <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Exemplo Completo&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Minha Página&lt;/h1&gt;
+    &lt;nav&gt;&lt;ul&gt;&lt;li&gt;Home&lt;/li&gt;&lt;/ul&gt;&lt;/nav&gt;
+  &lt;/header&gt;
+  &lt;main&gt;
+    &lt;section&gt;
+      &lt;article&gt;
+        &lt;h2&gt;Artigo 1&lt;/h2&gt;
+        &lt;p&gt;Texto do artigo 1.&lt;/p&gt;
+      &lt;/article&gt;
+      &lt;article&gt;
+        &lt;h2&gt;Artigo 2&lt;/h2&gt;
+        &lt;p&gt;Texto do artigo 2.&lt;/p&gt;
+      &lt;/article&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+  &lt;aside&gt;
+    &lt;h4&gt;Conteúdos relacionados&lt;/h4&gt;
+  &lt;/aside&gt;
+  &lt;footer&gt;
+    &lt;p&gt;Rodapé da página&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+      </code></pre> <!--1️⃣ <pre> — pré-formatado
+
+Significa “preformatted text” (texto pré-formatado).
+Ele mantém espaços, quebras de linha e tabulações exatamente como você escreve no código.
+Ideal para mostrar blocos de código, listas ou qualquer texto que precise manter a formatação original.-->
+    </section>
+
+ <section id="html" style="display:block;">
+  <h2>HTML</h2>
+  <p>HTML é a linguagem de marcação usada para estruturar o conteúdo de uma página web. Ela usa tags como <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;a&gt;</code>, etc.</p>
+
+  <!-- ====================== EXEMPLOS BÁSICOS DE HTML ====================== -->
+  <h3>📘 Lista das Tags mais usadas na linguagem HTML</h3>
+
+  <h4>🧩 TAGS BÁSICAS</h4>
+  <ul>
+    <li><code>&lt;html&gt;&lt;/html&gt;</code> — Inicia e termina um documento em HTML.</li>
+    <li><code>&lt;head&gt;&lt;/head&gt;</code> — Define a área de cabeçalho, com elementos não visualizáveis na página.</li>
+    <li><code>&lt;body&gt;&lt;/body&gt;</code> — Define a área visível do documento.</li>
+  </ul>
+  <p><strong>💬 Observação:</strong> Essas três tags são a base de toda página HTML.</p>
+
+  <h5>💡 Exemplo prático:</h5>
+  <pre><code>
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Minha Primeira Página&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Olá Mundo!&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+  </code></pre>
+
+  <!-- ====================== EXEMPLO PRÁTICO COMPLETO: GRUPO DE APOIO J&S ====================== -->
+  <h4>📝 Exemplo Prático Completo</h4>
+  <p>Este exemplo mostra uma página real de empresa, com cabeçalho, banner, serviços, histórico de clientes e contato. Explicações detalhadas seguem após o código.</p>
+
+  <pre><code>
+&lt;!doctype html&gt;
+&lt;html lang="pt-BR"&gt;
+
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;meta name="viewport" content="width=device-width,initial-scale=1" /&gt;
+  &lt;title&gt;Grupo de Apoio J&S — Segurança Privada&lt;/title&gt;
+
+  &lt;!-- Fonte Google --&gt;
+  &lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"&gt;
+
+  &lt;!-- CSS externo --&gt;
+  &lt;link rel="stylesheet" href="css/style.css" /&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+  &lt;!-- Cabeçalho com logo e menu --&gt;
+  &lt;header&gt;
+    &lt;div class="container nav"&gt;
+      &lt;div class="brand"&gt;
+        &lt;img src="img/logo.jpg" alt="Logo Grupo de Apoio JeS" /&gt;
+        &lt;div&gt;
+          &lt;h1&gt;Grupo de Apoio J&S&lt;/h1&gt;
+          &lt;small&gt;Segurança Privada • Ronda Patrimonial • Segurança de Eventos&lt;/small&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;nav&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#home"&gt;Início&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="https://wa.me/43988067370" target="_blank" class="btn"&gt;Contatar&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/nav&gt;
+    &lt;/div&gt;
+  &lt;/header&gt;
+
+  &lt;!-- Banner principal --&gt;
+  &lt;section id="home" class="hero container" aria-labelledby="hero-title"&gt;
+    &lt;div class="hero-content container-hero"&gt;
+      &lt;div&gt;
+        &lt;h2 id="hero-title"&gt;Protegemos o que é importante para Você&lt;/h2&gt;
+        &lt;p class="lead"&gt;Soluções em Ronda Patrimonial e Segurança Privada — Equipe Treinada, Resposta Rápida e Planejamento sob medida para Empresas, Condomínios e Eventos.&lt;/p&gt;
+
+        &lt;div class="contact-cards" aria-hidden="false"&gt;
+          &lt;div class="card" title="Ligue agora"&gt;
+            &lt;div class="icon"&gt;&lt;a href="https://wa.me/43988067370"&gt;📞&lt;/a&gt;&lt;/div&gt;
+            &lt;div&gt;
+              &lt;div style="font-weight:700;"&gt;(43) 98806-7370&lt;/div&gt;
+              &lt;small style="color:var(--muted)"&gt;Atendimento&lt;/small&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;div class="card" title="Localização"&gt;
+            &lt;div class="icon"&gt;&lt;a href="https://www.google.com/maps/place/R.+S%C3%A3o+Paulo,+597" target="_blank"&gt;📍&lt;/a&gt;&lt;/div&gt;
+            &lt;div&gt;
+              &lt;div style="font-weight:700;"&gt;Rua São Paulo, 597&lt;/div&gt;
+              &lt;small style="color:var(--muted)"&gt;Lupionópolis - PR&lt;/small&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;!-- Sobre / Serviços / Contato --&gt;
+  &lt;main class="container"&gt;
+    &lt;div class="sections"&gt;
+
+      &lt;!-- Sobre nós --&gt;
+      &lt;section id="sobre" class="about" aria-labelledby="sobre-title"&gt;
+        &lt;div class="about-img"&gt;
+          &lt;img src="img/about-bg.jpg" alt="Equipe Grupo de Apoio JeS" /&gt;
+        &lt;/div&gt;
+        &lt;div class="about-text"&gt;
+          &lt;h3 id="sobre-title"&gt;Sobre nós&lt;/h3&gt;
+          &lt;p&gt;Desde 2017, o Grupo de Apoio JeS atua com excelência no setor de segurança privada, com profissionais capacitados.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+
+      &lt;!-- Serviços --&gt;
+      &lt;section id="servicos"&gt;
+        &lt;h3 style="color:var(--accent); margin:0 0 0.6rem 0;"&gt;Nossos serviços&lt;/h3&gt;
+        &lt;div class="services"&gt;
+          &lt;article class="service-card" aria-labelledby="srv1-title"&gt;
+            &lt;img src="img/ronda.jpg" alt="Ronda Patrimonial" /&gt;
+            &lt;div&gt;
+              &lt;h4 id="srv1-title"&gt;Ronda Patrimonial&lt;/h4&gt;
+              &lt;p&gt;Rondas regulares. &lt;a href="html/ronda.html" target="_blank"&gt;&lt;b&gt;Ver mais.&lt;/b&gt;&lt;/a&gt;&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/article&gt;
+          &lt;article class="service-card" aria-labelledby="srv2-title"&gt;
+            &lt;img src="img/servico2.jpg" alt="Segurança Privada" /&gt;
+            &lt;div&gt;
+              &lt;h4 id="srv2-title"&gt;Segurança Privada&lt;/h4&gt;
+              &lt;p&gt;Serviços personalizados. &lt;a href="html/segu.priv.html" target="_blank"&gt;&lt;b&gt;Ver mais.&lt;/b&gt;&lt;/a&gt;&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/article&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+
+      &lt;!-- Histórico de clientes --&gt;
+      &lt;section id="clientes" class="about" aria-labelledby="sobre-title"&gt;
+        &lt;div class="clientes-img"&gt;
+          &lt;img src="img/about-bg.jpg" alt="Equipe Grupo de Apoio JeS" /&gt;
+        &lt;/div&gt;
+        &lt;div class="about-text"&gt;
+          &lt;h3 id="sobre-title"&gt;Histórico de Clientes&lt;/h3&gt;
+          &lt;p&gt;• Ronda Patrimonial: Supermercados, lojas, panificadoras...&lt;/p&gt;
+          &lt;p&gt;• Segurança Privada: Plantão 24h em empresas.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+
+      &lt;!-- Contato --&gt;
+      &lt;section id="contato" class="contact" aria-labelledby="contato-title"&gt;
+        &lt;div class="info"&gt;
+          &lt;h3 id="contato-title" style="color:var(--accent); margin:0;"&gt;Fale conosco&lt;/h3&gt;
+          &lt;div&gt;
+            &lt;a href="https://wa.me/43988067370" style="display:flex; align-items:center; gap:0.9rem;"&gt;
+              &lt;img src="img/whatsapp.jpg" alt="WhatsApp" style="width:40px; height:40px; border-radius:19px;" /&gt;
+              (43) 98806-7370 — WhatsApp
+            &lt;/a&gt;
+            &lt;small&gt;Rua São Paulo, 597, Lupionópolis - PR&lt;/small&gt;
+          &lt;/div&gt;
+          &lt;div style="margin-top:0.45rem; color:var(--muted)"&gt;
+            Email: &lt;a href="mailto:contato@grupodeapoioujs.com"&gt;grupodeapoiojs@gmail.com&lt;/a&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+
+    &lt;/div&gt;
+  &lt;/main&gt;
+
+  &lt;!-- Rodapé --&gt;
+  &lt;footer&gt;
+    &lt;div class="container footer-inner"&gt;
+      &lt;div&gt;© &lt;strong&gt;Grupo de Apoio J&S&lt;/strong&gt; — Todos os direitos reservados&lt;/div&gt;
+      &lt;div style="text-align:right;"&gt;
+        &lt;small&gt;Endereço: Rua São Paulo, 597 — Lupionópolis - PR&lt;/small&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/footer&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+  </code></pre>
+
+ <h4>💬 Explicações detalhadas:</h4>
+  <ul>
+    <li><strong>&lt;section&gt;</strong>: agrupa blocos de conteúdo relacionados (Home, Sobre, Serviços, Contato, Exemplo).</li>
+    <li><strong>&lt;article&gt;</strong>: representa conteúdo independente dentro de uma seção, ideal para serviços, postagens ou cartões.</li>
+    <li><strong>&lt;div class="..."&gt;</strong>: contêiner genérico usado para aplicar CSS e organizar elementos visualmente.</li>
+    <li><strong>&lt;h1/h2/h3/h4&gt;</strong>: títulos com hierarquia; IDs ajudam navegação, acessibilidade e linkagem direta.</li>
+    <li><strong>&lt;p&gt;</strong>: parágrafo de texto.</li>
+    <li><strong>&lt;a href="..."&gt;</strong>: link clicável; target="_blank" abre em nova aba. Pode ser usado para WhatsApp, páginas internas ou externas.</li>
+    <li><strong>&lt;img src="..." alt="..."&gt;</strong>: imagens; o atributo alt é essencial para acessibilidade e SEO.</li>
+    <li><strong>title</strong>: tooltip exibido ao passar o mouse sobre o elemento.</li>
+    <li><strong>class</strong>: usado para estilização e para referenciar grupos de elementos no CSS ou JS.</li>
+    <li><strong>id</strong>: identifica unicamente um elemento na página; útil para linkagem direta e manipulação via JS.</li>
+  </ul>
+
+
+  <p>✅ Use este exemplo como referência prática de uma página HTML completa, com seções semânticas, links, imagens, títulos e rodapé.</p>
+</section>
+
+
+    <!-- ====================== SEÇÃO CSS ====================== -->
+    <section id="css" style="display:none;">
+  <h2>CSS</h2>q
+  <p>Exemplos e explicações do CSS usado no site “Grupo de Apoio J&S”.</p>
+
+  <!-- ====================== VARIÁVEIS DE TEMA ====================== -->
+  <h4>🎨 Variáveis de Tema</h4>
+  <pre><code>
+:root {
+  --bg: #0b0b0b;      /* fundo geral (preto) */
+  --panel: #ffffff;   /* cor dos painéis/textos claros */
+  --accent: #ffd400;  /* amarelo da marca */
+  --muted: #cfcfcf;   /* texto secundário */
+  --max-width: 1100px;/* largura máxima do conteúdo */
+  --radius: 12px;     /* bordas arredondadas */
+  --gap: 1.25rem;     /* espaçamento padrão */
+  --shadow: 0 6px 20px rgba(0,0,0,0.45); /* sombra padrão */
+}
+  </code></pre>
+  <p><strong>💬 Observação:</strong> Variáveis permitem padronizar cores, espaçamentos, sombras e reutilizar valores facilmente em todo o CSS.</p>
+
+  <!-- ====================== RESET E BODY ====================== -->
+  <h4>🧹 Reset e estilo global</h4>
+  <pre><code>
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  background: var(--bg);
+  color: var(--panel);
+  line-height: 1.5;
+}
+  </code></pre>
+  <p>Resultado: todo o conteúdo usa a fonte definida, sem margens externas, fundo preto e textos claros.</p>
+
+  <!-- ====================== CONTAINER ====================== -->
+  <h4>📦 Container centralizado</h4>
+  <pre><code>
+.container {
+  width: calc(100% - 2rem);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+  </code></pre>
+  <p>Explicação: mantém o conteúdo centralizado, limitando a largura máxima e adicionando pequenas margens laterais.</p>
+
+  <!-- ====================== CABEÇALHO ====================== -->
+  <h4>🔝 Cabeçalho (header)</h4>
+  <pre><code>
+header {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(6px);
+  background: linear-gradient(180deg, rgba(11,11,11,0.85), rgba(11,11,11,0.65));
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+  </code></pre>
+  <p>Explicação: cabeçalho fixo no topo, com efeito de desfoque e gradiente semitransparente, criando contraste sutil.</p>
+
+  <!-- ====================== LOGO E MENU ====================== -->
+  <h4>🖼️ Logo e Menu</h4>
+  <pre><code>
+.brand { display:flex; align-items:center; gap:0.75rem; }
+.brand img { width:52px; height:52px; border-radius:8px; box-shadow: var(--shadow); }
+nav ul { display:flex; gap:1rem; }
+nav a { text-decoration:none; color: var(--panel); padding:0.5rem 0.7rem; border-radius:8px; }
+.btn { background: linear-gradient(90deg, var(--accent), #f6d500); color:#000; padding:0.55rem 0.9rem; border-radius:10px; }
+  </code></pre>
+  <p>Resultado: logo à esquerda, menu à direita, botão de destaque com cores da marca.</p>
+
+  <!-- ====================== HERO / BANNER ====================== -->
+  <h4>🌄 Banner principal (Hero)</h4>
+  <pre><code>
+.hero { border-radius:16px; overflow:hidden; position:relative; box-shadow: var(--shadow); }
+.hero .bg { background-image: url('img/banner.jpg'); background-size:cover; background-position:center; min-height:340px; }
+.hero::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg, rgba(0,0,0,0.68) 10%, rgba(0,0,0,0.42) 50%, rgba(0,0,0,0.72) 100%); }
+.hero-content { position:relative; z-index:2; padding:2.2rem; max-width:820px; }
+  </code></pre>
+  <p>Explicação: banner com imagem de fundo e overlay escuro, garantindo que o texto fique legível acima da imagem.</p>
+
+  <!-- ====================== SEÇÕES PRINCIPAIS ====================== -->
+  <h4>📑 Seções principais (Sobre, Serviços, Contato)</h4>
+  <pre><code>
+.about { display:flex; gap:1rem; align-items:center; background: rgba(255,255,255,0.03); padding:1.25rem; border-radius:12px; }
+.services { display:grid; grid-template-columns: repeat(2, 1fr); gap:1rem; }
+.service-card { padding:1rem; border-radius:12px; display:flex; gap:1rem; align-items:center; }
+.contact { display:flex; justify-content:space-between; padding:1rem; border-radius:12px; gap:1rem; }
+  </code></pre>
+  <p>Explicação: cada seção organizada em grid ou flexbox, com cartões, bordas arredondadas e sombra para destacar conteúdo.</p>
+
+  <!-- ====================== RODAPÉ ====================== -->
+  <h4>⚓ Rodapé</h4>
+  <pre><code>
+footer { margin-top:1.25rem; padding:1.2rem 0; border-top:1px solid rgba(255,255,255,0.03); color: var(--muted); font-size:0.9rem; }
+.footer-inner { display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem; align-items:center; }
+  </code></pre>
+  <p>Explicação: rodapé com flexbox, distribuindo conteúdo entre esquerda e direita, adaptável a telas menores.</p>
+
+  <!-- ====================== RESPONSIVIDADE ====================== -->
+  <h4>📱 Responsividade</h4>
+  <pre><code>
+@media (max-width:900px) {
+  .services { grid-template-columns: 1fr; }
+  .about { flex-direction:column; align-items:flex-start; }
+  nav ul { display:none; }
+}
+@media (max-width:600px) {
+  .hero .bg { min-height:360px; }
+  .brand h1 { font-size:0.95rem; }
+  .brand img { width:46px; height:46px; }
+  .contact { flex-direction:column; align-items:flex-start; gap:0.6rem; }
+}
+  </code></pre>
+  <p>Explicação: ajustes de layout para tablets e celulares, empilhando conteúdo e reduzindo tamanhos de imagem e fonte.</p>
+
+</section>
+
+  <p>Exemplos de CSS aplicados no HTML:</p>
+
+  <!-- Exemplo 1: cor do texto -->
+  <h4>💡 Alterando a cor do texto</h4>
+  <pre><code>
+p {
+  color: red;
+}
+</code></pre>
+  <p>Resultado: <span style="color:red;">Este texto ficará vermelho</span></p>
+
+  <!-- Exemplo 2: fundo da página -->
+  <h4>💡 Alterando o fundo da página</h4>
+  <pre><code>
+body {
+  background-color: lightblue;
+}
+</code></pre>
+  <p>Resultado: <span style="background-color:lightblue;">O fundo desta área está azul claro</span></p>
+
+  <!-- Exemplo 3: borda em div -->
+  <h4>💡 Adicionando borda em um container</h4>
+  <pre><code>
+div.container {
+  border: 2px solid black;
+  padding: 10px;
+}
+</code></pre>
+  <div class="container" style="border:2px solid black; padding:10px;">
+    Exemplo de container com borda
+  </div>
+  
+</section>
+
+    <!-- ====================== SEÇÃO JAVASCRIPT ====================== -->
+    <section id="js" style="display:none;">
+      <h2>JavaScript</h2>
+      <p>Em breve: explicações sobre interatividade e lógica com JS.</p>
+    </section>
+  </main>
+
+  <!-- ====================== FOOTER ====================== -->
+  <footer>
+    <p>✨ Feito por mim durante os estudos — versão de aprendizado HTML completa ✨</p>
+  </footer>
+
+  <!-- ====================== SCRIPT DE INTERAÇÃO ====================== -->
+  <script>
+    // Alterna entre as seções HTML, CSS e JS
+    function mostrarConteudo(id) {
+      document.querySelectorAll('section').forEach(sec => sec.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+  </script>
+</body>
+</html>
