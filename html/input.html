@@ -1,0 +1,95 @@
+<h3>2. &lt;input&gt; — Campo de entrada de dados</h3>
+<p>🟢 &lt;input&gt; cria campos variados. É autofechado (&lt;input ...&gt;).</p>
+
+<h4>📘 Atributos principais do &lt;input&gt;</h4>
+<p>🟢 type — define o tipo (text, email, number, etc);</p>
+<p>🟢 name — nome do campo enviado ao servidor;</p>
+<p>🟢 value — valor inicial;</p>
+<p>🟢 placeholder — texto de ajuda;</p>
+<p>🟢 required — torna obrigatório;</p>
+<p>🟢 disabled — desativa o campo;</p>
+<p>🟢 readonly — somente leitura;</p>
+<p>🟢 min, max, step — para number, range etc.</p>
+
+<h4>💡 Exemplos úteis de &lt;input&gt;</h4>
+<pre><code>&lt;!-- Texto --&gt;
+&lt;input type="text" name="nome" placeholder="Digite seu nome" required&gt;
+
+&lt;!-- Senha --&gt;
+&lt;input type="password" name="senha" placeholder="Senha"&gt;
+
+&lt;!-- E-mail (validação básica) --&gt;
+&lt;input type="email" name="email" placeholder="seu@email.com"&gt;
+
+&lt;!-- Número --&gt;
+&lt;input type="number" name="idade" min="1" max="120"&gt;
+
+&lt;!-- Data --&gt;
+&lt;input type="date" name="nascimento"&gt;
+
+&lt;!-- Hora --&gt;
+&lt;input type="time" name="hora"&gt;
+
+&lt;!-- Cor --&gt;
+&lt;input type="color" name="corFavorita"&gt;
+
+&lt;!-- Arquivo --&gt;
+&lt;input type="file" name="documento"&gt;
+
+&lt;!-- Enviar --&gt;
+&lt;input type="submit" value="Enviar"&gt;
+
+&lt;!-- Reset --&gt;
+&lt;input type="reset" value="Limpar"&gt;</code></pre>
+
+<ul>
+    <li> <a href="./../index..html">Voltar Inicio</a></li>
+</ul>
+<style>
+    :root {
+        /* Variáveis de cores personalizadas */
+        --primaria: #4f46e5;
+        /* Cor primária */
+        --secundaria: #7c3aed;
+        /* Cor secundária */
+        --escuro: #0f172a;
+        /* Cor escura */
+        --maisEscuro: #0a0f1c;
+        /* Cor mais escura */
+        --claro: #e2e8f0;
+        /* Cor clara */
+        --vidro: rgba(255, 255, 255, 0.1);
+        /* Cor vidro */
+    }
+
+
+    a {
+
+        border: 4px solid var(--primaria);
+        background-color: var(--claro);
+        border-radius: 3px;
+        color: var(--secundaria);
+        /* Cor secundária para links */
+        text-decoration: none;
+        /* Remove sublinhado padrão */
+        font-weight: bold;
+        /* Negrito para destaque */
+        margin-left: 0.5rem;
+        /* Espaçamento à esquerda */
+        transition: color 0.3s ease;
+        /* Transição suave de cor */
+        width: fit-content;
+        /* Ajusta a largura ao conteúdo */
+        padding: 0.3rem 0.8rem;
+        /* Espaçamento interno */
+        display: inline-block;
+        /* Permite aplicar padding e margin */
+    }
+
+    a:hover {
+        color: var(--primaria);
+        /* Muda para cor primária ao passar o mouse */
+        text-decoration: underline;
+        /* Sublinhado ao passar o mouse */
+    }
+</style>

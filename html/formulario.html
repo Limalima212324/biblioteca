@@ -1,0 +1,69 @@
+<h2>🧩 Formulários</h2>
+
+<h3>1. &lt;form&gt; — Estrutura do formulário</h3>
+<p>🟢 A tag &lt;form&gt; cria um formulário e agrupa os campos que serão enviados ao servidor.</p>
+<h4>📘 Como funciona</h4>
+<p>🟢 Tudo dentro de &lt;form&gt; pertence ao formulário.</p>
+<p>🟢 Envio definido por action (para onde) e method (como).</p>
+
+<h4>⚙️ Principais atributos do &lt;form&gt;</h4>
+<p>🟢 action="url" — URL que recebe os dados;</p>
+<p>🟢 method="get" ou post — método de envio;</p>
+<p>🟢 enctype — tipo de codificação (ex.: multipart/form-data para envio de arquivos);</p>
+<p>🟢 target — onde abrir a resposta (ex.: _blank).</p>
+<h4>💡 Exemplo básico</h4>
+<pre><code>&lt;form action="/enviar" method="post" enctype="multipart/form-data"&gt;
+  &lt;!-- Campos do formulário --&gt;
+&lt;/form&gt;</code></pre>
+
+<ul>
+  <li> <a href="./../index..html">Voltar Inicio</a></li>
+</ul>
+<style>
+  :root {
+    /* Variáveis de cores personalizadas */
+    --primaria: #4f46e5;
+    /* Cor primária */
+    --secundaria: #7c3aed;
+    /* Cor secundária */
+    --escuro: #0f172a;
+    /* Cor escura */
+    --maisEscuro: #0a0f1c;
+    /* Cor mais escura */
+    --claro: #e2e8f0;
+    /* Cor clara */
+    --vidro: rgba(255, 255, 255, 0.1);
+    /* Cor vidro */
+  }
+
+
+  a {
+
+    border: 4px solid var(--primaria);
+    background-color: var(--claro);
+    border-radius: 3px;
+    color: var(--secundaria);
+    /* Cor secundária para links */
+    text-decoration: none;
+    /* Remove sublinhado padrão */
+    font-weight: bold;
+    /* Negrito para destaque */
+    margin-left: 0.5rem;
+    /* Espaçamento à esquerda */
+    transition: color 0.3s ease;
+    /* Transição suave de cor */
+    width: fit-content;
+    /* Ajusta a largura ao conteúdo */
+    padding: 0.3rem 0.8rem;
+    /* Espaçamento interno */
+    display: inline-block;
+    /* Permite aplicar padding e margin */
+  }
+
+  a:hover {
+    color: var(--primaria);
+    /* Muda para cor primária ao passar o mouse */
+    text-decoration: underline;
+    /* Sublinhado ao passar o mouse */
+  }
+</style>

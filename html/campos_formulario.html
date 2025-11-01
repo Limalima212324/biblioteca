@@ -1,0 +1,76 @@
+<h3>🛡️ 8. &lt;fieldset&gt; — Agrupando campos de formulário</h3>
+<p>🟢 A tag &lt;fieldset&gt; é usada para agrupar campos relacionados dentro de um formulário, ajudando na organização e
+  acessibilidade.</p>
+<p>💬 Observação: normalmente combinada com &lt;legend&gt; para dar um título ao grupo.</p>
+<h4>💡 Exemplo:</h4>
+<form action="/enviar-agrupado" method="post">
+  <fieldset>
+    <legend>🟢 Informações Pessoais</legend>
+    <label>Nome: <input type="text" name="nome" required></label><br>
+    <label>Email: <input type="email" name="email" required></label><br>
+  </fieldset>
+  <fieldset>
+    <legend>🟢 Preferências</legend>
+    <label><input type="checkbox" name="noticias" value="sim"> Receber novidades</label><br>
+    <label>🟢 Estado:
+      <select name="estado">
+        <option value="">Selecione</option>
+        <option value="sp">SP</option>
+        <option value="rj">RJ</option>
+      </select>
+    </label>
+  </fieldset>
+  <button type="submit">Enviar</button>
+</form>
+<ul>
+  <li> <a href="./../index..html">Voltar Inicio</a></li>
+</ul>
+
+<style>
+  :root {
+    /* Variáveis de cores personalizadas */
+    --primaria: #4f46e5;
+    /* Cor primária */
+    --secundaria: #7c3aed;
+    /* Cor secundária */
+    --escuro: #0f172a;
+    /* Cor escura */
+    --maisEscuro: #0a0f1c;
+    /* Cor mais escura */
+    --claro: #e2e8f0;
+    /* Cor clara */
+    --vidro: rgba(255, 255, 255, 0.1);
+    /* Cor vidro */
+  }
+
+
+  a {
+
+    border: 4px solid var(--primaria);
+    background-color: var(--claro);
+    border-radius: 3px;
+    color: var(--secundaria);
+    /* Cor secundária para links */
+    text-decoration: none;
+    /* Remove sublinhado padrão */
+    font-weight: bold;
+    /* Negrito para destaque */
+    margin-left: 0.5rem;
+    /* Espaçamento à esquerda */
+    transition: color 0.3s ease;
+    /* Transição suave de cor */
+    width: fit-content;
+    /* Ajusta a largura ao conteúdo */
+    padding: 0.3rem 0.8rem;
+    /* Espaçamento interno */
+    display: inline-block;
+    /* Permite aplicar padding e margin */
+  }
+
+  a:hover {
+    color: var(--primaria);
+    /* Muda para cor primária ao passar o mouse */
+    text-decoration: underline;
+    /* Sublinhado ao passar o mouse */
+  }
+</style>

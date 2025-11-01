@@ -1,0 +1,61 @@
+<h3>☑️ 3. Checkbox (&lt;input type="checkbox"&gt;)</h3>
+<p>Usado quando o usuário pode marcar várias opções.</p>
+<h4>📘 Como usar</h4>
+<p>Vários checkboxes podem ter o mesmo name (se quiser enviar como array, use name="opcao[]" no backend) ou nomes
+  diferentes.</p>
+<h4>💡 Exemplo</h4>
+<p>🟢 Frutas favoritas:</p>
+<label><input type="checkbox" name="frutas" value="maca"> Maçã</label>
+<label><input type="checkbox" name="frutas" value="banana"> Banana</label>
+<label><input type="checkbox" name="frutas" value="uva"> Uva</label>
+
+<ul>
+  <li> <a href="./../index..html">Voltar Inicio</a></li>
+</ul>
+<style>
+  :root {
+    /* Variáveis de cores personalizadas */
+    --primaria: #4f46e5;
+    /* Cor primária */
+    --secundaria: #7c3aed;
+    /* Cor secundária */
+    --escuro: #0f172a;
+    /* Cor escura */
+    --maisEscuro: #0a0f1c;
+    /* Cor mais escura */
+    --claro: #e2e8f0;
+    /* Cor clara */
+    --vidro: rgba(255, 255, 255, 0.1);
+    /* Cor vidro */
+  }
+
+  a {
+
+    border: 4px solid var(--primaria);
+    background-color: var(--claro);
+    border-radius: 3px;
+    color: var(--secundaria);
+    /* Cor secundária para links */
+    text-decoration: none;
+    /* Remove sublinhado padrão */
+    font-weight: bold;
+    /* Negrito para destaque */
+    margin-left: 0.5rem;
+    /* Espaçamento à esquerda */
+    transition: color 0.3s ease;
+    /* Transição suave de cor */
+    width: fit-content;
+    /* Ajusta a largura ao conteúdo */
+    padding: 0.3rem 0.8rem;
+    /* Espaçamento interno */
+    display: inline-block;
+    /* Permite aplicar padding e margin */
+  }
+
+  a:hover {
+    color: var(--primaria);
+    /* Muda para cor primária ao passar o mouse */
+    text-decoration: underline;
+    /* Sublinhado ao passar o mouse */
+  }
+</style>

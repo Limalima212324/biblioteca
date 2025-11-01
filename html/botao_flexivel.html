@@ -1,0 +1,62 @@
+<h3>🔲 5. &lt;button&gt; — Botões flexíveis</h3>
+<p>&lt;button&gt; é mais flexível que &lt;input type="submit"&gt; — aceita HTML dentro (ícone, texto, span).</p>
+<h4>📘 Tipos</h4>
+<p>type="submit" — envia o formulário;</p>
+<p>type="reset" — limpa o formulário;</p>
+<p>type="button" — botão comum (usa JS para ação).</p>
+<h4>💡 Exemplo</h4>
+<pre><code>&lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;button type="reset"&gt;Limpar&lt;/button&gt;
+&lt;button type="button" onclick="alert('Ação')"&gt;Clique&lt;/button&gt;</code></pre>
+<ul>
+    <li> <a href="./../index..html">Voltar Inicio</a></li>
+</ul>
+
+<style>
+    :root {
+        /* Variáveis de cores personalizadas */
+        --primaria: #4f46e5;
+        /* Cor primária */
+        --secundaria: #7c3aed;
+        /* Cor secundária */
+        --escuro: #0f172a;
+        /* Cor escura */
+        --maisEscuro: #0a0f1c;
+        /* Cor mais escura */
+        --claro: #e2e8f0;
+        /* Cor clara */
+        --vidro: rgba(255, 255, 255, 0.1);
+        /* Cor vidro */
+    }
+
+
+    a {
+
+        border: 4px solid var(--primaria);
+        background-color: var(--claro);
+        border-radius: 3px;
+        color: var(--secundaria);
+        /* Cor secundária para links */
+        text-decoration: none;
+        /* Remove sublinhado padrão */
+        font-weight: bold;
+        /* Negrito para destaque */
+        margin-left: 0.5rem;
+        /* Espaçamento à esquerda */
+        transition: color 0.3s ease;
+        /* Transição suave de cor */
+        width: fit-content;
+        /* Ajusta a largura ao conteúdo */
+        padding: 0.3rem 0.8rem;
+        /* Espaçamento interno */
+        display: inline-block;
+        /* Permite aplicar padding e margin */
+    }
+
+    a:hover {
+        color: var(--primaria);
+        /* Muda para cor primária ao passar o mouse */
+        text-decoration: underline;
+        /* Sublinhado ao passar o mouse */
+    }
+</style>
