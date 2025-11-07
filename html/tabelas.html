@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabelas HTML</title>
+    <style>
+        /* Estilos globais para a página de exemplo */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            color: #4f46e5;
+        }
+
+        pre {
+            background-color: #eee;
+            padding: 10px;
+            border-left: 3px solid #7c3aed;
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        .exemplo {
+            border: 1px dashed #999;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #fff;
+        }
+
+        /* Estilos para as tabelas de exemplo */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #e2e8f0;
+        }
+
+        /* Estilos para o link "Voltar Início" */
+        :root {
+            --primaria: #4f46e5;
+            --secundaria: #7c3aed;
+            --escuro: #0f172a;
+            --maisEscuro: #0a0f1c;
+            --claro: #e2e8f0;
+            --vidro: rgba(255, 255, 255, 0.1);
+        }
+
+        a {
+            border: 4px solid var(--primaria);
+            background-color: var(--claro);
+            border-radius: 3px;
+            color: var(--secundaria);
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 0.5rem;
+            transition: color 0.3s ease;
+            width: fit-content;
+            padding: 0.3rem 0.8rem;
+            display: inline-block;
+        }
+
+        a:hover {
+            color: var(--primaria);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>📊 Tabelas (dados tabulares)</h1>
+    <p>Tabelas são usadas para exibir dados em formato de linhas e colunas.</p>
+
+    <h2>Estrutura Básica</h2>
+    <p>Uma tabela é criada com a tag <code>&lt;table&gt;</code>. Dentro dela, <code>&lt;tr&gt;</code> cria uma linha, <code>&lt;th&gt;</code> cria uma célula de cabeçalho e <code>&lt;td&gt;</code> cria uma célula de dados.</p>
+    <div class="exemplo">
+        <pre><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Nome&lt;/th&gt;
+    &lt;th&gt;Idade&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Ana&lt;/td&gt;
+    &lt;td&gt;25&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+        <table>
+            <tr>
+                <th>Nome</th>
+                <th>Idade</th>
+            </tr>
+            <tr>
+                <td>Ana</td>
+                <td>25</td>
+            </tr>
+        </table>
+    </div>
+
+    <h2>Estrutura Semântica</h2>
+    <p>Para tabelas mais complexas, é uma boa prática usar <code>&lt;thead&gt;</code> para o cabeçalho, <code>&lt;tbody&gt;</code> para o corpo e <code>&lt;tfoot&gt;</code> para o rodapé.</p>
+    <div class="exemplo">
+        <pre><code>&lt;table&gt;
+  &lt;thead&gt;...&lt;/thead&gt;
+  &lt;tbody&gt;...&lt;/tbody&gt;
+  &lt;tfoot&gt;...&lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+    </div>
+
+    <h2>Mesclando Células (<code>colspan</code> e <code>rowspan</code>)</h2>
+    <p><code>colspan</code> mescla colunas, enquanto <code>rowspan</code> mescla linhas.</p>
+    <div class="exemplo">
+        <pre><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Nome&lt;/th&gt;
+    &lt;th colspan="2"&gt;Telefones&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;João&lt;/td&gt;
+    &lt;td&gt;1111-1111&lt;/td&gt;
+    &lt;td&gt;2222-2222&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+        <table>
+            <tr>
+                <th>Nome</th>
+                <th colspan="2">Telefones</th>
+            </tr>
+            <tr>
+                <td>João</td>
+                <td>1111-1111</td>
+                <td>2222-2222</td>
+            </tr>
+        </table>
+    </div>
+
+    <ul>
+        <li> <a href="./../index.html">Voltar Início</a></li>
+    </ul>
+</body>
+
+</html>

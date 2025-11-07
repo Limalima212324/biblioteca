@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura do Documento HTML</title>
+    <style>
+        /* Estilos globais para a página de exemplo */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            color: #4f46e5;
+        }
+
+        pre {
+            background-color: #eee;
+            padding: 10px;
+            border-left: 3px solid #7c3aed;
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        .exemplo {
+            border: 1px dashed #999;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #fff;
+        }
+
+        /* Estilos para o link "Voltar Início" */
+        :root {
+            --primaria: #4f46e5;
+            --secundaria: #7c3aed;
+            --escuro: #0f172a;
+            --maisEscuro: #0a0f1c;
+            --claro: #e2e8f0;
+            --vidro: rgba(255, 255, 255, 0.1);
+        }
+
+        a {
+            border: 4px solid var(--primaria);
+            background-color: var(--claro);
+            border-radius: 3px;
+            color: var(--secundaria);
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 0.5rem;
+            transition: color 0.3s ease;
+            width: fit-content;
+            padding: 0.3rem 0.8rem;
+            display: inline-block;
+        }
+
+        a:hover {
+            color: var(--primaria);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>📄 Estrutura do Documento (head, body)</h1>
+    <p>Todo documento HTML segue uma estrutura básica que informa ao navegador como interpretar e renderizar a página.</p>
+
+    <h2>Esqueleto Básico</h2>
+    <div class="exemplo">
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Título da Página&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- Conteúdo visível da página vai aqui --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </div>
+
+    <h2>Explicação das Tags</h2>
+    <div class="exemplo">
+        <ul>
+            <li><code>&lt;!DOCTYPE html&gt;</code>: Declaração que define o tipo de documento como HTML5. É a primeira linha do arquivo.</li>
+            <li><code>&lt;html&gt;</code>: A tag raiz que envolve todo o conteúdo da página. O atributo <code>lang</code> define o idioma principal do documento.</li>
+            <li><code>&lt;head&gt;</code>: Contém metadados sobre a página, como o título, codificação de caracteres e links para folhas de estilo (CSS) e scripts (JS). O conteúdo aqui não é visível na página.</li>
+            <li><code>&lt;meta charset="UTF-8"&gt;</code>: Define o conjunto de caracteres para UTF-8, que suporta a maioria dos caracteres e símbolos, incluindo acentos.</li>
+            <li><code>&lt;meta name="viewport" ...&gt;</code>: Essencial para o design responsivo, instrui o navegador a ajustar a largura da página à largura da tela do dispositivo.</li>
+            <li><code>&lt;title&gt;</code>: Define o título da página, que aparece na aba ou na barra de título do navegador.</li>
+            <li><code>&lt;body&gt;</code>: Contém todo o conteúdo visível da página, como textos, imagens, links, formulários, etc.</li>
+        </ul>
+    </div>
+
+    <ul>
+        <li> <a href="./../index.html">Voltar Início</a></li>
+    </ul>
+</body>
+
+</html>
