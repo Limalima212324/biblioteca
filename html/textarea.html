@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkbox Input</title>
+    <title>Textarea - Área de Texto</title>
     <style>
         /* Estilos globais para a página de exemplo */
         body {
@@ -69,34 +69,34 @@
 </head>
 
 <body>
-    <h1>☑️ Checkbox (&lt;input type="checkbox"&gt;)</h1>
-    <p>O checkbox é usado quando o usuário pode selecionar zero, uma ou várias opções de uma lista.</p>
+    <h1>📝 &lt;textarea&gt; — Área de texto grande</h1>
+    <p>A tag <code>&lt;textarea&gt;</code> é usada para campos de entrada de texto com múltiplas linhas, como caixas de comentários ou mensagens.</p>
 
-    <h2>Como Usar</h2>
-    <p>Para agrupar várias opções, use o mesmo atributo <code>name</code> para todos os checkboxes. Cada um deve ter um <code>value</code> único que será enviado ao servidor se a opção for marcada. É uma boa prática envolver o input e seu texto em uma tag <code>&lt;label&gt;</code> para melhorar a acessibilidade e a usabilidade (permite clicar no texto para marcar a caixa).</p>
+    <h2>Principais Atributos</h2>
+    <div class="exemplo">
+        <ul>
+            <li><code>name</code>: O nome do campo, enviado ao servidor.</li>
+            <li><code>rows</code>: Define o número de linhas de texto visíveis.</li>
+            <li><code>cols</code>: Define a largura (número de colunas) visível do campo.</li>
+            <li><code>placeholder</code>: Texto de ajuda que aparece dentro do campo.</li>
+            <li><code>maxlength</code>: Define o número máximo de caracteres permitidos.</li>
+            <li><code>required</code>: Torna o preenchimento do campo obrigatório.</li>
+        </ul>
+    </div>
 
     <h2>Exemplo Prático</h2>
+    <p>Diferente do <code>&lt;input&gt;</code>, o texto inicial de um <code>&lt;textarea&gt;</code> é colocado entre a tag de abertura e a de fechamento.</p>
     <div class="exemplo">
-        <p>Quais tecnologias você conhece?</p>
-        <pre><code>&lt;label&gt;
-  &lt;input type="checkbox" name="tecnologias" value="html"&gt; HTML
-&lt;/label&gt;
-&lt;label&gt;
-  &lt;input type="checkbox" name="tecnologias" value="css" checked&gt; CSS
-&lt;/label&gt;
-&lt;label&gt;
-  &lt;input type="checkbox" name="tecnologias" value="js"&gt; JavaScript
-&lt;/label&gt;</code></pre>
+        <pre><code>&lt;label for="comentario"&gt;Deixe seu comentário:&lt;/label&gt;
+&lt;textarea 
+  id="comentario" 
+  name="comentario" 
+  rows="5" 
+  cols="40" 
+  placeholder="Escreva algo aqui..."&gt;&lt;/textarea&gt;</code></pre>
         <form>
-            <label>
-                <input type="checkbox" name="tecnologias" value="html"> HTML
-            </label><br>
-            <label>
-                <input type="checkbox" name="tecnologias" value="css" checked> CSS (pré-marcado com `checked`)
-            </label><br>
-            <label>
-                <input type="checkbox" name="tecnologias" value="js"> JavaScript
-            </label>
+            <label for="comentario">Deixe seu comentário:</label><br>
+            <textarea id="comentario" name="comentario" rows="5" cols="40" placeholder="Escreva algo aqui..."></textarea>
         </form>
     </div>
 

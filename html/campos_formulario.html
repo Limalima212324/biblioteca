@@ -1,76 +1,113 @@
-<h3>🛡️ 8. &lt;fieldset&gt; — Agrupando campos de formulário</h3>
-<p>🟢 A tag &lt;fieldset&gt; é usada para agrupar campos relacionados dentro de um formulário, ajudando na organização e
-  acessibilidade.</p>
-<p>💬 Observação: normalmente combinada com &lt;legend&gt; para dar um título ao grupo.</p>
-<h4>💡 Exemplo:</h4>
-<form action="/enviar-agrupado" method="post">
-  <fieldset>
-    <legend>🟢 Informações Pessoais</legend>
-    <label>Nome: <input type="text" name="nome" required></label><br>
-    <label>Email: <input type="email" name="email" required></label><br>
-  </fieldset>
-  <fieldset>
-    <legend>🟢 Preferências</legend>
-    <label><input type="checkbox" name="noticias" value="sim"> Receber novidades</label><br>
-    <label>🟢 Estado:
-      <select name="estado">
-        <option value="">Selecione</option>
-        <option value="sp">SP</option>
-        <option value="rj">RJ</option>
-      </select>
-    </label>
-  </fieldset>
-  <button type="submit">Enviar</button>
-</form>
-<ul>
-  <li> <a href="./../index..html">Voltar Inicio</a></li>
-</ul>
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-<style>
-  :root {
-    /* Variáveis de cores personalizadas */
-    --primaria: #4f46e5;
-    /* Cor primária */
-    --secundaria: #7c3aed;
-    /* Cor secundária */
-    --escuro: #0f172a;
-    /* Cor escura */
-    --maisEscuro: #0a0f1c;
-    /* Cor mais escura */
-    --claro: #e2e8f0;
-    /* Cor clara */
-    --vidro: rgba(255, 255, 255, 0.1);
-    /* Cor vidro */
-  }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fieldset - Agrupando Campos</title>
+    <style>
+        /* Estilos globais para a página de exemplo */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
 
+        h1, h2, h3 {
+            color: #4f46e5;
+        }
 
-  a {
+        pre {
+            background-color: #eee;
+            padding: 10px;
+            border-left: 3px solid #7c3aed;
+            overflow-x: auto;
+        }
 
-    border: 4px solid var(--primaria);
-    background-color: var(--claro);
-    border-radius: 3px;
-    color: var(--secundaria);
-    /* Cor secundária para links */
-    text-decoration: none;
-    /* Remove sublinhado padrão */
-    font-weight: bold;
-    /* Negrito para destaque */
-    margin-left: 0.5rem;
-    /* Espaçamento à esquerda */
-    transition: color 0.3s ease;
-    /* Transição suave de cor */
-    width: fit-content;
-    /* Ajusta a largura ao conteúdo */
-    padding: 0.3rem 0.8rem;
-    /* Espaçamento interno */
-    display: inline-block;
-    /* Permite aplicar padding e margin */
-  }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        .exemplo {
+            border: 1px dashed #999;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #fff;
+        }
 
-  a:hover {
-    color: var(--primaria);
-    /* Muda para cor primária ao passar o mouse */
-    text-decoration: underline;
-    /* Sublinhado ao passar o mouse */
-  }
-</style>
+        /* Estilos para o link "Voltar Início" */
+        :root {
+            --primaria: #4f46e5;
+            --secundaria: #7c3aed;
+            --escuro: #0f172a;
+            --maisEscuro: #0a0f1c;
+            --claro: #e2e8f0;
+            --vidro: rgba(255, 255, 255, 0.1);
+        }
+
+        a {
+            border: 4px solid var(--primaria);
+            background-color: var(--claro);
+            border-radius: 3px;
+            color: var(--secundaria);
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 0.5rem;
+            transition: color 0.3s ease;
+            width: fit-content;
+            padding: 0.3rem 0.8rem;
+            display: inline-block;
+        }
+
+        a:hover {
+            color: var(--primaria);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🛡️ &lt;fieldset&gt; — Agrupando campos de formulário</h1>
+    <p>A tag <code>&lt;fieldset&gt;</code> é usada para agrupar campos relacionados dentro de um formulário, melhorando a organização visual e a acessibilidade.</p>
+
+    <h2>Como Usar com <code>&lt;legend&gt;</code></h2>
+    <p>Normalmente, <code>&lt;fieldset&gt;</code> é combinado com a tag <code>&lt;legend&gt;</code>, que fornece um título ou legenda para o grupo de campos, tornando o formulário mais claro para os usuários e leitores de tela.</p>
+
+    <h2>Exemplo Prático</h2>
+    <div class="exemplo">
+        <pre><code>&lt;form&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;Informações Pessoais&lt;/legend&gt;
+    &lt;label for="nome"&gt;Nome:&lt;/label&gt;
+    &lt;input type="text" id="nome" name="nome"&gt;&lt;br&gt;
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email"&gt;
+  &lt;/fieldset&gt;
+
+  &lt;fieldset&gt;
+    &lt;legend&gt;Endereço de Entrega&lt;/legend&gt;
+    &lt;label for="rua"&gt;Rua:&lt;/label&gt;
+    &lt;input type="text" id="rua" name="rua"&gt;&lt;br&gt;
+    &lt;label for="cidade"&gt;Cidade:&lt;/label&gt;
+    &lt;input type="text" id="cidade" name="cidade"&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
+        <form>
+            <fieldset>
+                <legend>Informações Pessoais</legend>
+                <label for="nome-ex">Nome:</label>
+                <input type="text" id="nome-ex" name="nome"><br><br>
+                <label for="email-ex">Email:</label>
+                <input type="email" id="email-ex" name="email">
+            </fieldset>
+        </form>
+    </div>
+
+    <ul>
+        <li> <a href="./../index.html">Voltar Início</a></li>
+    </ul>
+</body>
+
+</html>

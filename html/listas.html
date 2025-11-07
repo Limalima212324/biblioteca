@@ -1,66 +1,127 @@
-<h2>📋 Listas </h2>
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-<h3>Ordenada:</h3>
-<ol>
-  <li>Item 1</li>
-  <li>Item 2</li>
-</ol>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listas HTML</title>
+    <style>
+        /* Estilos globais para a página de exemplo */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
 
-<h3>Não ordenada:</h3>
-<ul>
-  <li>Item A</li>
-  <li>Item B</li>
-</ul>
+        h1, h2, h3 {
+            color: #4f46e5;
+        }
 
-<hr>
-<ul>
-  <li> <a href="./../index..html">Voltar Inicio</a></li>
-</ul>
-<style>
-  :root {
-    /* Variáveis de cores personalizadas */
-    --primaria: #4f46e5;
-    /* Cor primária */
-    --secundaria: #7c3aed;
-    /* Cor secundária */
-    --escuro: #0f172a;
-    /* Cor escura */
-    --maisEscuro: #0a0f1c;
-    /* Cor mais escura */
-    --claro: #e2e8f0;
-    /* Cor clara */
-    --vidro: rgba(255, 255, 255, 0.1);
-    /* Cor vidro */
-  }
+        pre {
+            background-color: #eee;
+            padding: 10px;
+            border-left: 3px solid #7c3aed;
+            overflow-x: auto;
+        }
 
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        .exemplo {
+            border: 1px dashed #999;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #fff;
+        }
 
-  a {
+        /* Estilos para o link "Voltar Início" */
+        :root {
+            --primaria: #4f46e5;
+            --secundaria: #7c3aed;
+            --escuro: #0f172a;
+            --maisEscuro: #0a0f1c;
+            --claro: #e2e8f0;
+            --vidro: rgba(255, 255, 255, 0.1);
+        }
 
-    border: 4px solid var(--primaria);
-    background-color: var(--claro);
-    border-radius: 3px;
-    color: var(--secundaria);
-    /* Cor secundária para links */
-    text-decoration: none;
-    /* Remove sublinhado padrão */
-    font-weight: bold;
-    /* Negrito para destaque */
-    margin-left: 0.5rem;
-    /* Espaçamento à esquerda */
-    transition: color 0.3s ease;
-    /* Transição suave de cor */
-    width: fit-content;
-    /* Ajusta a largura ao conteúdo */
-    padding: 0.3rem 0.8rem;
-    /* Espaçamento interno */
-    display: inline-block;
-    /* Permite aplicar padding e margin */
-  }
+        a {
+            border: 4px solid var(--primaria);
+            background-color: var(--claro);
+            border-radius: 3px;
+            color: var(--secundaria);
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 0.5rem;
+            transition: color 0.3s ease;
+            width: fit-content;
+            padding: 0.3rem 0.8rem;
+            display: inline-block;
+        }
 
-  a:hover {
-    color: var(--primaria);
-    /* Muda para cor primária ao passar o mouse */
-    text-decoration: underline;
-    /* Sublinhado ao passar o mouse */
-  }
-</style>
+        a:hover {
+            color: var(--primaria);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>📋 Listas</h1>
+    <p>HTML oferece três tipos principais de listas para organizar informações.</p>
+
+    <h2>1. Lista Não Ordenada (<code>&lt;ul&gt;</code>)</h2>
+    <p>Usada para itens onde a ordem não importa. Geralmente exibida com marcadores (bullets).</p>
+    <div class="exemplo">
+        <pre><code>&lt;ul&gt;
+  &lt;li&gt;Maçã&lt;/li&gt;
+  &lt;li&gt;Banana&lt;/li&gt;
+  &lt;li&gt;Laranja&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+        <ul>
+            <li>Maçã</li>
+            <li>Banana</li>
+            <li>Laranja</li>
+        </ul>
+    </div>
+
+    <h2>2. Lista Ordenada (<code>&lt;ol&gt;</code>)</h2>
+    <p>Usada para itens onde a sequência é importante. Geralmente exibida com números.</p>
+    <div class="exemplo">
+        <pre><code>&lt;ol&gt;
+  &lt;li&gt;Primeiro passo&lt;/li&gt;
+  &lt;li&gt;Segundo passo&lt;/li&gt;
+  &lt;li&gt;Terceiro passo&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+        <ol>
+            <li>Primeiro passo</li>
+            <li>Segundo passo</li>
+            <li>Terceiro passo</li>
+        </ol>
+    </div>
+
+    <h2>3. Lista de Definição (<code>&lt;dl&gt;</code>)</h2>
+    <p>Usada para criar uma lista de termos e suas definições, como um glossário. Usa <code>&lt;dt&gt;</code> (termo) e <code>&lt;dd&gt;</code> (descrição).</p>
+    <div class="exemplo">
+        <pre><code>&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;Linguagem de Marcação de Hipertexto.&lt;/dd&gt;
+  &lt;dt&gt;CSS&lt;/dt&gt;
+  &lt;dd&gt;Folhas de Estilo em Cascata.&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+        <dl>
+            <dt>HTML</dt>
+            <dd>Linguagem de Marcação de Hipertexto.</dd>
+            <dt>CSS</dt>
+            <dd>Folhas de Estilo em Cascata.</dd>
+        </dl>
+    </div>
+
+    <ul>
+        <li> <a href="./../index.html">Voltar Início</a></li>
+    </ul>
+</body>
+
+</html>

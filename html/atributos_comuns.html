@@ -1,69 +1,118 @@
-<h3>⚙️ Atributos comuns (úteis em muitas tags)</h3>
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-<p> 🟢id="..." — identificador único do elemento;</p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atributos Comuns</title>
+    <style>
+        /* Estilos globais para a página de exemplo */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
 
-<p> 🟢style="..." — CSS inline;</p>
+        h1, h2, h3 {
+            color: #4f46e5;
+        }
 
-<p> 🟢lang="pt-BR" — idioma do elemento;</p>
+        pre {
+            background-color: #eee;
+            padding: 10px;
+            border-left: 3px solid #7c3aed;
+            overflow-x: auto;
+        }
 
-<p> 🟢title="..." — texto que aparece ao passar o mouse;</p>
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        .exemplo {
+            border: 1px dashed #999;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #fff;
+        }
 
-<p> 🟢alt="..." — texto alternativo para imagens (acessibilidade);</p>
+        /* Estilos para o link "Voltar Início" */
+        :root {
+            --primaria: #4f46e5;
+            --secundaria: #7c3aed;
+            --escuro: #0f172a;
+            --maisEscuro: #0a0f1c;
+            --claro: #e2e8f0;
+            --vidro: rgba(255, 255, 255, 0.1);
+        }
 
-<p> 🟢hidden — esconde o elemento;</p>
+        a {
+            border: 4px solid var(--primaria);
+            background-color: var(--claro);
+            border-radius: 3px;
+            color: var(--secundaria);
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 0.5rem;
+            transition: color 0.3s ease;
+            width: fit-content;
+            padding: 0.3rem 0.8rem;
+            display: inline-block;
+        }
 
-<p> 🟢width, height — dimensões (imagens, iframes etc).</p>
+        a:hover {
+            color: var(--primaria);
+            text-decoration: underline;
+        }
+    </style>
+</head>
 
-<ul>
-    <li> <a href="./../index..html">Voltar Inicio</a></li>
-</ul>
+<body>
+    <h1>⚙️ Atributos Comuns</h1>
+    <p>Atributos globais são atributos que podem ser usados em praticamente todas as tags HTML.</p>
 
+    <div class="exemplo">
+        <h2><code>id</code></h2>
+        <p>Define um identificador <strong>único</strong> para um elemento. Usado para estilização com CSS (<code>#meu-id</code>) e manipulação com JavaScript (<code>document.getElementById('meu-id')</code>).</p>
+        <pre><code>&lt;p id="paragrafo-unico"&gt;Este parágrafo tem um ID.&lt;/p&gt;</code></pre>
+    </div>
 
-<style>
-    :root {
-        /* Variáveis de cores personalizadas */
-        --primaria: #4f46e5;
-        /* Cor primária */
-        --secundaria: #7c3aed;
-        /* Cor secundária */
-        --escuro: #0f172a;
-        /* Cor escura */
-        --maisEscuro: #0a0f1c;
-        /* Cor mais escura */
-        --claro: #e2e8f0;
-        /* Cor clara */
-        --vidro: rgba(255, 255, 255, 0.1);
-        /* Cor vidro */
-    }
+    <div class="exemplo">
+        <h2><code>class</code></h2>
+        <p>Associa um ou mais nomes de classe a um elemento. Usado para estilizar <strong>múltiplos</strong> elementos com CSS (<code>.minha-classe</code>).</p>
+        <pre><code>&lt;p class="destaque importante"&gt;Este parágrafo tem duas classes.&lt;/p&gt;</code></pre>
+    </div>
 
+    <div class="exemplo">
+        <h2><code>style</code></h2>
+        <p>Aplica estilos CSS diretamente no elemento (CSS inline). Deve ser usado com moderação.</p>
+        <pre><code>&lt;p style="color: red; font-size: 20px;"&gt;Texto estilizado com CSS inline.&lt;/p&gt;</code></pre>
+    </div>
 
-    a {
+    <div class="exemplo">
+        <h2><code>title</code></h2>
+        <p>Fornece informações extras sobre um elemento. O texto geralmente aparece quando o usuário passa o mouse sobre o elemento.</p>
+        <pre><code>&lt;button title="Clique aqui para salvar o documento"&gt;Salvar&lt;/button&gt;</code></pre>
+        <button title="Clique aqui para salvar o documento">Passe o mouse aqui</button>
+    </div>
 
-        border: 4px solid var(--primaria);
-        background-color: var(--claro);
-        border-radius: 3px;
-        color: var(--secundaria);
-        /* Cor secundária para links */
-        text-decoration: none;
-        /* Remove sublinhado padrão */
-        font-weight: bold;
-        /* Negrito para destaque */
-        margin-left: 0.5rem;
-        /* Espaçamento à esquerda */
-        transition: color 0.3s ease;
-        /* Transição suave de cor */
-        width: fit-content;
-        /* Ajusta a largura ao conteúdo */
-        padding: 0.3rem 0.8rem;
-        /* Espaçamento interno */
-        display: inline-block;
-        /* Permite aplicar padding e margin */
-    }
+    <div class="exemplo">
+        <h2><code>lang</code></h2>
+        <p>Especifica o idioma do conteúdo do elemento. Ajuda os mecanismos de busca e leitores de tela.</p>
+        <pre><code>&lt;p lang="en"&gt;This paragraph is in English.&lt;/p&gt;</code></pre>
+    </div>
 
-    a:hover {
-        color: var(--primaria);
-        /* Muda para cor primária ao passar o mouse */
-        text-decoration: underline;
-        /* Sublinhado ao passar o mouse */
-    }
-</style>
+    <div class="exemplo">
+        <h2><code>hidden</code></h2>
+        <p>Um atributo booleano que esconde o elemento da página. Ele não é renderizado.</p>
+        <pre><code>&lt;p hidden&gt;Este parágrafo está escondido.&lt;/p&gt;</code></pre>
+        <p>O parágrafo acima está no código, mas não aparece na tela.</p>
+    </div>
+
+    <ul>
+        <li> <a href="./../index.html">Voltar Início</a></li>
+    </ul>
+</body>
+
+</html>

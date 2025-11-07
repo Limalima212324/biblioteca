@@ -1,95 +1,148 @@
-<h3>2. &lt;input&gt; — Campo de entrada de dados</h3>
-<p>🟢 &lt;input&gt; cria campos variados. É autofechado (&lt;input ...&gt;).</p>
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-<h4>📘 Atributos principais do &lt;input&gt;</h4>
-<p>🟢 type — define o tipo (text, email, number, etc);</p>
-<p>🟢 name — nome do campo enviado ao servidor;</p>
-<p>🟢 value — valor inicial;</p>
-<p>🟢 placeholder — texto de ajuda;</p>
-<p>🟢 required — torna obrigatório;</p>
-<p>🟢 disabled — desativa o campo;</p>
-<p>🟢 readonly — somente leitura;</p>
-<p>🟢 min, max, step — para number, range etc.</p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input - Campo de Entrada</title>
+    <style>
+        /* Estilos globais para a página de exemplo */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
 
-<h4>💡 Exemplos úteis de &lt;input&gt;</h4>
-<pre><code>&lt;!-- Texto --&gt;
-&lt;input type="text" name="nome" placeholder="Digite seu nome" required&gt;
+        h1, h2, h3 {
+            color: #4f46e5;
+        }
 
-&lt;!-- Senha --&gt;
-&lt;input type="password" name="senha" placeholder="Senha"&gt;
+        pre {
+            background-color: #eee;
+            padding: 10px;
+            border-left: 3px solid #7c3aed;
+            overflow-x: auto;
+        }
 
-&lt;!-- E-mail (validação básica) --&gt;
-&lt;input type="email" name="email" placeholder="seu@email.com"&gt;
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        .exemplo {
+            border: 1px dashed #999;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #fff;
+        }
 
-&lt;!-- Número --&gt;
-&lt;input type="number" name="idade" min="1" max="120"&gt;
+        /* Estilos para o link "Voltar Início" */
+        :root {
+            --primaria: #4f46e5;
+            --secundaria: #7c3aed;
+            --escuro: #0f172a;
+            --maisEscuro: #0a0f1c;
+            --claro: #e2e8f0;
+            --vidro: rgba(255, 255, 255, 0.1);
+        }
 
-&lt;!-- Data --&gt;
-&lt;input type="date" name="nascimento"&gt;
+        a {
+            border: 4px solid var(--primaria);
+            background-color: var(--claro);
+            border-radius: 3px;
+            color: var(--secundaria);
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 0.5rem;
+            transition: color 0.3s ease;
+            width: fit-content;
+            padding: 0.3rem 0.8rem;
+            display: inline-block;
+        }
 
-&lt;!-- Hora --&gt;
-&lt;input type="time" name="hora"&gt;
+        a:hover {
+            color: var(--primaria);
+            text-decoration: underline;
+        }
+    </style>
+</head>
 
-&lt;!-- Cor --&gt;
-&lt;input type="color" name="corFavorita"&gt;
+<body>
+    <h1>🧩 &lt;input&gt; — Campo de entrada de dados</h1>
+    <p>A tag <code>&lt;input&gt;</code> é a mais versátil para formulários, criando diversos tipos de campos de entrada. É uma tag autofechada.</p>
 
-&lt;!-- Arquivo --&gt;
-&lt;input type="file" name="documento"&gt;
+    <h2>Atributos Principais</h2>
+    <div class="exemplo">
+        <ul>
+            <li><code>type</code>: Define o tipo do campo (text, email, password, number, etc.).</li>
+            <li><code>name</code>: Nome do campo que será enviado ao servidor.</li>
+            <li><code>value</code>: Valor inicial do campo.</li>
+            <li><code>placeholder</code>: Texto de ajuda que aparece dentro do campo antes de ser preenchido.</li>
+            <li><code>required</code>: Torna o preenchimento do campo obrigatório.</li>
+            <li><code>disabled</code>: Desativa o campo, impedindo a interação.</li>
+            <li><code>readonly</code>: O campo não pode ser editado, mas seu valor é enviado.</li>
+            <li><code>min</code>, <code>max</code>, <code>step</code>: Usados para campos numéricos, definindo valor mínimo, máximo e o intervalo de incremento.</li>
+        </ul>
+    </div>
 
-&lt;!-- Enviar --&gt;
-&lt;input type="submit" value="Enviar"&gt;
+    <h2>Exemplos de Tipos de &lt;input&gt;</h2>
 
-&lt;!-- Reset --&gt;
-&lt;input type="reset" value="Limpar"&gt;</code></pre>
+    <div class="exemplo">
+        <h3>Texto (<code>type="text"</code>)</h3>
+        <pre><code>&lt;input type="text" name="nome" placeholder="Digite seu nome" required&gt;</code></pre>
+        <input type="text" name="nome" placeholder="Digite seu nome" required>
+    </div>
 
-<ul>
-    <li> <a href="./../index..html">Voltar Inicio</a></li>
-</ul>
-<style>
-    :root {
-        /* Variáveis de cores personalizadas */
-        --primaria: #4f46e5;
-        /* Cor primária */
-        --secundaria: #7c3aed;
-        /* Cor secundária */
-        --escuro: #0f172a;
-        /* Cor escura */
-        --maisEscuro: #0a0f1c;
-        /* Cor mais escura */
-        --claro: #e2e8f0;
-        /* Cor clara */
-        --vidro: rgba(255, 255, 255, 0.1);
-        /* Cor vidro */
-    }
+    <div class="exemplo">
+        <h3>Senha (<code>type="password"</code>)</h3>
+        <pre><code>&lt;input type="password" name="senha" placeholder="Senha"&gt;</code></pre>
+        <input type="password" name="senha" placeholder="Senha">
+    </div>
 
+    <div class="exemplo">
+        <h3>E-mail (<code>type="email"</code>)</h3>
+        <p>O navegador realiza uma validação básica do formato do e-mail.</p>
+        <pre><code>&lt;input type="email" name="email" placeholder="seu@email.com"&gt;</code></pre>
+        <input type="email" name="email" placeholder="seu@email.com">
+    </div>
 
-    a {
+    <div class="exemplo">
+        <h3>Número (<code>type="number"</code>)</h3>
+        <pre><code>&lt;input type="number" name="idade" min="1" max="120" placeholder="Idade"&gt;</code></pre>
+        <input type="number" name="idade" min="1" max="120" placeholder="Idade">
+    </div>
 
-        border: 4px solid var(--primaria);
-        background-color: var(--claro);
-        border-radius: 3px;
-        color: var(--secundaria);
-        /* Cor secundária para links */
-        text-decoration: none;
-        /* Remove sublinhado padrão */
-        font-weight: bold;
-        /* Negrito para destaque */
-        margin-left: 0.5rem;
-        /* Espaçamento à esquerda */
-        transition: color 0.3s ease;
-        /* Transição suave de cor */
-        width: fit-content;
-        /* Ajusta a largura ao conteúdo */
-        padding: 0.3rem 0.8rem;
-        /* Espaçamento interno */
-        display: inline-block;
-        /* Permite aplicar padding e margin */
-    }
+    <div class="exemplo">
+        <h3>Data (<code>type="date"</code>)</h3>
+        <pre><code>&lt;input type="date" name="nascimento"&gt;</code></pre>
+        <input type="date" name="nascimento">
+    </div>
 
-    a:hover {
-        color: var(--primaria);
-        /* Muda para cor primária ao passar o mouse */
-        text-decoration: underline;
-        /* Sublinhado ao passar o mouse */
-    }
-</style>
+    <div class="exemplo">
+        <h3>Arquivo (<code>type="file"</code>)</h3>
+        <p>Permite ao usuário selecionar um arquivo do seu dispositivo.</p>
+        <pre><code>&lt;input type="file" name="documento"&gt;</code></pre>
+        <input type="file" name="documento">
+    </div>
+
+    <div class="exemplo">
+        <h3>Envio (<code>type="submit"</code>)</h3>
+        <p>Cria um botão que, ao ser clicado, envia o formulário.</p>
+        <pre><code>&lt;input type="submit" value="Enviar Formulário"&gt;</code></pre>
+        <input type="submit" value="Enviar Formulário">
+    </div>
+
+    <div class="exemplo">
+        <h3>Reset (<code>type="reset"</code>)</h3>
+        <p>Cria um botão que limpa todos os campos do formulário para seus valores iniciais.</p>
+        <pre><code>&lt;input type="reset" value="Limpar Campos"&gt;</code></pre>
+        <input type="reset" value="Limpar Campos">
+    </div>
+
+    <ul>
+        <li> <a href="./../index.html">Voltar Início</a></li>
+    </ul>
+</body>
+
+</html>

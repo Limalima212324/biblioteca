@@ -1,71 +1,139 @@
-<h3>🔽 6. &lt;select&gt; — Lista suspensa (dropdown)</h3>
-<p>🟢 Cria uma lista de opções. Use &lt;option&gt; para cada item.</p>
-<h4>📘 Atributos úteis</h4>
-<p>🟢 multiple — permite selecionar várias opções;</p>
-<p>🟢 size — mostra múltiplas opções sem abrir o dropdown.</p>
-<h4>💡 Exemplo</h4>
-<label for="estado">Estado:</label>
-<select id="estado" name="estado">
-  <option value="">Selecione</option>
-  <option value="sp">São Paulo</option>
-  <option value="rj">Rio de Janeiro</option>
-</select>
-<p>&lt;!-- Select múltiplo --&gt;</p>
-<select name="cursos[]" multiple size="3">
-  <option value="html">HTML</option>
-  <option value="css">CSS</option>
-  <option value="js">JavaScript</option>
-</select>
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-<ul>
-  <li> <a href="./../index..html">Voltar Inicio</a></li>
-</ul>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select - Lista Suspensa</title>
+    <style>
+        /* Estilos globais para a página de exemplo */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
 
-<style>
-  :root {
-    /* Variáveis de cores personalizadas */
-    --primaria: #4f46e5;
-    /* Cor primária */
-    --secundaria: #7c3aed;
-    /* Cor secundária */
-    --escuro: #0f172a;
-    /* Cor escura */
-    --maisEscuro: #0a0f1c;
-    /* Cor mais escura */
-    --claro: #e2e8f0;
-    /* Cor clara */
-    --vidro: rgba(255, 255, 255, 0.1);
-    /* Cor vidro */
-  }
+        h1, h2, h3 {
+            color: #4f46e5;
+        }
 
+        pre {
+            background-color: #eee;
+            padding: 10px;
+            border-left: 3px solid #7c3aed;
+            overflow-x: auto;
+        }
 
-  a {
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        .exemplo {
+            border: 1px dashed #999;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #fff;
+        }
 
-    border: 4px solid var(--primaria);
-    background-color: var(--claro);
-    border-radius: 3px;
-    color: var(--secundaria);
-    /* Cor secundária para links */
-    text-decoration: none;
-    /* Remove sublinhado padrão */
-    font-weight: bold;
-    /* Negrito para destaque */
-    margin-left: 0.5rem;
-    /* Espaçamento à esquerda */
-    transition: color 0.3s ease;
-    /* Transição suave de cor */
-    width: fit-content;
-    /* Ajusta a largura ao conteúdo */
-    padding: 0.3rem 0.8rem;
-    /* Espaçamento interno */
-    display: inline-block;
-    /* Permite aplicar padding e margin */
-  }
+        /* Estilos para o link "Voltar Início" */
+        :root {
+            --primaria: #4f46e5;
+            --secundaria: #7c3aed;
+            --escuro: #0f172a;
+            --maisEscuro: #0a0f1c;
+            --claro: #e2e8f0;
+            --vidro: rgba(255, 255, 255, 0.1);
+        }
 
-  a:hover {
-    color: var(--primaria);
-    /* Muda para cor primária ao passar o mouse */
-    text-decoration: underline;
-    /* Sublinhado ao passar o mouse */
-  }
-</style>
+        a {
+            border: 4px solid var(--primaria);
+            background-color: var(--claro);
+            border-radius: 3px;
+            color: var(--secundaria);
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 0.5rem;
+            transition: color 0.3s ease;
+            width: fit-content;
+            padding: 0.3rem 0.8rem;
+            display: inline-block;
+        }
+
+        a:hover {
+            color: var(--primaria);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🔽 &lt;select&gt; — Lista suspensa (dropdown)</h1>
+    <p>A tag <code>&lt;select&gt;</code> cria um menu de opções em formato de lista suspensa (dropdown).</p>
+
+    <h2>Como Usar</h2>
+    <p>A tag <code>&lt;select&gt;</code> funciona como um contêiner. Cada item da lista é definido pela tag <code>&lt;option&gt;</code>. O atributo <code>value</code> da tag <code>&lt;option&gt;</code> contém o valor que será enviado ao servidor.</p>
+
+    <h2>Exemplo Básico</h2>
+    <div class="exemplo">
+        <pre><code>&lt;label for="estado"&gt;Estado:&lt;/label&gt;
+&lt;select id="estado" name="estado"&gt;
+  &lt;option value=""&gt;Selecione...&lt;/option&gt;
+  &lt;option value="sp"&gt;São Paulo&lt;/option&gt;
+  &lt;option value="rj" selected&gt;Rio de Janeiro&lt;/option&gt;
+  &lt;option value="mg"&gt;Minas Gerais&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+        <form>
+            <label for="estado">Estado:</label>
+            <select id="estado" name="estado">
+                <option value="">Selecione...</option>
+                <option value="sp">São Paulo</option>
+                <option value="rj" selected>Rio de Janeiro (pré-selecionado)</option>
+                <option value="mg">Minas Gerais</option>
+            </select>
+        </form>
+    </div>
+
+    <h2>Principais Atributos</h2>
+    <div class="exemplo">
+        <ul>
+            <li><code>multiple</code>: Permite que o usuário selecione várias opções (geralmente segurando a tecla Ctrl ou Command).</li>
+            <li><code>size</code>: Define quantas opções ficam visíveis de uma vez. Se for maior que 1, a lista pode perder a aparência de dropdown.</li>
+            <li><code>selected</code> (no <code>&lt;option&gt;</code>): Define qual opção virá pré-selecionada.</li>
+        </ul>
+    </div>
+
+    <h2>Agrupando Opções com <code>&lt;optgroup&gt;</code></h2>
+    <p>A tag <code>&lt;optgroup&gt;</code> permite agrupar opções relacionadas dentro do select, com um título definido pelo atributo <code>label</code>.</p>
+    <div class="exemplo">
+        <pre><code>&lt;select name="veiculo"&gt;
+  &lt;optgroup label="Carros"&gt;
+    &lt;option value="volvo"&gt;Volvo&lt;/option&gt;
+    &lt;option value="fiat"&gt;Fiat&lt;/option&gt;
+  &lt;/optgroup&gt;
+  &lt;optgroup label="Motos"&gt;
+    &lt;option value="honda"&gt;Honda&lt;/option&gt;
+    &lt;option value="yamaha"&gt;Yamaha&lt;/option&gt;
+  &lt;/optgroup&gt;
+&lt;/select&gt;</code></pre>
+        <form>
+            <select name="veiculo">
+                <optgroup label="Carros">
+                    <option value="volvo">Volvo</option>
+                    <option value="fiat">Fiat</option>
+                </optgroup>
+                <optgroup label="Motos">
+                    <option value="honda">Honda</option>
+                    <option value="yamaha">Yamaha</option>
+                </optgroup>
+            </select>
+        </form>
+    </div>
+
+    <ul>
+        <li> <a href="./../index.html">Voltar Início</a></li>
+    </ul>
+</body>
+
+</html>

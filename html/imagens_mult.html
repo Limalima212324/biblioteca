@@ -1,55 +1,117 @@
-<h2>🎥 Imagens e multimídia</h2>
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-<p>Imagem: &lt;img src="img.jpg" alt="Descrição"&gt; (sempre usar alt).</p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagens e Multimídia</title>
+    <style>
+        /* Estilos globais para a página de exemplo */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
 
+        h1, h2, h3 {
+            color: #4f46e5;
+        }
 
-<ul>
-  <li> <a href="./../index..html">Voltar Inicio</a></li>
-</ul>
-<style>
-  :root {
-    /* Variáveis de cores personalizadas */
-    --primaria: #4f46e5;
-    /* Cor primária */
-    --secundaria: #7c3aed;
-    /* Cor secundária */
-    --escuro: #0f172a;
-    /* Cor escura */
-    --maisEscuro: #0a0f1c;
-    /* Cor mais escura */
-    --claro: #e2e8f0;
-    /* Cor clara */
-    --vidro: rgba(255, 255, 255, 0.1);
-    /* Cor vidro */
-  }
+        pre {
+            background-color: #eee;
+            padding: 10px;
+            border-left: 3px solid #7c3aed;
+            overflow-x: auto;
+        }
 
-  a {
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        .exemplo {
+            border: 1px dashed #999;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #fff;
+        }
 
-    border: 4px solid var(--primaria);
-    background-color: var(--claro);
-    border-radius: 3px;
-    color: var(--secundaria);
-    /* Cor secundária para links */
-    text-decoration: none;
-    /* Remove sublinhado padrão */
-    font-weight: bold;
-    /* Negrito para destaque */
-    margin-left: 0.5rem;
-    /* Espaçamento à esquerda */
-    transition: color 0.3s ease;
-    /* Transição suave de cor */
-    width: fit-content;
-    /* Ajusta a largura ao conteúdo */
-    padding: 0.3rem 0.8rem;
-    /* Espaçamento interno */
-    display: inline-block;
-    /* Permite aplicar padding e margin */
-  }
+        /* Estilos para o link "Voltar Início" */
+        :root {
+            --primaria: #4f46e5;
+            --secundaria: #7c3aed;
+            --escuro: #0f172a;
+            --maisEscuro: #0a0f1c;
+            --claro: #e2e8f0;
+            --vidro: rgba(255, 255, 255, 0.1);
+        }
 
-  a:hover {
-    color: var(--primaria);
-    /* Muda para cor primária ao passar o mouse */
-    text-decoration: underline;
-    /* Sublinhado ao passar o mouse */
-  }
-</style>
+        a {
+            border: 4px solid var(--primaria);
+            background-color: var(--claro);
+            border-radius: 3px;
+            color: var(--secundaria);
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 0.5rem;
+            transition: color 0.3s ease;
+            width: fit-content;
+            padding: 0.3rem 0.8rem;
+            display: inline-block;
+        }
+
+        a:hover {
+            color: var(--primaria);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🎥 Imagens e Multimídia</h1>
+    <p>HTML oferece tags para incorporar imagens, vídeos, áudios e outros conteúdos na sua página.</p>
+
+    <h2>1. Imagens (<code>&lt;img&gt;</code>)</h2>
+    <p>A tag <code>&lt;img&gt;</code> é usada para exibir imagens. Seus atributos mais importantes são <code>src</code> (caminho da imagem) e <code>alt</code> (texto alternativo para acessibilidade).</p>
+    <div class="exemplo">
+        <pre><code>&lt;img src="https://via.placeholder.com/300x100" alt="Placeholder de uma imagem retangular"&gt;</code></pre>
+        <img src="https://via.placeholder.com/300x100" alt="Placeholder de uma imagem retangular" style="max-width: 100%;">
+    </div>
+
+    <h2>2. Vídeo (<code>&lt;video&gt;</code>)</h2>
+    <p>A tag <code>&lt;video&gt;</code> permite incorporar vídeos. O atributo <code>controls</code> exibe os controles padrão (play, volume, etc.). A tag <code>&lt;source&gt;</code> especifica o arquivo de vídeo.</p>
+    <div class="exemplo">
+        <pre><code>&lt;video controls width="320"&gt;
+  &lt;source src="movie.mp4" type="video/mp4"&gt;
+  Seu navegador não suporta a tag de vídeo.
+&lt;/video&gt;</code></pre>
+        <p><i>(Abaixo, um exemplo funcional seria exibido se o arquivo "movie.mp4" existisse)</i></p>
+    </div>
+
+    <h2>3. Áudio (<code>&lt;audio&gt;</code>)</h2>
+    <p>Similar ao vídeo, a tag <code>&lt;audio&gt;</code> incorpora arquivos de som. O atributo <code>controls</code> também é essencial para a interação do usuário.</p>
+    <div class="exemplo">
+        <pre><code>&lt;audio controls&gt;
+  &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+  Seu navegador não suporta a tag de áudio.
+&lt;/audio&gt;</code></pre>
+        <p><i>(Abaixo, um exemplo funcional seria exibido se o arquivo "audio.mp3" existisse)</i></p>
+    </div>
+
+    <h2>4. Iframe (<code>&lt;iframe&gt;</code>)</h2>
+    <p>A tag <code>&lt;iframe&gt;</code> cria um "quadro" dentro da sua página para exibir outro documento HTML, como um mapa do Google ou um vídeo do YouTube.</p>
+    <div class="exemplo">
+        <pre><code>&lt;!-- Exemplo incorporando um mapa do Google Maps --&gt;
+&lt;iframe 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.197550539229!2d-46.65657118502224!3d-23.56135938468276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1670000000000!5m2!1spt-BR!2sbr" 
+  width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"&gt;
+&lt;/iframe&gt;</code></pre>
+    </div>
+
+    <ul>
+        <li> <a href="./../index.html">Voltar Início</a></li>
+    </ul>
+</body>
+
+</html>

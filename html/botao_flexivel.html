@@ -1,62 +1,120 @@
-<h3>🔲 5. &lt;button&gt; — Botões flexíveis</h3>
-<p>&lt;button&gt; é mais flexível que &lt;input type="submit"&gt; — aceita HTML dentro (ícone, texto, span).</p>
-<h4>📘 Tipos</h4>
-<p>type="submit" — envia o formulário;</p>
-<p>type="reset" — limpa o formulário;</p>
-<p>type="button" — botão comum (usa JS para ação).</p>
-<h4>💡 Exemplo</h4>
-<pre><code>&lt;button type="submit"&gt;Enviar&lt;/button&gt;
-&lt;button type="reset"&gt;Limpar&lt;/button&gt;
-&lt;button type="button" onclick="alert('Ação')"&gt;Clique&lt;/button&gt;</code></pre>
-<ul>
-    <li> <a href="./../index..html">Voltar Inicio</a></li>
-</ul>
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-<style>
-    :root {
-        /* Variáveis de cores personalizadas */
-        --primaria: #4f46e5;
-        /* Cor primária */
-        --secundaria: #7c3aed;
-        /* Cor secundária */
-        --escuro: #0f172a;
-        /* Cor escura */
-        --maisEscuro: #0a0f1c;
-        /* Cor mais escura */
-        --claro: #e2e8f0;
-        /* Cor clara */
-        --vidro: rgba(255, 255, 255, 0.1);
-        /* Cor vidro */
-    }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tag Button</title>
+    <style>
+        /* Estilos globais para a página de exemplo */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
 
+        h1, h2, h3 {
+            color: #4f46e5;
+        }
 
-    a {
+        pre {
+            background-color: #eee;
+            padding: 10px;
+            border-left: 3px solid #7c3aed;
+            overflow-x: auto;
+        }
 
-        border: 4px solid var(--primaria);
-        background-color: var(--claro);
-        border-radius: 3px;
-        color: var(--secundaria);
-        /* Cor secundária para links */
-        text-decoration: none;
-        /* Remove sublinhado padrão */
-        font-weight: bold;
-        /* Negrito para destaque */
-        margin-left: 0.5rem;
-        /* Espaçamento à esquerda */
-        transition: color 0.3s ease;
-        /* Transição suave de cor */
-        width: fit-content;
-        /* Ajusta a largura ao conteúdo */
-        padding: 0.3rem 0.8rem;
-        /* Espaçamento interno */
-        display: inline-block;
-        /* Permite aplicar padding e margin */
-    }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        .exemplo {
+            border: 1px dashed #999;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #fff;
+        }
 
-    a:hover {
-        color: var(--primaria);
-        /* Muda para cor primária ao passar o mouse */
-        text-decoration: underline;
-        /* Sublinhado ao passar o mouse */
-    }
-</style>
+        /* Estilos para o link "Voltar Início" */
+        :root {
+            --primaria: #4f46e5;
+            --secundaria: #7c3aed;
+            --escuro: #0f172a;
+            --maisEscuro: #0a0f1c;
+            --claro: #e2e8f0;
+            --vidro: rgba(255, 255, 255, 0.1);
+        }
+
+        a {
+            border: 4px solid var(--primaria);
+            background-color: var(--claro);
+            border-radius: 3px;
+            color: var(--secundaria);
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 0.5rem;
+            transition: color 0.3s ease;
+            width: fit-content;
+            padding: 0.3rem 0.8rem;
+            display: inline-block;
+        }
+
+        a:hover {
+            color: var(--primaria);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🔲 &lt;button&gt; — Botões flexíveis</h1>
+    <p>A tag <code>&lt;button&gt;</code> é mais flexível que <code>&lt;input type="submit"&gt;</code> porque permite aninhar outros elementos HTML dentro dela, como ícones, imagens e texto com formatação complexa.</p>
+
+    <h2>Tipos de Botão</h2>
+    <div class="exemplo">
+        <ul>
+            <li><code>type="submit"</code>: (Padrão) Envia os dados do formulário ao qual pertence.</li>
+            <li><code>type="reset"</code>: Limpa todos os campos do formulário, restaurando seus valores iniciais.</li>
+            <li><code>type="button"</code>: Um botão clicável sem comportamento padrão. Sua ação é definida via JavaScript.</li>
+        </ul>
+    </div>
+
+    <h2>Exemplos Práticos</h2>
+    <div class="exemplo">
+        <h3>Botão de Envio (<code>type="submit"</code>)</h3>
+        <pre><code>&lt;button type="submit"&gt;Enviar Formulário&lt;/button&gt;</code></pre>
+        <button type="submit">Enviar Formulário</button>
+    </div>
+
+    <div class="exemplo">
+        <h3>Botão de Limpar (<code>type="reset"</code>)</h3>
+        <pre><code>&lt;button type="reset"&gt;Limpar Campos&lt;/button&gt;</code></pre>
+        <button type="reset">Limpar Campos</button>
+    </div>
+
+    <div class="exemplo">
+        <h3>Botão Genérico (<code>type="button"</code>)</h3>
+        <p>Este botão precisa de JavaScript para executar uma ação.</p>
+        <pre><code>&lt;button type="button" onclick="alert('Ação executada!')"&gt;Clique para uma Ação&lt;/button&gt;</code></pre>
+        <button type="button" onclick="alert('Ação executada!')">Clique para uma Ação</button>
+    </div>
+
+    <div class="exemplo">
+        <h3>Botão com Conteúdo HTML</h3>
+        <p>A grande vantagem do <code>&lt;button&gt;</code> é poder conter outras tags.</p>
+        <pre><code>&lt;button type="button"&gt;
+  &lt;strong&gt;Salvar&lt;/strong&gt; &lt;i&gt;Alterações&lt;/i&gt;
+&lt;/button&gt;</code></pre>
+        <button type="button">
+            <strong>Salvar</strong> <i>Alterações</i>
+        </button>
+    </div>
+
+    <ul>
+        <li> <a href="./../index.html">Voltar Início</a></li>
+    </ul>
+</body>
+
+</html>

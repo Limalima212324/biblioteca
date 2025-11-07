@@ -1,69 +1,105 @@
-<h2>🧩 Formulários</h2>
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-<h3>1. &lt;form&gt; — Estrutura do formulário</h3>
-<p>🟢 A tag &lt;form&gt; cria um formulário e agrupa os campos que serão enviados ao servidor.</p>
-<h4>📘 Como funciona</h4>
-<p>🟢 Tudo dentro de &lt;form&gt; pertence ao formulário.</p>
-<p>🟢 Envio definido por action (para onde) e method (como).</p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários (Tag &lt;form&gt;)</title>
+    <style>
+        /* Estilos globais para a página de exemplo */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
 
-<h4>⚙️ Principais atributos do &lt;form&gt;</h4>
-<p>🟢 action="url" — URL que recebe os dados;</p>
-<p>🟢 method="get" ou post — método de envio;</p>
-<p>🟢 enctype — tipo de codificação (ex.: multipart/form-data para envio de arquivos);</p>
-<p>🟢 target — onde abrir a resposta (ex.: _blank).</p>
-<h4>💡 Exemplo básico</h4>
-<pre><code>&lt;form action="/enviar" method="post" enctype="multipart/form-data"&gt;
-  &lt;!-- Campos do formulário --&gt;
+        h1, h2, h3 {
+            color: #4f46e5;
+        }
+
+        pre {
+            background-color: #eee;
+            padding: 10px;
+            border-left: 3px solid #7c3aed;
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        .exemplo {
+            border: 1px dashed #999;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #fff;
+        }
+
+        /* Estilos para o link "Voltar Início" */
+        :root {
+            --primaria: #4f46e5;
+            --secundaria: #7c3aed;
+            --escuro: #0f172a;
+            --maisEscuro: #0a0f1c;
+            --claro: #e2e8f0;
+            --vidro: rgba(255, 255, 255, 0.1);
+        }
+
+        a {
+            border: 4px solid var(--primaria);
+            background-color: var(--claro);
+            border-radius: 3px;
+            color: var(--secundaria);
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 0.5rem;
+            transition: color 0.3s ease;
+            width: fit-content;
+            padding: 0.3rem 0.8rem;
+            display: inline-block;
+        }
+
+        a:hover {
+            color: var(--primaria);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🧩 Formulários (&lt;form&gt;)</h1>
+    <p>A tag <code>&lt;form&gt;</code> é o contêiner principal para todos os campos de um formulário. Ela agrupa os elementos que serão enviados para um servidor.</p>
+
+    <h2>Como funciona</h2>
+    <p>Tudo que está dentro da tag <code>&lt;form&gt;</code> faz parte do formulário. O envio dos dados é definido principalmente pelos atributos <code>action</code> (para onde enviar) e <code>method</code> (como enviar).</p>
+
+    <h2>Principais Atributos</h2>
+    <div class="exemplo">
+        <ul>
+            <li><code>action="url"</code>: A URL do servidor que receberá os dados do formulário.</li>
+            <li><code>method="get"</code> ou <code>"post"</code>: O método HTTP para enviar os dados. <code>GET</code> envia os dados na URL, enquanto <code>POST</code> envia no corpo da requisição.</li>
+            <li><code>enctype</code>: Tipo de codificação dos dados. Use <code>"multipart/form-data"</code> quando o formulário incluir envio de arquivos (<code>&lt;input type="file"&gt;</code>).</li>
+            <li><code>target</code>: Onde exibir a resposta após o envio (ex: <code>"_blank"</code> para abrir em uma nova aba).</li>
+        </ul>
+    </div>
+
+    <h2>Exemplo Básico</h2>
+    <p>A estrutura básica de um formulário que envia dados para um script no servidor.</p>
+    <div class="exemplo">
+        <pre><code>&lt;form action="/enviar" method="post"&gt;
+  &lt;!-- 
+    Campos do formulário como &lt;input&gt;, &lt;textarea&gt;, 
+    &lt;select&gt; e &lt;button&gt; entram aqui.
+  --&gt;
+  &lt;button type="submit"&gt;Enviar&lt;/button&gt;
 &lt;/form&gt;</code></pre>
+    </div>
 
-<ul>
-  <li> <a href="./../index..html">Voltar Inicio</a></li>
-</ul>
-<style>
-  :root {
-    /* Variáveis de cores personalizadas */
-    --primaria: #4f46e5;
-    /* Cor primária */
-    --secundaria: #7c3aed;
-    /* Cor secundária */
-    --escuro: #0f172a;
-    /* Cor escura */
-    --maisEscuro: #0a0f1c;
-    /* Cor mais escura */
-    --claro: #e2e8f0;
-    /* Cor clara */
-    --vidro: rgba(255, 255, 255, 0.1);
-    /* Cor vidro */
-  }
+    <ul>
+        <li> <a href="./../index.html">Voltar Início</a></li>
+    </ul>
+</body>
 
-
-  a {
-
-    border: 4px solid var(--primaria);
-    background-color: var(--claro);
-    border-radius: 3px;
-    color: var(--secundaria);
-    /* Cor secundária para links */
-    text-decoration: none;
-    /* Remove sublinhado padrão */
-    font-weight: bold;
-    /* Negrito para destaque */
-    margin-left: 0.5rem;
-    /* Espaçamento à esquerda */
-    transition: color 0.3s ease;
-    /* Transição suave de cor */
-    width: fit-content;
-    /* Ajusta a largura ao conteúdo */
-    padding: 0.3rem 0.8rem;
-    /* Espaçamento interno */
-    display: inline-block;
-    /* Permite aplicar padding e margin */
-  }
-
-  a:hover {
-    color: var(--primaria);
-    /* Muda para cor primária ao passar o mouse */
-    text-decoration: underline;
-    /* Sublinhado ao passar o mouse */
-  }
-</style>
+</html>

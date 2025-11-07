@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seletores CSS</title>
+    <style>
+        /* Estilos globais para a página de exemplo */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            color: #4f46e5; /* Usando a cor primária */
+        }
+
+        pre {
+            background-color: #eee;
+            padding: 10px;
+            border-left: 3px solid #7c3aed; /* Usando a cor secundária */
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        /* Estilos para o link "Voltar Início" */
+        :root {
+            --primaria: #4f46e5;
+            --secundaria: #7c3aed;
+            --escuro: #0f172a;
+            --maisEscuro: #0a0f1c;
+            --claro: #e2e8f0;
+            --vidro: rgba(255, 255, 255, 0.1);
+        }
+
+        a {
+            border: 4px solid var(--primaria);
+            background-color: var(--claro);
+            border-radius: 3px;
+            color: var(--secundaria);
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 0.5rem;
+            transition: color 0.3s ease;
+            width: fit-content;
+            padding: 0.3rem 0.8rem;
+            display: inline-block;
+        }
+
+        a:hover {
+            color: var(--primaria);
+            text-decoration: underline;
+        }
+
+        /* Estilos para os exemplos de seletores */
+        #meu-id {
+            color: blue;
+            font-weight: bold;
+        }
+
+        .minha-classe {
+            background-color: yellow;
+            padding: 5px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🎯 Seletores (id, class, tag)</h1>
+
+    <h2>1. Seletor de ID (`#`)</h2>
+    <p>O seletor de ID é usado para estilizar um <strong>único elemento</strong> com um ID específico. IDs devem ser únicos em uma página HTML.</p>
+    <pre><code>#meu-id {
+    color: blue;
+    font-weight: bold;
+}</code></pre>
+    <p id="meu-id">Este parágrafo tem um ID e está estilizado com cor azul e negrito.</p>
+
+    <h2>2. Seletor de Classe (`.`)</h2>
+    <p>O seletor de classe é usado para estilizar <strong>múltiplos elementos</strong> que compartilham a mesma classe. Um elemento pode ter várias classes.</p>
+    <pre><code>.minha-classe {
+    background-color: yellow;
+    padding: 5px;
+}</code></pre>
+    <p class="minha-classe">Este parágrafo tem a classe "minha-classe" e está com fundo amarelo.</p>
+    <div class="minha-classe">Esta div também tem a classe "minha-classe".</div>
+
+    <h2>3. Seletor de Tag (Elemento)</h2>
+    <p>O seletor de tag (ou elemento) é usado para estilizar <strong>todos os elementos de um tipo específico</strong> (ex: todos os parágrafos, todas as divs).</p>
+    <pre><code>p {
+    font-size: 18px;
+}</code></pre>
+    <p>Este é um parágrafo comum, estilizado pelo seletor de tag.</p>
+    <span>Este é um span, que não é afetado pelo seletor de tag `p`.</span>
+
+    <h2>Exemplo Combinado:</h2>
+    <pre><code>/* Estiliza um parágrafo com a classe "minha-classe" */
+p.minha-classe {
+    border: 1px solid green;
+}
+
+/* Estiliza um elemento com ID "outro-id" que está dentro de uma div */
+div #outro-id {
+    text-decoration: underline;
+}</code></pre>
+    <p class="minha-classe">Este parágrafo tem a classe e também é um parágrafo, então recebe o estilo combinado.</p>
+    <div>
+        <p id="outro-id">Este parágrafo está dentro de uma div e tem um ID.</p>
+    </div>
+
+    <ul>
+        <li> <a href="./../index.html">Voltar Início</a></li>
+    </ul>
+</body>
+
+</html>

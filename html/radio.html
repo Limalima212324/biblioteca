@@ -1,62 +1,108 @@
-<h3>🔘 4. Radio (&lt;input type="radio"&gt;)</h3>
-<p>Usado quando o usuário deve escolher apenas uma opção do grupo.</p>
-<h4>📘 Como usar</h4>
-<p>Todos os radios que pertencem ao mesmo grupo devem ter o mesmo name.</p>
-<h4>💡 Exemplo</h4>
-<p>🟢 Gênero:</p>
-<label><input type="radio" name="genero" value="m"> Masculino</label>
-<label><input type="radio" name="genero" value="f"> Feminino</label>
-<label><input type="radio" name="genero" value="o"> Outro</label>
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-<ul>
-  <li> <a href="./../index..html">Voltar Inicio</a></li>
-</ul>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Input</title>
+    <style>
+        /* Estilos globais para a página de exemplo */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
 
-<style>
-  :root {
-    /* Variáveis de cores personalizadas */
-    --primaria: #4f46e5;
-    /* Cor primária */
-    --secundaria: #7c3aed;
-    /* Cor secundária */
-    --escuro: #0f172a;
-    /* Cor escura */
-    --maisEscuro: #0a0f1c;
-    /* Cor mais escura */
-    --claro: #e2e8f0;
-    /* Cor clara */
-    --vidro: rgba(255, 255, 255, 0.1);
-    /* Cor vidro */
-  }
+        h1, h2, h3 {
+            color: #4f46e5;
+        }
 
+        pre {
+            background-color: #eee;
+            padding: 10px;
+            border-left: 3px solid #7c3aed;
+            overflow-x: auto;
+        }
 
-  a {
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        .exemplo {
+            border: 1px dashed #999;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #fff;
+        }
 
-    border: 4px solid var(--primaria);
-    background-color: var(--claro);
-    border-radius: 3px;
-    color: var(--secundaria);
-    /* Cor secundária para links */
-    text-decoration: none;
-    /* Remove sublinhado padrão */
-    font-weight: bold;
-    /* Negrito para destaque */
-    margin-left: 0.5rem;
-    /* Espaçamento à esquerda */
-    transition: color 0.3s ease;
-    /* Transição suave de cor */
-    width: fit-content;
-    /* Ajusta a largura ao conteúdo */
-    padding: 0.3rem 0.8rem;
-    /* Espaçamento interno */
-    display: inline-block;
-    /* Permite aplicar padding e margin */
-  }
+        /* Estilos para o link "Voltar Início" */
+        :root {
+            --primaria: #4f46e5;
+            --secundaria: #7c3aed;
+            --escuro: #0f172a;
+            --maisEscuro: #0a0f1c;
+            --claro: #e2e8f0;
+            --vidro: rgba(255, 255, 255, 0.1);
+        }
 
-  a:hover {
-    color: var(--primaria);
-    /* Muda para cor primária ao passar o mouse */
-    text-decoration: underline;
-    /* Sublinhado ao passar o mouse */
-  }
-</style>
+        a {
+            border: 4px solid var(--primaria);
+            background-color: var(--claro);
+            border-radius: 3px;
+            color: var(--secundaria);
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 0.5rem;
+            transition: color 0.3s ease;
+            width: fit-content;
+            padding: 0.3rem 0.8rem;
+            display: inline-block;
+        }
+
+        a:hover {
+            color: var(--primaria);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🔘 Radio (&lt;input type="radio"&gt;)</h1>
+    <p>O radio button é usado quando o usuário deve escolher <strong>apenas uma</strong> opção de um grupo.</p>
+
+    <h2>Como Usar</h2>
+    <p>A característica principal do radio button é que todos os inputs que pertencem ao mesmo grupo de escolha devem ter o <strong>mesmo atributo <code>name</code></strong>. Isso garante que apenas um deles possa ser selecionado por vez. Cada opção deve ter um <code>value</code> único.</p>
+
+    <h2>Exemplo Prático</h2>
+    <div class="exemplo">
+        <p>Escolha seu plano:</p>
+        <pre><code>&lt;label&gt;
+  &lt;input type="radio" name="plano" value="basico" checked&gt; Básico
+&lt;/label&gt;
+&lt;label&gt;
+  &lt;input type="radio" name="plano" value="premium"&gt; Premium
+&lt;/label&gt;
+&lt;label&gt;
+  &lt;input type="radio" name="plano" value="pro"&gt; Profissional
+&lt;/label&gt;</code></pre>
+        <form>
+            <label>
+                <input type="radio" name="plano" value="basico" checked> Básico (pré-marcado com `checked`)
+            </label><br>
+            <label>
+                <input type="radio" name="plano" value="premium"> Premium
+            </label><br>
+            <label>
+                <input type="radio" name="plano" value="pro"> Profissional
+            </label>
+        </form>
+    </div>
+
+    <ul>
+        <li> <a href="./../index.html">Voltar Início</a></li>
+    </ul>
+</body>
+
+</html>

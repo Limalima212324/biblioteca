@@ -1,82 +1,147 @@
-    <h3>✅ 9. Exemplo prático de formulário completo alterar esse aqui</h3>
-    <form action="/enviar-completo" method="post" enctype="multipart/form-data">
-      <p><label>Nome: <input type="text" name="nome" required></label></p>
-      <p><label>🟢 Email: <input type="email" name="email" required></label></p>
-      <fieldset>
-        <legend>🟢 Gênero:</legend>
-        <label><input type="radio" name="genero" value="m"> Masculino</label>
-        <label><input type="radio" name="genero" value="f"> Feminino</label>
-      </fieldset>
-      <fieldset>
-        <legend>🟢 Preferências:</legend>
-        <label><input type="checkbox" name="noticias" value="sim"> Receber novidades</label>
-      </fieldset>
-      <p><label>🟢 Estado:
-          <select name="estado">
-            <option value="">Selecione</option>
-            <option value="sp">SP</option>
-            <option value="rj">RJ</option>
-          </select>
-        </label></p>
-      <p><label>🟢 Mensagem:
-          <textarea name="mensagem" rows="4" placeholder="Escreva aqui..."></textarea>
-        </label></p>
-      <p><label>🟢 Arquivo: <input type="file" name="arquivo"></label></p>
-      <button type="submit">Enviar</button>
-      <button type="reset">Limpar</button>
-    </form>
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-    
-
-    <h2>💬 Dicas rápidas falta esse </h2>
-    <p>Use <code>label</code> sempre que possível — melhora usabilidade e acessibilidade:
-      <br><code>&lt;label for="idDoCampo"&gt;Texto&lt;/label&gt;</code> + <code>&lt;input id="idDoCampo"&gt;</code>
-    </p>
-    <p><code>required</code> evita envio sem preenchimento.</p>
-    <p>Para múltiplas opções enviadas ao backend, use <code>name="campo[]"</code> ou trate no servidor.</p>
-    <p><code>enctype="multipart/form-data"</code> é obrigatório para envio de arquivos.</p>
-    
-    <hr>
-
-    <h2>📦 &lt;embed&gt; — Incorporando conteúdos externos esse ta certo </h2>
-    <p>🟢 A tag &lt;embed&gt; permite inserir conteúdo externo como PDFs, mídia ou apps diretamente na página.</p>
-    <p>💬 Observação: diferente de &lt;iframe&gt;, &lt;embed&gt; é usado principalmente para documentos ou objetos interativos.</p>
-    <h4>💡 Exemplo:</h4>
-    <p>🟢 PDF incorporado:</p>
-    <embed src="documento.pdf" type="application/pdf" width="600" height="400">
-
-      <ul>
-  <li> <a href="./../index..html">Voltar Inicio</a></li>
-</ul>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Completo</title>
     <style>
-      a {
+        /* Estilos globais para a página de exemplo */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
 
-    border: 4px solid var(--primaria);
-    background-color: var(--claro);
-    border-radius: 3px;
-    color: var(--secundaria);
-    /* Cor secundária para links */
-    text-decoration: none;
-    /* Remove sublinhado padrão */
-    font-weight: bold;
-    /* Negrito para destaque */
-    margin-left: 0.5rem;
-    /* Espaçamento à esquerda */
-    transition: color 0.3s ease;
-    /* Transição suave de cor */
-    width: fit-content;
-    /* Ajusta a largura ao conteúdo */
-    padding: 0.3rem 0.8rem;
-    /* Espaçamento interno */
-    display: inline-block;
-    /* Permite aplicar padding e margin */
-}
+        h1, h2, h3 {
+            color: #4f46e5;
+        }
 
-a:hover {
-    color: var(--primaria);
-    /* Muda para cor primária ao passar o mouse */
-    text-decoration: underline;
-    /* Sublinhado ao passar o mouse */
-}
+        pre {
+            background-color: #eee;
+            padding: 10px;
+            border-left: 3px solid #7c3aed;
+            overflow-x: auto;
+        }
 
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        .exemplo {
+            border: 1px dashed #999;
+            padding: 15px;
+            margin: 10px 0;
+            background-color: #fff;
+        }
+
+        .exemplo .campo {
+            margin-bottom: 15px;
+        }
+
+        /* Estilos para o link "Voltar Início" */
+        :root {
+            --primaria: #4f46e5;
+            --secundaria: #7c3aed;
+            --escuro: #0f172a;
+            --maisEscuro: #0a0f1c;
+            --claro: #e2e8f0;
+            --vidro: rgba(255, 255, 255, 0.1);
+        }
+
+        a {
+            border: 4px solid var(--primaria);
+            background-color: var(--claro);
+            border-radius: 3px;
+            color: var(--secundaria);
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 0.5rem;
+            transition: color 0.3s ease;
+            width: fit-content;
+            padding: 0.3rem 0.8rem;
+            display: inline-block;
+        }
+
+        a:hover {
+            color: var(--primaria);
+            text-decoration: underline;
+        }
     </style>
+</head>
+
+<body>
+    <h1>✅ Exemplo Prático de Formulário Completo</h1>
+    <p>Este exemplo combina vários elementos de formulário que aprendemos, criando um formulário de cadastro completo e bem estruturado.</p>
+
+    <div class="exemplo">
+        <form action="/enviar-cadastro" method="post" enctype="multipart/form-data">
+            <fieldset>
+                <legend>Informações Pessoais</legend>
+                <div class="campo">
+                    <label for="nome">Nome:</label><br>
+                    <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+                </div>
+                <div class="campo">
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Preferências</legend>
+                <div class="campo">
+                    <p>Plano desejado:</p>
+                    <label><input type="radio" name="plano" value="basico" checked> Básico</label><br>
+                    <label><input type="radio" name="plano" value="premium"> Premium</label>
+                </div>
+                <div class="campo">
+                    <p>Interesses:</p>
+                    <label><input type="checkbox" name="interesses" value="esportes"> Esportes</label><br>
+                    <label><input type="checkbox" name="interesses" value="tecnologia"> Tecnologia</label><br>
+                    <label><input type="checkbox" name="interesses" value="arte"> Arte</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Detalhes Adicionais</legend>
+                <div class="campo">
+                    <label for="estado">Estado:</label><br>
+                    <select id="estado" name="estado">
+                        <option value="">Selecione...</option>
+                        <option value="sp">São Paulo</option>
+                        <option value="rj">Rio de Janeiro</option>
+                        <option value="mg">Minas Gerais</option>
+                    </select>
+                </div>
+                <div class="campo">
+                    <label for="mensagem">Mensagem:</label><br>
+                    <textarea id="mensagem" name="mensagem" rows="4" placeholder="Deixe uma mensagem (opcional)"></textarea>
+                </div>
+                <div class="campo">
+                    <label for="arquivo">Enviar um documento:</label><br>
+                    <input type="file" id="arquivo" name="arquivo">
+                </div>
+            </fieldset>
+
+            <button type="submit">Cadastrar</button>
+            <button type="reset">Limpar</button>
+        </form>
+    </div>
+
+    <h2>💬 Dicas Rápidas e Boas Práticas</h2>
+    <ul>
+        <li>Sempre use <code>&lt;label for="id_do_campo"&gt;</code> para associar o texto ao campo, melhorando a acessibilidade e usabilidade.</li>
+        <li>O atributo <code>required</code> é uma forma simples de garantir que campos essenciais não sejam enviados em branco.</li>
+        <li>Para enviar múltiplos valores (como em checkboxes), é comum usar <code>name="nome_do_campo[]"</code>, o que facilita o processamento no backend (ex: PHP).</li>
+        <li>Lembre-se: <code>enctype="multipart/form-data"</code> é <strong>obrigatório</strong> na tag <code>&lt;form&gt;</code> para que o envio de arquivos funcione.</li>
+    </ul>
+
+    <ul>
+        <li> <a href="./../index.html">Voltar Início</a></li>
+    </ul>
+</body>
+
+</html>

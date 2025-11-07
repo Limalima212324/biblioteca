@@ -1,68 +1,128 @@
-<h2>🏗️ Tags semânticas (estruturação moderna)</h2>
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-<p>🟢 header — cabeçalho da página/ seção;</p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tags Semânticas</title>
+    <style>
+        /* Estilos globais para a página de exemplo */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
 
-<p>🟢 nav — navegação / menu;</p>
+        h1, h2, h3 {
+            color: #4f46e5;
+        }
 
-<p>🟢 main — conteúdo principal;</p>
+        pre {
+            background-color: #eee;
+            padding: 10px;
+            border-left: 3px solid #7c3aed;
+            overflow-x: auto;
+        }
 
-<p>🟢 section — seção de conteúdo;</p>
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
 
-<p>🟢 article — conteúdo independente (post, card);</p>
+        .exemplo-visual {
+            border: 2px solid #ccc;
+            padding: 10px;
+            margin-top: 15px;
+        }
+        .exemplo-visual header, .exemplo-visual footer { background-color: #e2e8f0; padding: 10px; text-align: center; }
+        .exemplo-visual nav { background-color: #c7d2fe; padding: 5px; text-align: center; }
+        .exemplo-visual main { border: 1px dashed #999; padding: 10px; margin-top: 5px; }
+        .exemplo-visual section { background-color: #f0f9ff; border: 1px solid #bae6fd; padding: 10px; margin-bottom: 10px; }
+        .exemplo-visual article { background-color: #fff; border: 1px solid #ddd; padding: 10px; margin: 5px; }
+        .exemplo-visual aside { background-color: #fefce8; border: 1px solid #fde047; padding: 10px; float: right; width: 30%; margin-left: 10px; }
+        .clearfix::after { content: ""; clear: both; display: table; }
 
-<p>🟢 aside — conteúdo lateral/complementar;</p>
+        /* Estilos para o link "Voltar Início" */
+        :root {
+            --primaria: #4f46e5;
+            --secundaria: #7c3aed;
+            --escuro: #0f172a;
+            --maisEscuro: #0a0f1c;
+            --claro: #e2e8f0;
+            --vidro: rgba(255, 255, 255, 0.1);
+        }
 
-<p>🟢 footer — rodapé.</p>
+        a {
+            border: 4px solid var(--primaria);
+            background-color: var(--claro);
+            border-radius: 3px;
+            color: var(--secundaria);
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 0.5rem;
+            transition: color 0.3s ease;
+            width: fit-content;
+            padding: 0.3rem 0.8rem;
+            display: inline-block;
+        }
 
-<ul>
-  <li> <a href="./../index..html">Voltar Inicio</a></li>
-</ul>
+        a:hover {
+            color: var(--primaria);
+            text-decoration: underline;
+        }
+    </style>
+</head>
 
-<style>
-  :root {
-    /* Variáveis de cores personalizadas */
-    --primaria: #4f46e5;
-    /* Cor primária */
-    --secundaria: #7c3aed;
-    /* Cor secundária */
-    --escuro: #0f172a;
-    /* Cor escura */
-    --maisEscuro: #0a0f1c;
-    /* Cor mais escura */
-    --claro: #e2e8f0;
-    /* Cor clara */
-    --vidro: rgba(255, 255, 255, 0.1);
-    /* Cor vidro */
-  }
+<body>
+    <h1>🏗️ Tags semânticas (estruturação moderna)</h1>
+    <p>Tags semânticas descrevem o significado do conteúdo para o navegador e para os desenvolvedores, melhorando a acessibilidade e o SEO (otimização para motores de busca).</p>
+
+    <h2>Estrutura Principal</h2>
+    <ul>
+        <li><code>&lt;header&gt;</code>: Define o cabeçalho da página ou de uma seção. Geralmente contém o logo, título principal e navegação.</li>
+        <li><code>&lt;nav&gt;</code>: Define um bloco de links de navegação.</li>
+        <li><code>&lt;main&gt;</code>: Define o conteúdo principal e único da página. Só deve existir um por página.</li>
+        <li><code>&lt;footer&gt;</code>: Define o rodapé da página ou de uma seção. Geralmente contém informações de copyright, links úteis e contatos.</li>
+    </ul>
+
+    <h2>Estrutura de Conteúdo</h2>
+    <ul>
+        <li><code>&lt;section&gt;</code>: Agrupa conteúdos relacionados, como um capítulo de um livro. Geralmente possui um título (<code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code>).</li>
+        <li><code>&lt;article&gt;</code>: Define um conteúdo independente e auto-contido, que poderia ser distribuído separadamente (ex: um post de blog, um card de produto).</li>
+        <li><code>&lt;aside&gt;</code>: Define um conteúdo complementar ou lateral ao conteúdo principal (ex: uma barra lateral com links relacionados, biografia do autor).</li>
+        <li><code>&lt;figure&gt;</code> e <code>&lt;figcaption&gt;</code>: Agrupam uma mídia (imagem, diagrama, código) e sua legenda, respectivamente.</li>
+    </ul>
+
+    <h2>Exemplo Visual da Estrutura</h2>
+    <div class="exemplo-visual clearfix">
+        <header>&lt;header&gt; (Cabeçalho)</header>
+        <nav>&lt;nav&gt; (Navegação)</nav>
+        <main>
+            &lt;main&gt; (Conteúdo Principal)
+            <aside>&lt;aside&gt; (Barra Lateral)</aside>
+            <section>
+                &lt;section&gt;
+                <article>&lt;article&gt; (Post 1)</article>
+                <article>&lt;article&gt; (Post 2)</article>
+            </section>
+        </main>
+        <footer>&lt;footer&gt; (Rodapé)</footer>
+    </div>
+
+    <h2>Exemplo de <code>&lt;figure&gt;</code> e <code>&lt;figcaption&gt;</code></h2>
+    <p>Use estas tags para associar semanticamente uma imagem ou outro conteúdo de mídia a uma legenda.</p>
+    <div class="exemplo-visual">
+        <figure style="margin: 0; text-align: center;">
+            <img src="https://via.placeholder.com/400x150" alt="Exemplo de imagem placeholder" style="max-width: 100%;">
+            <figcaption style="padding-top: 8px; font-style: italic;">&lt;figcaption&gt;: Legenda descritiva da imagem.&lt;/figcaption&gt;
+        </figure>
+    </div>
 
 
-  a {
+    <ul>
+        <li> <a href="./../index.html">Voltar Início</a></li>
+    </ul>
+</body>
 
-    border: 4px solid var(--primaria);
-    background-color: var(--claro);
-    border-radius: 3px;
-    color: var(--secundaria);
-    /* Cor secundária para links */
-    text-decoration: none;
-    /* Remove sublinhado padrão */
-    font-weight: bold;
-    /* Negrito para destaque */
-    margin-left: 0.5rem;
-    /* Espaçamento à esquerda */
-    transition: color 0.3s ease;
-    /* Transição suave de cor */
-    width: fit-content;
-    /* Ajusta a largura ao conteúdo */
-    padding: 0.3rem 0.8rem;
-    /* Espaçamento interno */
-    display: inline-block;
-    /* Permite aplicar padding e margin */
-  }
-
-  a:hover {
-    color: var(--primaria);
-    /* Muda para cor primária ao passar o mouse */
-    text-decoration: underline;
-    /* Sublinhado ao passar o mouse */
-  }
-</style>
+</html>

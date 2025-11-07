@@ -1,69 +1,130 @@
-<h2>✏️ Tags de texto</h2>
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-<h4> ✏️ Títulos (hierarquia);</h4>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tags de Texto</title>
+    <style>
+        /* Estilos globais para a página de exemplo */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
 
-<p>🟢 &lt;p&gt; — parágrafo;</p>
+        h1, h2, h3, h4, h5, h6 {
+            color: #4f46e5;
+        }
 
-<p>🟢 &lt;span&gt; — trecho pequeno;</p>
+        pre {
+            background-color: #eee;
+            padding: 10px;
+            border-left: 3px solid #7c3aed;
+            overflow-x: auto;
+        }
 
-<p>🟢 &lt;strong&gt; e &lt;b&gt; — negrito (semântico: strong = importância);</p>
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        .exemplo {
+            border: 1px dashed #999;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #fff;
+        }
 
-<p>🟢 &lt;em&gt; — itálico (semântico: em = ênfase);</p>
+        /* Estilos para o link "Voltar Início" */
+        :root {
+            --primaria: #4f46e5;
+            --secundaria: #7c3aed;
+            --escuro: #0f172a;
+            --maisEscuro: #0a0f1c;
+            --claro: #e2e8f0;
+            --vidro: rgba(255, 255, 255, 0.1);
+        }
 
-<p>🟢 &lt;br&gt; — quebra de linha;</p>
+        a {
+            border: 4px solid var(--primaria);
+            background-color: var(--claro);
+            border-radius: 3px;
+            color: var(--secundaria);
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 0.5rem;
+            transition: color 0.3s ease;
+            width: fit-content;
+            padding: 0.3rem 0.8rem;
+            display: inline-block;
+        }
 
-<p>🟢 &lt;hr&gt; — linha horizontal;</p>
+        a:hover {
+            color: var(--primaria);
+            text-decoration: underline;
+        }
+    </style>
+</head>
 
-<p>🟢 &lt;pre&gt; — texto pré-formatado (bom pra código).</p>
+<body>
+    <h1>✏️ Tags de Texto</h1>
+    <p>Estas tags são usadas para estruturar e formatar o conteúdo textual de uma página.</p>
 
-<ul>
-  <li> <a href="./../index..html">Voltar Inicio</a></li>
-</ul>
-<style>
-  :root {
-    /* Variáveis de cores personalizadas */
-    --primaria: #4f46e5;
-    /* Cor primária */
-    --secundaria: #7c3aed;
-    /* Cor secundária */
-    --escuro: #0f172a;
-    /* Cor escura */
-    --maisEscuro: #0a0f1c;
-    /* Cor mais escura */
-    --claro: #e2e8f0;
-    /* Cor clara */
-    --vidro: rgba(255, 255, 255, 0.1);
-    /* Cor vidro */
-  }
+    <h2>Títulos (<code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code>)</h2>
+    <p>Definem uma hierarquia de títulos, do mais importante (h1) ao menos importante (h6).</p>
+    <div class="exemplo">
+        <h1>Título Nível 1</h1>
+        <h2>Título Nível 2</h2>
+        <h3>Título Nível 3</h3>
+    </div>
 
+    <h2>Parágrafo (<code>&lt;p&gt;</code>)</h2>
+    <p>Usada para agrupar um bloco de texto em um parágrafo.</p>
+    <div class="exemplo">
+        <p>Este é um parágrafo de exemplo. Ele contém várias frases para demonstrar como o texto é agrupado.</p>
+    </div>
 
-  a {
+    <h2>Negrito (<code>&lt;strong&gt;</code> e <code>&lt;b&gt;</code>)</h2>
+    <p>Ambas deixam o texto em negrito, mas <code>&lt;strong&gt;</code> indica que o texto tem grande importância (semântica), enquanto <code>&lt;b&gt;</code> é apenas para destaque visual.</p>
+    <div class="exemplo">
+        <p>Este texto é normal, mas esta parte é <strong>muito importante</strong>.</p>
+        <p>Este texto é normal, e esta parte está apenas em <b>negrito</b>.</p>
+    </div>
 
-    border: 4px solid var(--primaria);
-    background-color: var(--claro);
-    border-radius: 3px;
-    color: var(--secundaria);
-    /* Cor secundária para links */
-    text-decoration: none;
-    /* Remove sublinhado padrão */
-    font-weight: bold;
-    /* Negrito para destaque */
-    margin-left: 0.5rem;
-    /* Espaçamento à esquerda */
-    transition: color 0.3s ease;
-    /* Transição suave de cor */
-    width: fit-content;
-    /* Ajusta a largura ao conteúdo */
-    padding: 0.3rem 0.8rem;
-    /* Espaçamento interno */
-    display: inline-block;
-    /* Permite aplicar padding e margin */
-  }
+    <h2>Itálico (<code>&lt;em&gt;</code> e <code>&lt;i&gt;</code>)</h2>
+    <p>Ambas deixam o texto em itálico. <code>&lt;em&gt;</code> (emphasis) dá ênfase a uma palavra ou trecho. <code>&lt;i&gt;</code> é usado para termos técnicos, nomes estrangeiros ou destaque visual.</p>
+    <div class="exemplo">
+        <p>Você <em>precisa</em> ver isso! (Ênfase)</p>
+        <p>O termo <i>de facto</i> vem do Latim. (Termo estrangeiro)</p>
+    </div>
 
-  a:hover {
-    color: var(--primaria);
-    /* Muda para cor primária ao passar o mouse */
-    text-decoration: underline;
-    /* Sublinhado ao passar o mouse */
-  }
-</style>
+    <h2>Span (<code>&lt;span&gt;</code>)</h2>
+    <p>É uma tag "coringa" para agrupar pequenos trechos de texto, geralmente para aplicar um estilo CSS específico sem quebrar a linha.</p>
+    <div class="exemplo">
+        <p>A maior parte do texto é preta, mas esta palavra é <span style="color: red; font-weight: bold;">vermelha</span>.</p>
+    </div>
+
+    <h2>Quebra de Linha (<code>&lt;br&gt;</code>) e Linha Horizontal (<code>&lt;hr&gt;</code>)</h2>
+    <p><code>&lt;br&gt;</code> força uma quebra de linha. <code>&lt;hr&gt;</code> cria uma linha horizontal para separar conteúdos.</p>
+    <div class="exemplo">
+        <p>Este texto está na primeira linha.<br>Este está na segunda.</p>
+        <hr>
+        <p>Este texto está após a linha horizontal.</p>
+    </div>
+
+    <h2>Texto Pré-Formatado (<code>&lt;pre&gt;</code> e <code>&lt;code&gt;</code>)</h2>
+    <p>A tag <code>&lt;pre&gt;</code> preserva os espaços em branco e as quebras de linha do texto. É ideal para exibir blocos de código, geralmente envolvendo a tag <code>&lt;code&gt;</code>.</p>
+    <div class="exemplo">
+<pre><code>function helloWorld() {
+  console.log("Olá, Mundo!");
+}</code></pre>
+    </div>
+
+    <ul>
+        <li> <a href="./../index.html">Voltar Início</a></li>
+    </ul>
+</body>
+
+</html>
