@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cores e Fundos (background)</title>
+    <style>
+        /* Estilos globais para a página de exemplo */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            color: #4f46e5;
+        }
+
+        pre {
+            background-color: #eee;
+            padding: 10px;
+            border-left: 3px solid #7c3aed;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .exemplo {
+            border: 1px dashed #999;
+            padding: 15px;
+            margin: 10px 0;
+            background-color: #fff;
+        }
+
+        .exemplo-bg {
+            height: 120px;
+            border: 1px solid #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 1px 1px 2px black;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* Estilos para o link "Voltar Início" */
+        :root {
+            --primaria: #4f46e5;
+            --secundaria: #7c3aed;
+            --claro: #e2e8f0;
+        }
+
+        .voltar-link {
+            border: 4px solid var(--primaria);
+            background-color: var(--claro);
+            border-radius: 3px;
+            color: var(--secundaria);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            width: fit-content;
+            padding: 0.3rem 0.8rem;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🎨 Cores e Fundos (background)</h1>
+    <p>CSS oferece várias maneiras de definir cores e estilizar o fundo dos elementos.</p>
+
+    <h2>1. Formatos de Cores</h2>
+    <p>As cores podem ser definidas de várias formas:</p>
+    <div class="exemplo">
+        <ul>
+            <li><strong>Nomes de Cores:</strong> <code>red</code>, <code>blue</code>, <code>green</code>, <code>tomato</code>.</li>
+            <li><strong>HEX (Hexadecimal):</strong> <code>#RRGGBB</code> (ex: <code>#ff0000</code> para vermelho).</li>
+            <li><strong>RGB (Red, Green, Blue):</strong> <code>rgb(255, 0, 0)</code>.</li>
+            <li><strong>RGBA (com transparência):</strong> <code>rgba(255, 0, 0, 0.5)</code> (50% de transparência).</li>
+            <li><strong>HSL (Hue, Saturation, Lightness):</strong> <code>hsl(0, 100%, 50%)</code>.</li>
+            <li><strong>HSLA (com transparência):</strong> <code>hsla(0, 100%, 50%, 0.5)</code>.</li>
+        </ul>
+        <pre><code>.texto-vermelho {
+    color: red; /* ou #ff0000 ou rgb(255,0,0) */
+}
+.fundo-transparente {
+    background-color: rgba(79, 70, 229, 0.7); /* Cor primária com 70% de opacidade */
+}</code></pre>
+    </div>
+
+    <h2>2. Background-Color</h2>
+    <p>Define uma cor sólida para o fundo de um elemento.</p>
+    <div class="exemplo">
+        <pre><code>.caixa {
+    background-color: #e2e8f0; /* Cor --claro */
+    padding: 10px;
+}</code></pre>
+        <div class="caixa" style="background-color: #e2e8f0; padding: 10px; color: #333;">Este elemento tem um fundo cinza claro.</div>
+    </div>
+
+    <h2>3. Background-Image</h2>
+    <p>Aplica uma imagem como fundo. Pode ser uma URL ou um gradiente.</p>
+    <div class="exemplo">
+        <pre><code>.com-imagem {
+    background-image: url('https://via.placeholder.com/100');
+}
+.com-gradiente {
+    background-image: linear-gradient(to right, #4f46e5, #7c3aed);
+}</code></pre>
+        <h3>Imagem de Fundo:</h3>
+        <div class="exemplo-bg" style="background-image: url('https://via.placeholder.com/100');">Imagem repetida</div>
+        <h3>Gradiente Linear:</h3>
+        <div class="exemplo-bg" style="background-image: linear-gradient(to right, #4f46e5, #7c3aed);">Gradiente</div>
+    </div>
+
+    <h2>4. Outras Propriedades de Fundo</h2>
+    <div class="exemplo">
+        <ul>
+            <li><code>background-repeat</code>: Controla a repetição da imagem (<code>no-repeat</code>, <code>repeat-x</code>, <code>repeat-y</code>, <code>repeat</code>).</li>
+            <li><code>background-position</code>: Define a posição inicial da imagem (<code>center</code>, <code>top right</code>, <code>50% 50%</code>).</li>
+            <li><code>background-size</code>: Define o tamanho da imagem (<code>cover</code>, <code>contain</code>, <code>100px 50px</code>).</li>
+            <li><code>background-attachment</code>: Define se a imagem rola com a página (<code>scroll</code>) ou fica fixa (<code>fixed</code>).</li>
+        </ul>
+        <pre><code>.fundo-completo {
+    background-image: url('https://source.unsplash.com/random/400x200');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}</code></pre>
+        <div class="exemplo-bg" style="background-image: url('https://source.unsplash.com/random/400x200'); background-repeat: no-repeat; background-size: cover; background-position: center;">
+            Imagem de fundo completa
+        </div>
+    </div>
+
+    <h2>5. Shorthand (Atalho) `background`</h2>
+    <p>É uma boa prática combinar todas as propriedades de fundo em uma única declaração, na seguinte ordem: <code>color image repeat attachment position / size</code>.</p>
+    <div class="exemplo">
+        <pre><code>.fundo-atalho {
+    background: #e2e8f0 url('https://via.placeholder.com/50') no-repeat center center;
+}</code></pre>
+        <div class="exemplo-bg" style="background: #e2e8f0 url('https://via.placeholder.com/50') no-repeat center center; color: #333;">
+            Fundo com atalho
+        </div>
+    </div>
+
+    <ul>
+        <li><a href="../index.html" class="voltar-link">Voltar Início</a></li>
+    </ul>
+</body>
+
+</html>

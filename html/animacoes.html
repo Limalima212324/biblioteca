@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transições e Animações (transition, animation)</title>
+    <style>
+        /* Estilos globais para a página de exemplo */
+        :root {
+            --primaria: #4f46e5;
+            --secundaria: #7c3aed;
+            --claro: #e2e8f0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            color: var(--primaria);
+        }
+
+        pre {
+            background-color: #eee;
+            padding: 10px;
+            border-left: 3px solid var(--secundaria);
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .exemplo {
+            border: 1px dashed #999;
+            padding: 15px;
+            margin: 10px 0;
+            background-color: #fff;
+        }
+
+        /* Estilos para o link "Voltar Início" */
+        .voltar-link {
+            border: 4px solid var(--primaria);
+            background-color: var(--claro);
+            border-radius: 3px;
+            color: var(--secundaria);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            width: fit-content;
+            padding: 0.3rem 0.8rem;
+            display: inline-block;
+        }
+
+        /* Estilos para demonstração de Transições e Animações */
+        .transition-box {
+            width: 100px;
+            height: 100px;
+            background-color: var(--primaria);
+            margin: 20px;
+            transition: background-color 0.5s ease, transform 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .transition-box:hover {
+            background-color: var(--secundaria);
+            transform: scale(1.2);
+        }
+
+        .animation-box {
+            width: 100px;
+            height: 100px;
+            background-color: var(--primaria);
+            margin: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            animation-name: pulse;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                background-color: var(--primaria);
+            }
+            100% {
+                transform: scale(1.1);
+                background-color: var(--secundaria);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>✨ Transições e Animações (transition, animation)</h1>
+    <p>CSS permite criar efeitos visuais dinâmicos para tornar a experiência do usuário mais agradável e interativa.</p>
+
+    <h2>1. Transições (`transition`)</h2>
+    <p>Transições permitem que as mudanças de propriedades CSS ocorram suavemente ao longo do tempo, em vez de instantaneamente. Elas são geralmente acionadas por eventos como <code>:hover</code>, <code>:focus</code>, ou por JavaScript.</p>
+
+    <h3>Propriedades da Transição:</h3>
+    <div class="exemplo">
+        <ul>
+            <li><code>transition-property</code>: Qual propriedade CSS será animada (ex: <code>background-color</code>, <code>all</code>).</li>
+            <li><code>transition-duration</code>: Duração da transição (ex: <code>0.5s</code>, <code>500ms</code>).</li>
+            <li><code>transition-timing-function</code>: Curva de velocidade da transição (ex: <code>ease</code>, <code>linear</code>, <code>ease-in-out</code>).</li>
+            <li><code>transition-delay</code>: Atraso antes do início da transição.</li>
+        </ul>
+        <p><strong>Atalho (Shorthand):</strong> <code>transition: [property] [duration] [timing-function] [delay];</code></p>
+        <pre><code>.elemento {
+    transition: background-color 0.5s ease, transform 0.5s ease;
+}
+.elemento:hover {
+    background-color: var(--secundaria);
+    transform: scale(1.2);
+}</code></pre>
+        <p>Passe o mouse sobre a caixa abaixo para ver a transição:</p>
+        <div class="transition-box">Passe o mouse</div>
+    </div>
+
+    <h2>2. Animações (`animation`)</h2>
+    <p>Animações são mais complexas que transições, permitindo criar sequências de estilos que mudam ao longo do tempo, sem a necessidade de um evento para serem acionadas (podem rodar automaticamente).</p>
+
+    <h3>`@keyframes` Rule:</h3>
+    <p>Define os estágios de uma animação. Você especifica os estilos em diferentes "quadros-chave" (keyframes) usando porcentagens (<code>0%</code> a <code>100%</code>) ou as palavras-chave <code>from</code> (0%) e <code>to</code> (100%).</p>
+    <div class="exemplo">
+        <pre><code>@keyframes pulse {
+    0% {
+        transform: scale(1);
+        background-color: var(--primaria);
+    }
+    50% {
+        transform: scale(1.05);
+        background-color: var(--secundaria);
+    }
+    100% {
+        transform: scale(1);
+        background-color: var(--primaria);
+    }
+}</code></pre>
+    </div>
+
+    <h3>Propriedades da Animação:</h3>
+    <div class="exemplo">
+        <ul>
+            <li><code>animation-name</code>: Nome da regra <code>@keyframes</code> a ser usada.</li>
+            <li><code>animation-duration</code>: Duração de um ciclo da animação.</li>
+            <li><code>animation-timing-function</code>: Curva de velocidade da animação.</li>
+            <li><code>animation-delay</code>: Atraso antes do início da animação.</li>
+            <li><code>animation-iteration-count</code>: Quantas vezes a animação deve ser repetida (<code>infinite</code> para sempre).</li>
+            <li><code>animation-direction</code>: Se a animação deve ser reproduzida para frente, para trás ou alternadamente (<code>normal</code>, <code>reverse</code>, <code>alternate</code>).</li>
+            <li><code>animation-fill-mode</code>: Como os estilos do elemento são aplicados antes e depois da animação (<code>forwards</code>, <code>backwards</code>, <code>both</code>).</li>
+        </ul>
+        <p><strong>Atalho (Shorthand):</strong> <code>animation: [name] [duration] [timing-function] [delay] [iteration-count] [direction] [fill-mode];</code></p>
+        <pre><code>.elemento-animado {
+    animation-name: pulse;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    /* Atalho: animation: pulse 2s infinite alternate; */
+}</code></pre>
+        <p>Veja a caixa abaixo animando automaticamente:</p>
+        <div class="animation-box">Animando!</div>
+    </div>
+
+    <ul>
+        <li><a href="../index.html" class="voltar-link">Voltar Início</a></li>
+    </ul>
+</body>
+
+</html>

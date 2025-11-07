@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid (display: grid)</title>
+    <style>
+        /* Estilos globais para a página de exemplo */
+        :root {
+            --primaria: #4f46e5;
+            --secundaria: #7c3aed;
+            --claro: #e2e8f0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            color: var(--primaria);
+        }
+
+        pre {
+            background-color: #eee;
+            padding: 10px;
+            border-left: 3px solid var(--secundaria);
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .exemplo {
+            border: 1px dashed #999;
+            padding: 15px;
+            margin: 10px 0;
+            background-color: #fff;
+        }
+
+        /* Estilos para o link "Voltar Início" */
+        .voltar-link {
+            border: 4px solid var(--primaria);
+            background-color: var(--claro);
+            border-radius: 3px;
+            color: var(--secundaria);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            width: fit-content;
+            padding: 0.3rem 0.8rem;
+            display: inline-block;
+        }
+
+        /* Estilos para as demonstrações de Grid */
+        .grid-container {
+            display: grid;
+            background-color: var(--claro);
+            border: 2px solid var(--secundaria);
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        .grid-item {
+            background-color: var(--primaria);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🏁 Grid (display: grid)</h1>
+    <p>O CSS Grid Layout é um sistema de layout bidimensional (linhas e colunas), projetado para simplificar a criação de layouts complexos. Ele transforma um elemento em um contêiner de grid e seus filhos diretos em itens de grid.</p>
+    <p>Para começar, aplique <code>display: grid;</code> ao elemento pai (o contêiner).</p>
+
+    <h2>1. Propriedades do Contêiner Grid (o Pai)</h2>
+
+    <h3>`grid-template-columns` e `grid-template-rows`</h3>
+    <p>Definem o número e o tamanho das colunas e linhas do grid. A unidade <code>fr</code> (fração) é muito útil para distribuir o espaço disponível de forma proporcional.</p>
+    <div class="exemplo">
+        <pre><code>.container {
+    display: grid;
+    /* Três colunas: a segunda tem o dobro da largura das outras */
+    grid-template-columns: 1fr 2fr 1fr;
+    /* Duas linhas de altura automática */
+    grid-template-rows: auto auto;
+}</code></pre>
+        <div class="grid-container" style="grid-template-columns: 1fr 2fr 1fr;">
+            <div class="grid-item">1fr</div>
+            <div class="grid-item" style="background-color: #7c3aed;">2fr</div>
+            <div class="grid-item">1fr</div>
+            <div class="grid-item">1fr</div>
+            <div class="grid-item" style="background-color: #7c3aed;">2fr</div>
+            <div class="grid-item">1fr</div>
+        </div>
+    </div>
+
+    <h3>`gap` (ou `grid-gap`)</h3>
+    <p>Define o espaçamento (calha) entre as linhas e colunas do grid.</p>
+    <div class="exemplo">
+        <pre><code>.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px; /* 10px de espaço entre linhas e colunas */
+    /* gap: 20px 10px; -> 20px entre linhas, 10px entre colunas */
+}</code></pre>
+        <div class="grid-container" style="grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+        </div>
+    </div>
+
+    <h3>`justify-items` e `align-items`</h3>
+    <p>Alinham o conteúdo <strong>dentro</strong> de cada célula do grid. <code>justify-items</code> alinha no eixo horizontal e <code>align-items</code> no eixo vertical.</p>
+    <div class="exemplo">
+        <ul>
+            <li>Valores comuns: <code>start</code>, <code>end</code>, <code>center</code>, <code>stretch</code> (padrão).</li>
+        </ul>
+        <pre><code>.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center; /* Alinha verticalmente no centro */
+    justify-items: end; /* Alinha horizontalmente no final */
+}</code></pre>
+        <div class="grid-container" style="grid-template-columns: 1fr 1fr; height: 150px; align-items: center; justify-items: end; gap: 10px;">
+            <div class="grid-item" style="padding: 10px;">Item 1</div>
+            <div class="grid-item" style="padding: 10px;">Item 2</div>
+        </div>
+    </div>
+
+    <h2>2. Propriedades dos Itens Grid (os Filhos)</h2>
+
+    <h3>`grid-column` e `grid-row`</h3>
+    <p>Permitem que um item se estenda por múltiplas colunas ou linhas. Você pode especificar a linha/coluna de início e de fim.</p>
+    <div class="exemplo">
+        <pre><code>.item-destaque {
+    /* Começa na linha de coluna 1 e vai até a 4 (ocupa 3 colunas) */
+    grid-column: 1 / 4;
+    /* Começa na linha de linha 1 e vai até a 2 (ocupa 1 linha) */
+    grid-row: 1 / 2;
+}</code></pre>
+        <div class="grid-container" style="grid-template-columns: repeat(3, 1fr); gap: 10px;">
+            <div class="grid-item" style="grid-column: 1 / 4; background-color: #7c3aed;">Item A (ocupa 3 colunas)</div>
+            <div class="grid-item">Item B</div>
+            <div class="grid-item">Item C</div>
+            <div class="grid-item">Item D</div>
+        </div>
+    </div>
+
+    <h3>`justify-self` e `align-self`</h3>
+    <p>Alinham um item individual dentro de sua célula, sobrescrevendo o alinhamento definido no contêiner (`justify-items` e `align-items`).</p>
+    <div class="exemplo">
+        <pre><code>.item-especial {
+    justify-self: center; /* Centraliza este item horizontalmente */
+    align-self: start; /* Alinha este item no topo verticalmente */
+}</code></pre>
+        <div class="grid-container" style="grid-template-columns: 1fr 1fr; height: 150px; gap: 10px;">
+            <div class="grid-item">Padrão</div>
+            <div class="grid-item" style="justify-self: center; align-self: start; background-color: #7c3aed; padding: 10px;">Especial</div>
+        </div>
+    </div>
+
+    <ul>
+        <li><a href="../index.html" class="voltar-link">Voltar Início</a></li>
+    </ul>
+</body>
+
+</html>

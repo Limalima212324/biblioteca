@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texto e Fontes (font, text)</title>
+    <style>
+        /* Estilos globais para a página de exemplo */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            color: #4f46e5;
+        }
+
+        pre {
+            background-color: #eee;
+            padding: 10px;
+            border-left: 3px solid #7c3aed;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .exemplo {
+            border: 1px dashed #999;
+            padding: 15px;
+            margin: 10px 0;
+            background-color: #fff;
+        }
+
+        /* Estilos para o link "Voltar Início" */
+        :root {
+            --primaria: #4f46e5;
+            --secundaria: #7c3aed;
+            --claro: #e2e8f0;
+        }
+
+        .voltar-link {
+            border: 4px solid var(--primaria);
+            background-color: var(--claro);
+            border-radius: 3px;
+            color: var(--secundaria);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            width: fit-content;
+            padding: 0.3rem 0.8rem;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>📝 Texto e Fontes (font, text)</h1>
+    <p>CSS oferece um controle robusto sobre a aparência de fontes e a formatação de textos.</p>
+
+    <h2>1. Propriedades de Fonte (<code>font</code>)</h2>
+    <div class="exemplo">
+        <ul>
+            <li><code>font-family</code>: Define a família da fonte (ex: 'Times New Roman', Arial). É uma boa prática fornecer uma lista de fontes alternativas (font stack).</li>
+            <li><code>font-size</code>: Controla o tamanho do texto (ex: <code>16px</code>, <code>1.2rem</code>).</li>
+            <li><code>font-weight</code>: Define o "peso" ou espessura da fonte (ex: <code>normal</code>, <code>bold</code>, <code>700</code>).</li>
+            <li><code>font-style</code>: Define o estilo da fonte (ex: <code>normal</code>, <code>italic</code>).</li>
+        </ul>
+        <pre><code>.destaque {
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+}</code></pre>
+        <p class="destaque" style="font-family: Georgia, serif; font-size: 20px; font-weight: bold; font-style: italic;">
+            Este parágrafo usa a fonte Georgia, em negrito e itálico.
+        </p>
+    </div>
+
+    <h2>2. Propriedades de Texto (<code>text</code>)</h2>
+    <div class="exemplo">
+        <ul>
+            <li><code>color</code>: Define a cor do texto.</li>
+            <li><code>text-align</code>: Alinha o texto horizontalmente (<code>left</code>, <code>right</code>, <code>center</code>, <code>justify</code>).</li>
+            <li><code>text-decoration</code>: Adiciona decoração ao texto (<code>none</code>, <code>underline</code>, <code>line-through</code>).</li>
+            <li><code>text-transform</code>: Altera a capitalização do texto (<code>none</code>, <code>uppercase</code>, <code>lowercase</code>, <code>capitalize</code>).</li>
+        </ul>
+        <pre><code>.alerta {
+    color: red;
+    text-align: center;
+    text-transform: uppercase;
+}</code></pre>
+        <p class="alerta" style="color: red; text-align: center; text-transform: uppercase;">
+            Texto de alerta centralizado e em maiúsculas.
+        </p>
+    </div>
+
+    <h2>3. Espaçamento de Texto</h2>
+    <div class="exemplo">
+        <ul>
+            <li><code>line-height</code>: Define a altura da linha, controlando o espaçamento vertical entre as linhas de texto.</li>
+            <li><code>letter-spacing</code>: Controla o espaçamento entre os caracteres.</li>
+            <li><code>word-spacing</code>: Controla o espaçamento entre as palavras.</li>
+        </ul>
+        <pre><code>.legivel {
+    line-height: 1.8;
+    letter-spacing: 1px;
+}</code></pre>
+        <p class="legivel" style="line-height: 1.8; letter-spacing: 1px;">
+            Este parágrafo tem um espaçamento maior entre as linhas e entre as letras para melhorar a legibilidade. Um bom `line-height` é crucial para textos longos.
+        </p>
+    </div>
+
+    <h2>4. Sombra de Texto (<code>text-shadow</code>)</h2>
+    <p>Adiciona uma sombra ao texto. A propriedade aceita valores para deslocamento horizontal, vertical, desfoque e cor.</p>
+    <div class="exemplo">
+        <pre><code>.titulo-sombreado {
+    /* deslocamento-x | deslocamento-y | desfoque | cor */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}</code></pre>
+        <h2 class="titulo-sombreado" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Título com Sombra</h2>
+    </div>
+
+    <h2>5. Atalho (Shorthand) `font`</h2>
+    <p>É possível combinar várias propriedades de fonte em uma única declaração. A ordem é importante: <code>font-style</code> <code>font-weight</code> <code>font-size</code>/<code>line-height</code> <code>font-family</code>.</p>
+    <div class="exemplo">
+        <pre><code>.texto-padrao {
+    font: normal 400 16px/1.5 Arial, sans-serif;
+}</code></pre>
+        <p class="texto-padrao" style="font: normal 400 16px/1.5 Arial, sans-serif;">
+            Este texto foi estilizado usando a propriedade de atalho `font`.
+        </p>
+    </div>
+
+    <ul>
+        <li><a href="../index.html" class="voltar-link">Voltar Início</a></li>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model (margin, padding, border)</title>
+    <style>
+        /* Estilos globais para a página de exemplo */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            color: #4f46e5;
+        }
+
+        pre {
+            background-color: #eee;
+            padding: 10px;
+            border-left: 3px solid #7c3aed;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .exemplo {
+            border: 1px dashed #999;
+            padding: 15px;
+            margin: 10px 0;
+            background-color: #fff;
+        }
+
+        /* Estilos para o link "Voltar Início" */
+        :root {
+            --primaria: #4f46e5;
+            --secundaria: #7c3aed;
+            --claro: #e2e8f0;
+        }
+
+        .voltar-link {
+            border: 4px solid var(--primaria);
+            background-color: var(--claro);
+            border-radius: 3px;
+            color: var(--secundaria);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            width: fit-content;
+            padding: 0.3rem 0.8rem;
+            display: inline-block;
+        }
+
+        /* Estilos específicos para o Box Model */
+        .box-container {
+            background-color: #f0f8ff; /* Azul claro para a área da margem */
+            padding: 20px;
+        }
+        .box-margin {
+            margin: 20px;
+            background-color: #e0eee0; /* Verde claro para a área da borda */
+            padding: 20px;
+        }
+        .box-border {
+            border: 10px solid #f0e68c; /* Amarelo para a borda */
+            background-color: #ffe4e1; /* Rosa claro para a área do padding */
+            padding: 20px;
+        }
+        .box-content {
+            background-color: #c7d2fe; /* Azul para o conteúdo */
+            padding: 20px;
+            text-align: center;
+            color: #333;
+        }
+        .box-sizing-demo {
+            width: 200px;
+            padding: 20px;
+            border: 10px solid var(--secundaria);
+            background-color: var(--claro);
+            margin-bottom: 10px;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>📦 Box Model (margin, padding, border)</h1>
+    <p>Em CSS, todo elemento HTML é visto como uma caixa retangular. O Box Model é o conjunto de regras que define como essa caixa é dimensionada e como ela interage com outras caixas.</p>
+
+    <h2>Os Componentes do Box Model</h2>
+    <p>O modelo é composto por quatro partes, de dentro para fora:</p>
+    <div class="exemplo">
+        <ol>
+            <li><strong>Conteúdo (Content):</strong> A área onde o seu texto e imagens aparecem.</li>
+            <li><strong>Preenchimento (Padding):</strong> Uma área transparente ao redor do conteúdo, dentro da borda.</li>
+            <li><strong>Borda (Border):</strong> Uma linha que envolve o preenchimento e o conteúdo.</li>
+            <li><strong>Margem (Margin):</strong> Uma área transparente fora da borda, que "empurra" outros elementos.</li>
+        </ol>
+
+        <div class="box-container">
+            Margem
+            <div class="box-margin">
+                Borda
+                <div class="box-border">
+                    Padding
+                    <div class="box-content">
+                        <strong>Conteúdo</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2>Propriedades e Atalhos (Shorthands)</h2>
+    <p>Você pode definir os valores para cada lado (top, right, bottom, left) ou usar atalhos.</p>
+    <div class="exemplo">
+        <pre><code>.minha-caixa {
+    /* 4 valores: topo, direita, baixo, esquerda */
+    margin: 10px 20px 10px 20px;
+
+    /* 2 valores: (topo e baixo), (esquerda e direita) */
+    padding: 15px 30px;
+
+    /* 1 valor: todos os lados iguais */
+    border-width: 2px;
+
+    /* Propriedade completa da borda */
+    border: 2px solid #4f46e5;
+}</code></pre>
+    </div>
+
+    <h2>A Propriedade `box-sizing`</h2>
+    <p>Por padrão (<code>box-sizing: content-box</code>), a largura e altura de um elemento se aplicam apenas ao <strong>conteúdo</strong>. Padding e borda são adicionados a essa medida, aumentando o tamanho final da caixa.</p>
+    <p>Com <code>box-sizing: border-box</code>, a largura e altura definidas incluem o <strong>conteúdo, o padding e a borda</strong>. Isso torna o layout muito mais previsível.</p>
+    <div class="exemplo">
+        <pre><code>.caixa-padrao {
+    box-sizing: content-box; /* Padrão */
+    width: 200px; /* Largura do conteúdo */
+    padding: 20px;
+    border: 10px solid;
+    /* Largura total = 200 + 20 + 20 + 10 + 10 = 260px */
+}
+
+.caixa-moderna {
+    box-sizing: border-box;
+    width: 200px; /* Largura total da caixa */
+    padding: 20px;
+    border: 10px solid;
+    /* Largura total = 200px */
+}</code></pre>
+        <h3><code>content-box</code> (Largura total: 260px)</h3>
+        <div class="box-sizing-demo" style="box-sizing: content-box;">Largura: 200px</div>
+        <h3><code>border-box</code> (Largura total: 200px)</h3>
+        <div class="box-sizing-demo" style="box-sizing: border-box;">Largura: 200px</div>
+    </div>
+
+    <ul>
+        <li><a href="../index.html" class="voltar-link">Voltar Início</a></li>
+    </ul>
+</body>
+
+</html>

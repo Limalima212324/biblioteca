@@ -30,6 +30,13 @@
             font-family: 'Courier New', Courier, monospace;
         }
 
+        .exemplo {
+            border: 1px dashed #999;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #fff;
+        }
+
         /* Estilos para o link "Voltar Início" */
         :root {
             --primaria: #4f46e5;
@@ -40,23 +47,17 @@
             --vidro: rgba(255, 255, 255, 0.1);
         }
 
-        a {
+        .voltar-link {
             border: 4px solid var(--primaria);
             background-color: var(--claro);
             border-radius: 3px;
             color: var(--secundaria);
             text-decoration: none;
             font-weight: bold;
-            margin-left: 0.5rem;
             transition: color 0.3s ease;
             width: fit-content;
             padding: 0.3rem 0.8rem;
             display: inline-block;
-        }
-
-        a:hover {
-            color: var(--primaria);
-            text-decoration: underline;
         }
 
         /* Estilos para os exemplos de seletores */
@@ -81,31 +82,38 @@
 
     <h2>1. Seletor de ID (`#`)</h2>
     <p>O seletor de ID é usado para estilizar um <strong>único elemento</strong> com um ID específico. IDs devem ser únicos em uma página HTML.</p>
-    <pre><code>#meu-id {
+    <div class="exemplo">
+        <pre><code>#meu-id {
     color: blue;
     font-weight: bold;
 }</code></pre>
-    <p id="meu-id">Este parágrafo tem um ID e está estilizado com cor azul e negrito.</p>
+        <p id="meu-id">Este parágrafo tem um ID e está estilizado com cor azul e negrito.</p>
+    </div>
 
     <h2>2. Seletor de Classe (`.`)</h2>
     <p>O seletor de classe é usado para estilizar <strong>múltiplos elementos</strong> que compartilham a mesma classe. Um elemento pode ter várias classes.</p>
-    <pre><code>.minha-classe {
+    <div class="exemplo">
+        <pre><code>.minha-classe {
     background-color: yellow;
     padding: 5px;
 }</code></pre>
-    <p class="minha-classe">Este parágrafo tem a classe "minha-classe" e está com fundo amarelo.</p>
-    <div class="minha-classe">Esta div também tem a classe "minha-classe".</div>
+        <p class="minha-classe">Este parágrafo tem a classe "minha-classe" e está com fundo amarelo.</p>
+        <div class="minha-classe">Esta div também tem a classe "minha-classe".</div>
+    </div>
 
     <h2>3. Seletor de Tag (Elemento)</h2>
     <p>O seletor de tag (ou elemento) é usado para estilizar <strong>todos os elementos de um tipo específico</strong> (ex: todos os parágrafos, todas as divs).</p>
-    <pre><code>p {
+    <div class="exemplo">
+        <pre><code>p {
     font-size: 18px;
 }</code></pre>
-    <p>Este é um parágrafo comum, estilizado pelo seletor de tag.</p>
-    <span>Este é um span, que não é afetado pelo seletor de tag `p`.</span>
+        <p>Este é um parágrafo comum, estilizado pelo seletor de tag.</p>
+        <span>Este é um span, que não é afetado pelo seletor de tag `p`.</span>
+    </div>
 
     <h2>Exemplo Combinado:</h2>
-    <pre><code>/* Estiliza um parágrafo com a classe "minha-classe" */
+    <div class="exemplo">
+        <pre><code>/* Estiliza um parágrafo com a classe "minha-classe" */
 p.minha-classe {
     border: 1px solid green;
 }
@@ -114,13 +122,14 @@ p.minha-classe {
 div #outro-id {
     text-decoration: underline;
 }</code></pre>
-    <p class="minha-classe">Este parágrafo tem a classe e também é um parágrafo, então recebe o estilo combinado.</p>
-    <div>
-        <p id="outro-id">Este parágrafo está dentro de uma div e tem um ID.</p>
+        <p class="minha-classe">Este parágrafo tem a classe e também é um parágrafo, então recebe o estilo combinado.</p>
+        <div>
+            <p id="outro-id">Este parágrafo está dentro de uma div e tem um ID.</p>
+        </div>
     </div>
 
     <ul>
-        <li> <a href="./../index.html">Voltar Início</a></li>
+        <li> <a href="./../index.html" class="voltar-link">Voltar Início</a></li>
     </ul>
 </body>
 

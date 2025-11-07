@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posicionamento (position, z-index)</title>
+    <style>
+        /* Estilos globais para a página de exemplo */
+        :root {
+            --primaria: #4f46e5;
+            --secundaria: #7c3aed;
+            --claro: #e2e8f0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            color: var(--primaria);
+        }
+
+        pre {
+            background-color: #eee;
+            padding: 10px;
+            border-left: 3px solid var(--secundaria);
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .exemplo {
+            border: 1px dashed #999;
+            padding: 15px;
+            margin: 10px 0;
+            background-color: #fff;
+        }
+
+        /* Estilos para o link "Voltar Início" */
+        .voltar-link {
+            border: 4px solid var(--primaria);
+            background-color: var(--claro);
+            border-radius: 3px;
+            color: var(--secundaria);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            width: fit-content;
+            padding: 0.3rem 0.8rem;
+            display: inline-block;
+        }
+
+        /* Estilos específicos para os exemplos de posicionamento */
+        .container-posicao {
+            position: relative; /* Contexto para o elemento absoluto */
+            height: 150px;
+            border: 2px solid var(--secundaria);
+            background-color: var(--claro);
+            padding: 10px;
+        }
+        .box {
+            width: 80px;
+            height: 80px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .box-static { background-color: #6b7280; }
+        .box-relative { background-color: #ef4444; position: relative; top: 20px; left: 20px; }
+        .box-absolute { background-color: #3b82f6; position: absolute; top: 10px; right: 10px; }
+        .box-fixed { background-color: #10b981; position: fixed; bottom: 20px; right: 20px; z-index: 100; }
+        .box-sticky { background-color: #f97316; position: sticky; top: 0; }
+
+        .z-index-demo .box {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>📍 Posicionamento (position, z-index)</h1>
+    <p>A propriedade <code>position</code> define como um elemento é posicionado no documento. Ela funciona em conjunto com as propriedades <code>top</code>, <code>right</code>, <code>bottom</code> e <code>left</code>.</p>
+
+    <h2>1. `position: static`</h2>
+    <p>Este é o valor padrão. O elemento segue o fluxo normal da página. As propriedades <code>top</code>, <code>right</code>, <code>bottom</code> e <code>left</code> não têm efeito.</p>
+    <div class="exemplo">
+        <div class="container-posicao" style="height: auto;">
+            <div class="box box-static">Static</div>
+            <p>Este elemento está no fluxo normal.</p>
+        </div>
+    </div>
+
+    <h2>2. `position: relative`</h2>
+    <p>O elemento é posicionado em relação à sua posição normal. Ele ainda ocupa seu espaço original no fluxo do documento, mas pode ser deslocado visualmente.</p>
+    <div class="exemplo">
+        <pre><code>.elemento-relativo {
+    position: relative;
+    top: 20px;
+    left: 20px;
+}</code></pre>
+        <div class="container-posicao">
+            <div class="box box-relative">Relative</div>
+            <p>O espaço original da caixa vermelha ainda está reservado.</p>
+        </div>
+    </div>
+
+    <h2>3. `position: absolute`</h2>
+    <p>O elemento é removido do fluxo normal e posicionado em relação ao seu ancestral posicionado mais próximo (qualquer um que não seja <code>static</code>). Se não houver, ele se posiciona em relação ao <code>&lt;body&gt;</code>.</p>
+    <div class="exemplo">
+        <pre><code>.container {
+    position: relative; /* Contexto de posicionamento */
+}
+.elemento-absoluto {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}</code></pre>
+        <div class="container-posicao">
+            Container (relative)
+            <div class="box box-absolute">Absolute</div>
+        </div>
+    </div>
+
+    <h2>4. `position: fixed`</h2>
+    <p>O elemento é removido do fluxo normal e posicionado em relação à janela do navegador (viewport). Ele não se move quando a página é rolada. (Veja o quadrado verde no canto inferior direito da sua tela).</p>
+    <div class="exemplo">
+        <pre><code>.elemento-fixo {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}</code></pre>
+        <div class="box box-fixed">Fixed</div>
+        <p>Este elemento fica fixo na tela, mesmo com a rolagem.</p>
+    </div>
+
+    <h2>5. `position: sticky`</h2>
+    <p>É um híbrido de <code>relative</code> e <code>fixed</code>. O elemento se comporta como <code>relative</code> até atingir um ponto específico na tela (definido por <code>top</code>, <code>bottom</code>, etc.), a partir do qual ele se torna <code>fixed</code>.</p>
+    <div class="exemplo">
+        <pre><code>.elemento-pegajoso {
+    position: sticky;
+    top: 0;
+}</code></pre>
+        <div class="box box-sticky">Sticky</div>
+        <p>Role a página para baixo. Este elemento "grudará" no topo quando for alcançado.</p>
+        <div style="height: 400px; background: #f0f0f0; margin-top: 10px; padding: 10px;">Área de rolagem para demonstrar o efeito sticky.</div>
+    </div>
+
+    <h2>6. `z-index`</h2>
+    <p>A propriedade <code>z-index</code> controla a ordem de sobreposição de elementos posicionados (qualquer um que não seja <code>static</code>). Um elemento com <code>z-index</code> maior ficará na frente de um com <code>z-index</code> menor.</p>
+    <div class="exemplo">
+        <pre><code>.caixa1 { z-index: 1; }
+.caixa2 { z-index: 2; } /* Ficará na frente */
+.caixa3 { z-index: 1; }</code></pre>
+        <div class="container-posicao z-index-demo">
+            <div class="box" style="background-color: #ef4444; top: 10px; left: 10px; z-index: 1;">z-index: 1</div>
+            <div class="box" style="background-color: #3b82f6; top: 30px; left: 30px; z-index: 2;">z-index: 2</div>
+            <div class="box" style="background-color: #10b981; top: 50px; left: 50px; z-index: 1;">z-index: 1</div>
+        </div>
+    </div>
+
+    <ul>
+        <li><a href="../index.html" class="voltar-link">Voltar Início</a></li>
+    </ul>
+</body>
+
+</html>

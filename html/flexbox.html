@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox (display: flex)</title>
+    <style>
+        /* Estilos globais para a página de exemplo */
+        :root {
+            --primaria: #4f46e5;
+            --secundaria: #7c3aed;
+            --claro: #e2e8f0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            color: var(--primaria);
+        }
+
+        pre {
+            background-color: #eee;
+            padding: 10px;
+            border-left: 3px solid var(--secundaria);
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .exemplo {
+            border: 1px dashed #999;
+            padding: 15px;
+            margin: 10px 0;
+            background-color: #fff;
+        }
+
+        /* Estilos para o link "Voltar Início" */
+        .voltar-link {
+            border: 4px solid var(--primaria);
+            background-color: var(--claro);
+            border-radius: 3px;
+            color: var(--secundaria);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            width: fit-content;
+            padding: 0.3rem 0.8rem;
+            display: inline-block;
+        }
+
+        /* Estilos para as demonstrações de Flexbox */
+        .flex-container {
+            display: flex;
+            background-color: var(--claro);
+            border: 2px solid var(--secundaria);
+            padding: 10px;
+            min-height: 120px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        .flex-item {
+            background-color: var(--primaria);
+            color: white;
+            padding: 10px 15px;
+            margin: 5px;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🤸 Flexbox (display: flex)</h1>
+    <p>O Flexible Box Layout, ou Flexbox, é um modelo de layout unidimensional que oferece uma maneira eficiente de alinhar e distribuir espaço entre itens em um contêiner.</p>
+    <p>Para começar, aplique <code>display: flex;</code> ao elemento pai (o contêiner).</p>
+
+    <h2>1. Propriedades do Contêiner Flex (o Pai)</h2>
+
+    <h3>`flex-direction`</h3>
+    <p>Define a direção do eixo principal (como os itens são organizados).</p>
+    <div class="exemplo">
+        <ul>
+            <li><code>row</code> (padrão): Itens em linha, da esquerda para a direita.</li>
+            <li><code>row-reverse</code>: Itens em linha, da direita para a esquerda.</li>
+            <li><code>column</code>: Itens em coluna, de cima para baixo.</li>
+            <li><code>column-reverse</code>: Itens em coluna, de baixo para cima.</li>
+        </ul>
+        <pre><code>.container { display: flex; flex-direction: row; }</code></pre>
+        <div class="flex-container" style="flex-direction: row;">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+        </div>
+    </div>
+
+    <h3>`justify-content`</h3>
+    <p>Alinha os itens ao longo do eixo principal.</p>
+    <div class="exemplo">
+        <ul>
+            <li><code>flex-start</code> (padrão): Agrupa os itens no início.</li>
+            <li><code>flex-end</code>: Agrupa os itens no final.</li>
+            <li><code>center</code>: Centraliza os itens.</li>
+            <li><code>space-between</code>: Espaço igual entre os itens.</li>
+            <li><code>space-around</code>: Espaço igual ao redor de cada item.</li>
+        </ul>
+        <pre><code>.container { display: flex; justify-content: space-between; }</code></pre>
+        <div class="flex-container" style="justify-content: space-between;">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+        </div>
+    </div>
+
+    <h3>`align-items`</h3>
+    <p>Alinha os itens ao longo do eixo transversal (o eixo perpendicular ao principal).</p>
+    <div class="exemplo">
+        <ul>
+            <li><code>stretch</code> (padrão): Estica os itens para preencher o contêiner.</li>
+            <li><code>flex-start</code>: Alinha os itens no início do eixo transversal.</li>
+            <li><code>flex-end</code>: Alinha os itens no final.</li>
+            <li><code>center</code>: Centraliza os itens.</li>
+        </ul>
+        <pre><code>.container { display: flex; align-items: center; }</code></pre>
+        <div class="flex-container" style="align-items: center;">
+            <div class="flex-item">1</div>
+            <div class="flex-item" style="padding: 25px 15px;">2</div>
+            <div class="flex-item">3</div>
+        </div>
+    </div>
+
+    <h3>`flex-wrap`</h3>
+    <p>Permite que os itens quebrem para a próxima linha se não houver espaço suficiente.</p>
+    <div class="exemplo">
+        <ul>
+            <li><code>nowrap</code> (padrão): Todos os itens em uma única linha.</li>
+            <li><code>wrap</code>: Os itens quebram para a próxima linha, se necessário.</li>
+        </ul>
+        <pre><code>.container { display: flex; flex-wrap: wrap; }</code></pre>
+        <div class="flex-container" style="flex-wrap: wrap;">
+            <div class="flex-item">1</div><div class="flex-item">2</div><div class="flex-item">3</div>
+            <div class="flex-item">4</div><div class="flex-item">5</div><div class="flex-item">6</div>
+        </div>
+    </div>
+
+    <h2>2. Propriedades dos Itens Flex (os Filhos)</h2>
+
+    <h3>`flex-grow`</h3>
+    <p>Define a capacidade de um item "crescer" para ocupar o espaço livre no contêiner. O valor é um número que representa uma proporção.</p>
+    <div class="exemplo">
+        <pre><code>.item1 { flex-grow: 1; }
+.item2 { flex-grow: 2; } /* Ocupará o dobro do espaço livre que o item 1 */</code></pre>
+        <div class="flex-container">
+            <div class="flex-item" style="flex-grow: 1;">grow: 1</div>
+            <div class="flex-item" style="flex-grow: 2; background-color: #7c3aed;">grow: 2</div>
+            <div class="flex-item" style="flex-grow: 1;">grow: 1</div>
+        </div>
+    </div>
+
+    <h3>`order`</h3>
+    <p>Altera a ordem visual dos itens, independentemente de sua ordem no HTML. O padrão é 0.</p>
+    <div class="exemplo">
+        <pre><code>.item1 { order: 3; }
+.item2 { order: 1; }
+.item3 { order: 2; }</code></pre>
+        <div class="flex-container">
+            <div class="flex-item" style="order: 3;">HTML 1 (order 3)</div>
+            <div class="flex-item" style="order: 1; background-color: #7c3aed;">HTML 2 (order 1)</div>
+            <div class="flex-item" style="order: 2;">HTML 3 (order 2)</div>
+        </div>
+    </div>
+
+    <ul>
+        <li><a href="../index.html" class="voltar-link">Voltar Início</a></li>
+    </ul>
+</body>
+
+</html>
