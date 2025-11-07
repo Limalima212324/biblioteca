@@ -157,9 +157,9 @@ main {
     color: var(--claro);
     /* Cor clara para o título */
     background: linear-gradient(45deg, var(--primaria), var(--secundaria));
-    /* Gradiente de cor */
-    -webkit-background-clip: text;
-    /* Clipa o fundo ao texto */
+    /* Gradiente de cor para o texto */
+    -webkit-background-clip: text; /* Necessário para navegadores WebKit */
+    background-clip: text;         /* Padrão, para compatibilidade futura */
     -webkit-text-fill-color: transparent;
     /* Preenche o texto com transparência */
 }
