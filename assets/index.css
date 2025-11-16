@@ -200,7 +200,7 @@ li:hover {
 /* ---------- LINKS ---------- */
 a {
 
-    border: 4px solid var(--primaria);
+    /* border: 4px solid var(--primaria); */
     background-color: var(--claro);
     border-radius: 3px;
     color: var(--secundaria);

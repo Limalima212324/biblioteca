@@ -9,9 +9,9 @@
         /* Estilos globais para a página de exemplo */
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            background-color: #f4f4f4;
+            line-height: 1.6;/* Espaçamento entre linhas */
+            margin: 20px; /* Margem ao redor do conteúdo */
+            background-color: #f4f4f4; 
             color: #333;
         }
 
@@ -20,20 +20,20 @@
         }
 
         pre {
-            background-color: #eee;
-            padding: 10px;
-            border-left: 3px solid #7c3aed;
+            background-color: #eee; /* Cor de fundo para blocos de código */
+            padding: 10px; /* Espaçamento interno */ 
+            border-left: 3px solid #7c3aed; /* Barra lateral colorida lado esquerdo do paragráfo*/
             overflow-x: auto;
         }
 
         code {
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Courier New', Courier, monospace; /* Fonte monoespaçada para código */
         }
         
         .exemplo {
-            border: 1px dashed #999;
-            padding: 10px;
-            margin: 10px 0;
+            border: 1px dashed #999; /* Borda pontilhada para destacar exemplos */
+            padding: 10px; /* Espaçamento interno */
+            margin: 10px 0; /* Espaçamento externo */
             background-color: #fff;
         }
 
@@ -52,18 +52,18 @@
             background-color: var(--claro);
             border-radius: 3px;
             color: var(--secundaria);
-            text-decoration: none;
-            font-weight: bold;
-            margin-left: 0.5rem;
-            transition: color 0.3s ease;
-            width: fit-content;
-            padding: 0.3rem 0.8rem;
-            display: inline-block;
+            text-decoration: none;/* Remover sublinhado padrão */
+            font-weight: bold; /* Deixar o texto em negrito */
+            margin-left: 0.5rem; /* Margem à esquerda */
+            transition: color 0.3s ease; /* Transição suave na cor ao passar o mouse */
+            width: fit-content; /* Ajusta a largura ao conteúdo */
+            padding: 0.3rem 0.8rem; /* Espaçamento interno */
+            display: inline-block; /* Permite aplicar padding e margin corretamente */ 
         }
 
         a:hover {
             color: var(--primaria);
-            text-decoration: underline;
+            text-decoration: underline; /* Adicionar sublinhado ao passar o mouse */
         }
     </style>
 </head>
@@ -85,6 +85,10 @@
     &lt;!-- Conteúdo visível da página vai aqui --&gt;
   &lt;/body&gt;
 &lt;/html&gt;</code></pre>
+
+<!-- 🧩 <pre> — “preformatted text” (texto pré-formatado)
+Mantém espaços, quebras de linha e tabulações exatamente como estão no HTML.
+Usa uma fonte monoespaçada (como Courier). -->
     </div>
 
     <h2>Explicação das Tags</h2>
@@ -97,6 +101,19 @@
             <li><code>&lt;meta name="viewport" ...&gt;</code>: Essencial para o design responsivo, instrui o navegador a ajustar a largura da página à largura da tela do dispositivo.</li>
             <li><code>&lt;title&gt;</code>: Define o título da página, que aparece na aba ou na barra de título do navegador.</li>
             <li><code>&lt;body&gt;</code>: Contém todo o conteúdo visível da página, como textos, imagens, links, formulários, etc.</li>
+            
+            <!-- 💻 <code> — “trecho de código”
+            Indica que o conteúdo é código de computador (HTML, JS, Python, etc.).
+            Usa fonte monoespaçada, mas não mantém a formatação (espaços/quebras de linha). -->
+           
+            <!-- ✅ Usando os dois juntos
+            Geralmente, para mostrar blocos de código completos, você combina assim:
+            <pre><code>
+            function saudacao() {
+                console.log("Olá, mundo!");
+            }
+            </code></pre> -->
+
         </ul>
     </div>
 

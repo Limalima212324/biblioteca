@@ -15,7 +15,9 @@
             color: #333;
         }
 
-        h1, h2, h3 {
+        h1,
+        h2,
+        h3 {
             color: #4f46e5;
         }
 
@@ -60,25 +62,34 @@
 
         /* Estilos específicos para o Box Model */
         .box-container {
-            background-color: #f0f8ff; /* Azul claro para a área da margem */
+            background-color: #f0f8ff;
+            /* Azul claro para a área da margem */
             padding: 20px;
         }
+
         .box-margin {
             margin: 20px;
-            background-color: #e0eee0; /* Verde claro para a área da borda */
+            background-color: #e0eee0;
+            /* Verde claro para a área da borda */
             padding: 20px;
         }
+
         .box-border {
-            border: 10px solid #f0e68c; /* Amarelo para a borda */
-            background-color: #ffe4e1; /* Rosa claro para a área do padding */
+            border: 10px solid #f0e68c;
+            /* Amarelo para a borda */
+            background-color: #ffe4e1;
+            /* Rosa claro para a área do padding */
             padding: 20px;
         }
+
         .box-content {
-            background-color: #c7d2fe; /* Azul para o conteúdo */
+            background-color: #c7d2fe;
+            /* Azul para o conteúdo */
             padding: 20px;
             text-align: center;
             color: #333;
         }
+
         .box-sizing-demo {
             width: 200px;
             padding: 20px;
@@ -87,21 +98,64 @@
             margin-bottom: 10px;
             color: #333;
         }
+
+        .btn {
+  outline: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #40B3A2;
+  min-width: 200px;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+  box-sizing: border-box;
+  padding: 16px 20px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: .95;
+}
+
+.btn .animation {
+  border-radius: 100%;
+  animation: ripple 0.6s linear infinite;
+}
+
+@keyframes ripple {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1);
+  }
+
+  100% {
+    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1), 0 0 0 80px rgba(255, 255, 255, 0);
+  }
+}
     </style>
 </head>
 
 <body>
     <h1>📦 Box Model (margin, padding, border)</h1>
-    <p>Em CSS, todo elemento HTML é visto como uma caixa retangular. O Box Model é o conjunto de regras que define como essa caixa é dimensionada e como ela interage com outras caixas.</p>
+    <p>Em CSS, todo elemento HTML é visto como uma caixa retangular. O Box Model é o conjunto de regras que define como
+        essa caixa é dimensionada e como ela interage com outras caixas.</p>
 
     <h2>Os Componentes do Box Model</h2>
     <p>O modelo é composto por quatro partes, de dentro para fora:</p>
     <div class="exemplo">
         <ol>
             <li><strong>Conteúdo (Content):</strong> A área onde o seu texto e imagens aparecem.</li>
-            <li><strong>Preenchimento (Padding):</strong> Uma área transparente ao redor do conteúdo, dentro da borda.</li>
+            <li><strong>Preenchimento (Padding):</strong> Uma área transparente ao redor do conteúdo, dentro da borda.
+            </li>
             <li><strong>Borda (Border):</strong> Uma linha que envolve o preenchimento e o conteúdo.</li>
-            <li><strong>Margem (Margin):</strong> Uma área transparente fora da borda, que "empurra" outros elementos.</li>
+            <li><strong>Margem (Margin):</strong> Uma área transparente fora da borda, que "empurra" outros elementos.
+            </li>
         </ol>
 
         <div class="box-container">
@@ -137,8 +191,11 @@
     </div>
 
     <h2>A Propriedade `box-sizing`</h2>
-    <p>Por padrão (<code>box-sizing: content-box</code>), a largura e altura de um elemento se aplicam apenas ao <strong>conteúdo</strong>. Padding e borda são adicionados a essa medida, aumentando o tamanho final da caixa.</p>
-    <p>Com <code>box-sizing: border-box</code>, a largura e altura definidas incluem o <strong>conteúdo, o padding e a borda</strong>. Isso torna o layout muito mais previsível.</p>
+    <p>Por padrão (<code>box-sizing: content-box</code>), a largura e altura de um elemento se aplicam apenas ao
+        <strong>conteúdo</strong>. Padding e borda são adicionados a essa medida, aumentando o tamanho final da caixa.
+    </p>
+    <p>Com <code>box-sizing: border-box</code>, a largura e altura definidas incluem o <strong>conteúdo, o padding e a
+            borda</strong>. Isso torna o layout muito mais previsível.</p>
     <div class="exemplo">
         <pre><code>.caixa-padrao {
     box-sizing: content-box; /* Padrão */
@@ -161,9 +218,16 @@
         <div class="box-sizing-demo" style="box-sizing: border-box;">Largura: 200px</div>
     </div>
 
-    <ul>
+    <!-- <ul>
         <li><a href="../index.html" class="voltar-link">Voltar Início</a></li>
-    </ul>
+    </ul> -->
+    <div>
+        <a href="./../index.html">
+            <button class="btn">
+                <i class="animation"></i>Voltar Início<i class="animation"></i>
+            </button>
+        </a>
+    </div>
 </body>
 
 </html>

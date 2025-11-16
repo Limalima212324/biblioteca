@@ -9,8 +9,8 @@
         /* Estilos globais para a página de exemplo */
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
+            line-height: 1.6; /* Espaçamento entre linhas */
+            margin: 20px; /* Margem ao redor do conteúdo */
             background-color: #f4f4f4;
             color: #333;
         }
@@ -21,9 +21,9 @@
 
         pre {
             background-color: #eee;
-            padding: 10px;
-            border-left: 3px solid #7c3aed;
-            overflow-x: auto;
+            padding: 10px; /* Espaçamento interno */
+            border-left: 3px solid #7c3aed; /* Destaque na borda esquerda */
+            overflow-x: auto; /* Adiciona barra de rolagem horizontal se necessário */ 
         }
 
         code {
@@ -32,8 +32,8 @@
         
         .exemplo {
             border: 1px dashed #999;
-            padding: 10px;
-            margin: 10px 0;
+            padding: 10px; /* Espaçamento interno */
+            margin: 10px 0; /* Espaçamento entre exemplos no caso espaçamento externo */
             background-color: #fff;
         }
 
@@ -65,6 +65,52 @@
             color: var(--primaria);
             text-decoration: underline;
         }
+
+        a {
+          border: none; /* Remover borda padrão */
+          outline: none; /* Remover borda e contorno padrão */
+        }
+
+        /* From Uiverse.io by mi-series */ 
+.btn {
+  outline: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #40B3A2;
+  min-width: 200px;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+  box-sizing: border-box;
+  padding: 16px 20px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: .95;
+}
+
+.btn .animation {
+  border-radius: 100%;
+  animation: ripple 0.6s linear infinite;
+}
+
+@keyframes ripple {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1);
+  }
+
+  100% {
+    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1), 0 0 0 80px rgba(255, 255, 255, 0);
+  }
+}
     </style>
 </head>
 
@@ -110,9 +156,15 @@
         <p>O parágrafo acima está no código, mas não aparece na tela.</p>
     </div>
 
-    <ul>
-        <li> <a href="./../index.html">Voltar Início</a></li>
-    </ul>
+  
+<div>
+  <a href="./../index.html">
+    <button class="btn">
+      <i class="animation"></i>Voltar Início<i class="animation"></i>
+    </button>
+  </a>
+</div>
+
 </body>
 
 </html>
