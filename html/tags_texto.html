@@ -15,7 +15,12 @@
             color: #333;
         }
 
-        h1, h2, h3, h4, h5, h6 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             color: #4f46e5;
         }
 
@@ -29,7 +34,7 @@
         code {
             font-family: 'Courier New', Courier, monospace;
         }
-        
+
         .exemplo {
             border: 1px dashed #999;
             padding: 10px;
@@ -65,6 +70,54 @@
             color: var(--primaria);
             text-decoration: underline;
         }
+
+        a {
+            border: none;
+            /* Remover borda padrão */
+            outline: none;
+            /* Remover borda e contorno padrão */
+        }
+
+        /* From Uiverse.io by mi-series */
+        .btn {
+            outline: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #40B3A2;
+            min-width: 200px;
+            border: 0;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+            box-sizing: border-box;
+            padding: 16px 20px;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            opacity: .95;
+        }
+
+        .btn .animation {
+            border-radius: 100%;
+            animation: ripple 0.6s linear infinite;
+        }
+
+        @keyframes ripple {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1);
+            }
+
+            100% {
+                box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1), 0 0 0 80px rgba(255, 255, 255, 0);
+            }
+        }
     </style>
 </head>
 
@@ -87,27 +140,32 @@
     </div>
 
     <h2>Negrito (<code>&lt;strong&gt;</code> e <code>&lt;b&gt;</code>)</h2>
-    <p>Ambas deixam o texto em negrito, mas <code>&lt;strong&gt;</code> indica que o texto tem grande importância (semântica), enquanto <code>&lt;b&gt;</code> é apenas para destaque visual.</p>
+    <p>Ambas deixam o texto em negrito, mas <code>&lt;strong&gt;</code> indica que o texto tem grande importância
+        (semântica), enquanto <code>&lt;b&gt;</code> é apenas para destaque visual.</p>
     <div class="exemplo">
         <p>Este texto é normal, mas esta parte é <strong>muito importante</strong>.</p>
         <p>Este texto é normal, e esta parte está apenas em <b>negrito</b>.</p>
     </div>
 
     <h2>Itálico (<code>&lt;em&gt;</code> e <code>&lt;i&gt;</code>)</h2>
-    <p>Ambas deixam o texto em itálico. <code>&lt;em&gt;</code> (emphasis) dá ênfase a uma palavra ou trecho. <code>&lt;i&gt;</code> é usado para termos técnicos, nomes estrangeiros ou destaque visual.</p>
+    <p>Ambas deixam o texto em itálico. <code>&lt;em&gt;</code> (emphasis) dá ênfase a uma palavra ou trecho.
+        <code>&lt;i&gt;</code> é usado para termos técnicos, nomes estrangeiros ou destaque visual.</p>
     <div class="exemplo">
         <p>Você <em>precisa</em> ver isso! (Ênfase)</p>
         <p>O termo <i>de facto</i> vem do Latim. (Termo estrangeiro)</p>
     </div>
 
     <h2>Span (<code>&lt;span&gt;</code>)</h2>
-    <p>É uma tag "coringa" para agrupar pequenos trechos de texto, geralmente para aplicar um estilo CSS específico sem quebrar a linha.</p>
+    <p>É uma tag "coringa" para agrupar pequenos trechos de texto, geralmente para aplicar um estilo CSS específico sem
+        quebrar a linha.</p>
     <div class="exemplo">
-        <p>A maior parte do texto é preta, mas esta palavra é <span style="color: red; font-weight: bold;">vermelha</span>.</p>
+        <p>A maior parte do texto é preta, mas esta palavra é <span
+                style="color: red; font-weight: bold;">vermelha</span>.</p>
     </div>
 
     <h2>Quebra de Linha (<code>&lt;br&gt;</code>) e Linha Horizontal (<code>&lt;hr&gt;</code>)</h2>
-    <p><code>&lt;br&gt;</code> força uma quebra de linha. <code>&lt;hr&gt;</code> cria uma linha horizontal para separar conteúdos.</p>
+    <p><code>&lt;br&gt;</code> força uma quebra de linha. <code>&lt;hr&gt;</code> cria uma linha horizontal para separar
+        conteúdos.</p>
     <div class="exemplo">
         <p>Este texto está na primeira linha.<br>Este está na segunda.</p>
         <hr>
@@ -115,16 +173,24 @@
     </div>
 
     <h2>Texto Pré-Formatado (<code>&lt;pre&gt;</code> e <code>&lt;code&gt;</code>)</h2>
-    <p>A tag <code>&lt;pre&gt;</code> preserva os espaços em branco e as quebras de linha do texto. É ideal para exibir blocos de código, geralmente envolvendo a tag <code>&lt;code&gt;</code>.</p>
+    <p>A tag <code>&lt;pre&gt;</code> preserva os espaços em branco e as quebras de linha do texto. É ideal para exibir
+        blocos de código, geralmente envolvendo a tag <code>&lt;code&gt;</code>.</p>
     <div class="exemplo">
-<pre><code>function helloWorld() {
+        <pre><code>function helloWorld() {
   console.log("Olá, Mundo!");
 }</code></pre>
     </div>
 
-    <ul>
+    <!-- <ul>
         <li> <a href="./../index.html">Voltar Início</a></li>
-    </ul>
+    </ul> -->
+    <div>
+        <a href="./../index.html">
+            <button class="btn">
+                <i class="animation"></i>Voltar Início<i class="animation"></i>
+            </button>
+        </a>
+    </div>
 </body>
 
 </html>

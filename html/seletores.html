@@ -15,14 +15,18 @@
             color: #333;
         }
 
-        h1, h2, h3 {
-            color: #4f46e5; /* Usando a cor primária */
+        h1,
+        h2,
+        h3 {
+            color: #4f46e5;
+            /* Usando a cor primária */
         }
 
         pre {
             background-color: #eee;
             padding: 10px;
-            border-left: 3px solid #7c3aed; /* Usando a cor secundária */
+            border-left: 3px solid #7c3aed;
+            /* Usando a cor secundária */
             overflow-x: auto;
         }
 
@@ -74,6 +78,54 @@
         p {
             font-size: 18px;
         }
+
+        a {
+            border: none;
+            /* Remover borda padrão */
+            outline: none;
+            /* Remover borda e contorno padrão */
+        }
+
+        /* From Uiverse.io by mi-series */
+        .btn {
+            outline: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #40B3A2;
+            min-width: 200px;
+            border: 0;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+            box-sizing: border-box;
+            padding: 16px 20px;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            opacity: .95;
+        }
+
+        .btn .animation {
+            border-radius: 100%;
+            animation: ripple 0.6s linear infinite;
+        }
+
+        @keyframes ripple {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1);
+            }
+
+            100% {
+                box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1), 0 0 0 80px rgba(255, 255, 255, 0);
+            }
+        }
     </style>
 </head>
 
@@ -81,7 +133,8 @@
     <h1>🎯 Seletores (id, class, tag)</h1>
 
     <h2>1. Seletor de ID (`#`)</h2>
-    <p>O seletor de ID é usado para estilizar um <strong>único elemento</strong> com um ID específico. IDs devem ser únicos em uma página HTML.</p>
+    <p>O seletor de ID é usado para estilizar um <strong>único elemento</strong> com um ID específico. IDs devem ser
+        únicos em uma página HTML.</p>
     <div class="exemplo">
         <pre><code>#meu-id {
     color: blue;
@@ -91,7 +144,8 @@
     </div>
 
     <h2>2. Seletor de Classe (`.`)</h2>
-    <p>O seletor de classe é usado para estilizar <strong>múltiplos elementos</strong> que compartilham a mesma classe. Um elemento pode ter várias classes.</p>
+    <p>O seletor de classe é usado para estilizar <strong>múltiplos elementos</strong> que compartilham a mesma classe.
+        Um elemento pode ter várias classes.</p>
     <div class="exemplo">
         <pre><code>.minha-classe {
     background-color: yellow;
@@ -102,7 +156,8 @@
     </div>
 
     <h2>3. Seletor de Tag (Elemento)</h2>
-    <p>O seletor de tag (ou elemento) é usado para estilizar <strong>todos os elementos de um tipo específico</strong> (ex: todos os parágrafos, todas as divs).</p>
+    <p>O seletor de tag (ou elemento) é usado para estilizar <strong>todos os elementos de um tipo específico</strong>
+        (ex: todos os parágrafos, todas as divs).</p>
     <div class="exemplo">
         <pre><code>p {
     font-size: 18px;
@@ -122,15 +177,23 @@ p.minha-classe {
 div #outro-id {
     text-decoration: underline;
 }</code></pre>
-        <p class="minha-classe">Este parágrafo tem a classe e também é um parágrafo, então recebe o estilo combinado.</p>
+        <p class="minha-classe">Este parágrafo tem a classe e também é um parágrafo, então recebe o estilo combinado.
+        </p>
         <div>
             <p id="outro-id">Este parágrafo está dentro de uma div e tem um ID.</p>
         </div>
     </div>
 
-    <ul>
+    <!-- <ul>
         <li> <a href="./../index.html" class="voltar-link">Voltar Início</a></li>
-    </ul>
+    </ul> -->
+    <div>
+        <a href="./../index.html">
+            <button class="btn">
+                <i class="animation"></i>Voltar Início<i class="animation"></i>
+            </button>
+        </a>
+    </div>
 </body>
 
 </html>

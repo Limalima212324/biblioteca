@@ -15,7 +15,9 @@
             color: #333;
         }
 
-        h1, h2, h3 {
+        h1,
+        h2,
+        h3 {
             color: #4f46e5;
         }
 
@@ -29,7 +31,7 @@
         code {
             font-family: 'Courier New', Courier, monospace;
         }
-        
+
         .exemplo {
             border: 1px dashed #999;
             padding: 10px;
@@ -65,23 +67,76 @@
             color: var(--primaria);
             text-decoration: underline;
         }
+
+        a {
+            border: none;
+            /* Remover borda padrão */
+            outline: none;
+            /* Remover borda e contorno padrão */
+        }
+
+        /* From Uiverse.io by mi-series */
+        .btn {
+            outline: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #40B3A2;
+            min-width: 200px;
+            border: 0;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+            box-sizing: border-box;
+            padding: 16px 20px;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            opacity: .95;
+        }
+
+        .btn .animation {
+            border-radius: 100%;
+            animation: ripple 0.6s linear infinite;
+        }
+
+        @keyframes ripple {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1);
+            }
+
+            100% {
+                box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1), 0 0 0 80px rgba(255, 255, 255, 0);
+            }
+        }
     </style>
 </head>
 
 <body>
     <h1>🧩 Formulários (&lt;form&gt;)</h1>
-    <p>A tag <code>&lt;form&gt;</code> é o contêiner principal para todos os campos de um formulário. Ela agrupa os elementos que serão enviados para um servidor.</p>
+    <p>A tag <code>&lt;form&gt;</code> é o contêiner principal para todos os campos de um formulário. Ela agrupa os
+        elementos que serão enviados para um servidor.</p>
 
     <h2>Como funciona</h2>
-    <p>Tudo que está dentro da tag <code>&lt;form&gt;</code> faz parte do formulário. O envio dos dados é definido principalmente pelos atributos <code>action</code> (para onde enviar) e <code>method</code> (como enviar).</p>
+    <p>Tudo que está dentro da tag <code>&lt;form&gt;</code> faz parte do formulário. O envio dos dados é definido
+        principalmente pelos atributos <code>action</code> (para onde enviar) e <code>method</code> (como enviar).</p>
 
     <h2>Principais Atributos</h2>
     <div class="exemplo">
         <ul>
             <li><code>action="url"</code>: A URL do servidor que receberá os dados do formulário.</li>
-            <li><code>method="get"</code> ou <code>"post"</code>: O método HTTP para enviar os dados. <code>GET</code> envia os dados na URL, enquanto <code>POST</code> envia no corpo da requisição.</li>
-            <li><code>enctype</code>: Tipo de codificação dos dados. Use <code>"multipart/form-data"</code> quando o formulário incluir envio de arquivos (<code>&lt;input type="file"&gt;</code>).</li>
-            <li><code>target</code>: Onde exibir a resposta após o envio (ex: <code>"_blank"</code> para abrir em uma nova aba).</li>
+            <li><code>method="get"</code> ou <code>"post"</code>: O método HTTP para enviar os dados. <code>GET</code>
+                envia os dados na URL, enquanto <code>POST</code> envia no corpo da requisição.</li>
+            <li><code>enctype</code>: Tipo de codificação dos dados. Use <code>"multipart/form-data"</code> quando o
+                formulário incluir envio de arquivos (<code>&lt;input type="file"&gt;</code>).</li>
+            <li><code>target</code>: Onde exibir a resposta após o envio (ex: <code>"_blank"</code> para abrir em uma
+                nova aba).</li>
         </ul>
     </div>
 
@@ -97,9 +152,16 @@
 &lt;/form&gt;</code></pre>
     </div>
 
-    <ul>
+    <!-- <ul>
         <li> <a href="./../index.html">Voltar Início</a></li>
-    </ul>
+    </ul> -->
+    <div>
+        <a href="./../index.html">
+            <button class="btn">
+                <i class="animation"></i>Voltar Início<i class="animation"></i>
+            </button>
+        </a>
+    </div>
 </body>
 
 </html>

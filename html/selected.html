@@ -15,7 +15,9 @@
             color: #333;
         }
 
-        h1, h2, h3 {
+        h1,
+        h2,
+        h3 {
             color: #4f46e5;
         }
 
@@ -29,7 +31,7 @@
         code {
             font-family: 'Courier New', Courier, monospace;
         }
-        
+
         .exemplo {
             border: 1px dashed #999;
             padding: 10px;
@@ -65,6 +67,54 @@
             color: var(--primaria);
             text-decoration: underline;
         }
+
+        a {
+            border: none;
+            /* Remover borda padrão */
+            outline: none;
+            /* Remover borda e contorno padrão */
+        }
+
+        /* From Uiverse.io by mi-series */
+        .btn {
+            outline: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #40B3A2;
+            min-width: 200px;
+            border: 0;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+            box-sizing: border-box;
+            padding: 16px 20px;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            opacity: .95;
+        }
+
+        .btn .animation {
+            border-radius: 100%;
+            animation: ripple 0.6s linear infinite;
+        }
+
+        @keyframes ripple {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1);
+            }
+
+            100% {
+                box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1), 0 0 0 80px rgba(255, 255, 255, 0);
+            }
+        }
     </style>
 </head>
 
@@ -73,7 +123,9 @@
     <p>A tag <code>&lt;select&gt;</code> cria um menu de opções em formato de lista suspensa (dropdown).</p>
 
     <h2>Como Usar</h2>
-    <p>A tag <code>&lt;select&gt;</code> funciona como um contêiner. Cada item da lista é definido pela tag <code>&lt;option&gt;</code>. O atributo <code>value</code> da tag <code>&lt;option&gt;</code> contém o valor que será enviado ao servidor.</p>
+    <p>A tag <code>&lt;select&gt;</code> funciona como um contêiner. Cada item da lista é definido pela tag
+        <code>&lt;option&gt;</code>. O atributo <code>value</code> da tag <code>&lt;option&gt;</code> contém o valor que
+        será enviado ao servidor.</p>
 
     <h2>Exemplo Básico</h2>
     <div class="exemplo">
@@ -98,14 +150,17 @@
     <h2>Principais Atributos</h2>
     <div class="exemplo">
         <ul>
-            <li><code>multiple</code>: Permite que o usuário selecione várias opções (geralmente segurando a tecla Ctrl ou Command).</li>
-            <li><code>size</code>: Define quantas opções ficam visíveis de uma vez. Se for maior que 1, a lista pode perder a aparência de dropdown.</li>
+            <li><code>multiple</code>: Permite que o usuário selecione várias opções (geralmente segurando a tecla Ctrl
+                ou Command).</li>
+            <li><code>size</code>: Define quantas opções ficam visíveis de uma vez. Se for maior que 1, a lista pode
+                perder a aparência de dropdown.</li>
             <li><code>selected</code> (no <code>&lt;option&gt;</code>): Define qual opção virá pré-selecionada.</li>
         </ul>
     </div>
 
     <h2>Agrupando Opções com <code>&lt;optgroup&gt;</code></h2>
-    <p>A tag <code>&lt;optgroup&gt;</code> permite agrupar opções relacionadas dentro do select, com um título definido pelo atributo <code>label</code>.</p>
+    <p>A tag <code>&lt;optgroup&gt;</code> permite agrupar opções relacionadas dentro do select, com um título definido
+        pelo atributo <code>label</code>.</p>
     <div class="exemplo">
         <pre><code>&lt;select name="veiculo"&gt;
   &lt;optgroup label="Carros"&gt;
@@ -131,9 +186,17 @@
         </form>
     </div>
 
-    <ul>
+    <!-- <ul>
         <li> <a href="./../index.html">Voltar Início</a></li>
-    </ul>
+    </ul> -->
+
+    <div>
+        <a href="./../index.html">
+            <button class="btn">
+                <i class="animation"></i>Voltar Início<i class="animation"></i>
+            </button>
+        </a>
+    </div>
 </body>
 
 </html>

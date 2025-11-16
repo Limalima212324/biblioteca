@@ -21,7 +21,9 @@
             color: #333;
         }
 
-        h1, h2, h3 {
+        h1,
+        h2,
+        h3 {
             color: var(--primaria);
         }
 
@@ -68,6 +70,7 @@
             cursor: pointer;
             transition: background-color 0.3s;
         }
+
         .hover-btn:hover {
             background-color: var(--secundaria);
         }
@@ -76,10 +79,12 @@
             color: var(--primaria);
             font-weight: bold;
         }
+
         .lista-estilizada li:last-child {
             color: #ef4444;
             font-weight: bold;
         }
+
         .lista-estilizada li:nth-child(odd) {
             background-color: var(--claro);
         }
@@ -88,25 +93,77 @@
             content: "▶ ";
             color: var(--secundaria);
         }
+
         .pseudo-elemento-p::first-letter {
             font-size: 2em;
             color: var(--primaria);
             float: left;
             margin-right: 5px;
         }
+
         ::selection {
             background-color: var(--secundaria);
             color: white;
+        }
+
+        a {
+            border: none;
+            /* Remover borda padrão */
+            outline: none;
+            /* Remover borda e contorno padrão */
+        }
+
+        /* From Uiverse.io by mi-series */
+        .btn {
+            outline: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #40B3A2;
+            min-width: 200px;
+            border: 0;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+            box-sizing: border-box;
+            padding: 16px 20px;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            opacity: .95;
+        }
+
+        .btn .animation {
+            border-radius: 100%;
+            animation: ripple 0.6s linear infinite;
+        }
+
+        @keyframes ripple {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1);
+            }
+
+            100% {
+                box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1), 0 0 0 80px rgba(255, 255, 255, 0);
+            }
         }
     </style>
 </head>
 
 <body>
     <h1>👻 Pseudo-classes e Pseudo-elementos</h1>
-    <p>Pseudo-classes e pseudo-elementos são seletores especiais que permitem estilizar elementos com base em seu estado ou partes específicas deles.</p>
+    <p>Pseudo-classes e pseudo-elementos são seletores especiais que permitem estilizar elementos com base em seu estado
+        ou partes específicas deles.</p>
 
     <h2>1. Pseudo-classes (<code>:</code>)</h2>
-    <p>Uma pseudo-classe seleciona um elemento com base em um <strong>estado</strong> específico, como quando o mouse está sobre ele ou quando um link já foi visitado.</p>
+    <p>Uma pseudo-classe seleciona um elemento com base em um <strong>estado</strong> específico, como quando o mouse
+        está sobre ele ou quando um link já foi visitado.</p>
 
     <div class="exemplo">
         <h3><code>:hover</code></h3>
@@ -143,7 +200,8 @@ li:nth-child(odd) { background-color: #f0f0f0; }</code></pre>
     </div>
 
     <h2>2. Pseudo-elementos (<code>::</code>)</h2>
-    <p>Um pseudo-elemento seleciona e estiliza uma <strong>parte específica</strong> de um elemento, como a primeira letra ou uma linha de texto, ou insere conteúdo antes ou depois do conteúdo real do elemento.</p>
+    <p>Um pseudo-elemento seleciona e estiliza uma <strong>parte específica</strong> de um elemento, como a primeira
+        letra ou uma linha de texto, ou insere conteúdo antes ou depois do conteúdo real do elemento.</p>
 
     <div class="exemplo">
         <h3><code>::before</code> e <code>::after</code></h3>
@@ -159,7 +217,9 @@ li:nth-child(odd) { background-color: #f0f0f0; }</code></pre>
 
     <div class="exemplo">
         <h3>Exemplo Combinado de Pseudo-elementos</h3>
-        <p class="pseudo-elemento-p">Este parágrafo demonstra o uso de pseudo-elementos. O marcador no início é criado com `::before` e a primeira letra é estilizada com `::first-letter`. Tente selecionar este texto para ver o efeito de `::selection`.</p>
+        <p class="pseudo-elemento-p">Este parágrafo demonstra o uso de pseudo-elementos. O marcador no início é criado
+            com `::before` e a primeira letra é estilizada com `::first-letter`. Tente selecionar este texto para ver o
+            efeito de `::selection`.</p>
     </div>
 
     <div class="exemplo">
@@ -169,9 +229,17 @@ li:nth-child(odd) { background-color: #f0f0f0; }</code></pre>
         <p>Selecione este texto para ver a mágica acontecer!</p>
     </div>
 
-    <ul>
+    <!-- <ul>
         <li><a href="../index.html" class="voltar-link">Voltar Início</a></li>
-    </ul>
+    </ul> -->
+
+    <div>
+        <a href="./../index.html">
+            <button class="btn">
+                <i class="animation"></i>Voltar Início<i class="animation"></i>
+            </button>
+        </a>
+    </div>
 </body>
 
 </html>

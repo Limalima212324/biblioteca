@@ -22,7 +22,9 @@
             color: #333;
         }
 
-        h1, h2, h3 {
+        h1,
+        h2,
+        h3 {
             color: var(--primaria);
         }
 
@@ -65,18 +67,71 @@
             border: 2px solid var(--secundaria);
             padding: 10px;
         }
+
         .filho-percentual {
-            width: 50%; /* 50% de 500px = 250px */
+            width: 50%;
+            /* 50% de 500px = 250px */
             background-color: var(--claro);
             padding: 10px;
             color: #333;
         }
+
         .viewport-width {
-            width: 50vw; /* 50% da largura da janela */
+            width: 50vw;
+            /* 50% da largura da janela */
             background-color: #c7d2fe;
             padding: 10px;
             color: #333;
             margin-top: 10px;
+        }
+
+
+        a {
+            border: none;
+            /* Remover borda padrão */
+            outline: none;
+            /* Remover borda e contorno padrão */
+        }
+
+        /* From Uiverse.io by mi-series */
+        .btn {
+            outline: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #40B3A2;
+            min-width: 200px;
+            border: 0;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+            box-sizing: border-box;
+            padding: 16px 20px;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            opacity: .95;
+        }
+
+        .btn .animation {
+            border-radius: 100%;
+            animation: ripple 0.6s linear infinite;
+        }
+
+        @keyframes ripple {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1);
+            }
+
+            100% {
+                box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1), 0 0 0 80px rgba(255, 255, 255, 0);
+            }
         }
     </style>
 </head>
@@ -86,7 +141,9 @@
     <p>Escolher a unidade de medida correta é fundamental para criar designs consistentes e responsivos.</p>
 
     <h2>1. Unidades Absolutas: `px` (Pixel)</h2>
-    <p>Pixels são unidades de tamanho fixo. Um elemento com <code>width: 200px</code> terá sempre 200 pixels de largura, independentemente do tamanho da tela ou do tamanho da fonte do navegador. São úteis para elementos que não devem mudar de tamanho, como bordas finas.</p>
+    <p>Pixels são unidades de tamanho fixo. Um elemento com <code>width: 200px</code> terá sempre 200 pixels de largura,
+        independentemente do tamanho da tela ou do tamanho da fonte do navegador. São úteis para elementos que não devem
+        mudar de tamanho, como bordas finas.</p>
     <div class="exemplo">
         <pre><code>.borda-fixa {
     border: 1px solid black;
@@ -96,9 +153,11 @@
 
     <h2>2. Unidades Relativas</h2>
     <p>Estas unidades são calculadas com base em outro valor, tornando-as flexíveis.</p>
-    
+
     <h3>`rem` (Root EM)</h3>
-    <p>É relativa ao tamanho da fonte do elemento raiz (<code>&lt;html&gt;</code>). Se o usuário aumentar o tamanho da fonte no navegador, todos os elementos definidos com <code>rem</code> escalarão proporcionalmente. É a unidade mais recomendada para fontes e espaçamentos, garantindo acessibilidade.</p>
+    <p>É relativa ao tamanho da fonte do elemento raiz (<code>&lt;html&gt;</code>). Se o usuário aumentar o tamanho da
+        fonte no navegador, todos os elementos definidos com <code>rem</code> escalarão proporcionalmente. É a unidade
+        mais recomendada para fontes e espaçamentos, garantindo acessibilidade.</p>
     <div class="exemplo">
         <pre><code>/* Se a fonte raiz for 16px (padrão): */
 .titulo {
@@ -115,7 +174,8 @@
     </div>
 
     <h3>`%` (Porcentagem)</h3>
-    <p>É relativa ao mesmo valor no elemento pai. Se um elemento filho tem <code>width: 50%</code>, ele ocupará metade da largura de seu elemento pai.</p>
+    <p>É relativa ao mesmo valor no elemento pai. Se um elemento filho tem <code>width: 50%</code>, ele ocupará metade
+        da largura de seu elemento pai.</p>
     <div class="exemplo">
         <pre><code>.container-pai {
     width: 500px;
@@ -135,7 +195,8 @@
         <li><code>vw</code> (Viewport Width): 1vw é 1% da largura da janela.</li>
         <li><code>vh</code> (Viewport Height): 1vh é 1% da altura da janela.</li>
     </ul>
-    <p>São excelentes para criar seções que ocupam a tela inteira ou elementos que devem escalar diretamente com o tamanho da janela.</p>
+    <p>São excelentes para criar seções que ocupam a tela inteira ou elementos que devem escalar diretamente com o
+        tamanho da janela.</p>
     <div class="exemplo">
         <pre><code>.secao-tela-cheia {
     height: 100vh; /* Ocupa 100% da altura da janela */
@@ -143,15 +204,25 @@
 .barra-responsiva {
     width: 50vw; /* Ocupa 50% da largura da janela */
 }</code></pre>
-        <p>A caixa abaixo tem <code>width: 50vw</code>. Redimensione a janela do navegador para vê-la mudar de tamanho.</p>
+        <p>A caixa abaixo tem <code>width: 50vw</code>. Redimensione a janela do navegador para vê-la mudar de tamanho.
+        </p>
         <div class="viewport-width">
             Eu tenho 50vw de largura.
         </div>
     </div>
 
-    <ul>
+    <!-- <ul>
         <li><a href="../index.html" class="voltar-link">Voltar Início</a></li>
-    </ul>
+    </ul> -->
+
+    <div>
+        <a href="./../index.html">
+            <button class="btn">
+                <i class="animation"></i>Voltar Início<i class="animation"></i>
+            </button>
+        </a>
+    </div>
+
 </body>
 
 </html>

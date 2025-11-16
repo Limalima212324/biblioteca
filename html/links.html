@@ -15,7 +15,9 @@
             color: #333;
         }
 
-        h1, h2, h3 {
+        h1,
+        h2,
+        h3 {
             color: #4f46e5;
         }
 
@@ -29,7 +31,7 @@
         code {
             font-family: 'Courier New', Courier, monospace;
         }
-        
+
         .exemplo {
             border: 1px dashed #999;
             padding: 10px;
@@ -51,7 +53,8 @@
             color: var(--secundaria);
             text-decoration: none;
             font-weight: bold;
-            transition: color 0.3s ease; /* Estilo geral para links no corpo da página */
+            transition: color 0.3s ease;
+            /* Estilo geral para links no corpo da página */
         }
 
         a:hover {
@@ -72,12 +75,53 @@
             padding: 0.3rem 0.8rem;
             display: inline-block;
         }
+
+        .btn {
+            outline: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #40B3A2;
+            min-width: 200px;
+            border: 0;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+            box-sizing: border-box;
+            padding: 16px 20px;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            opacity: .95;
+        }
+
+        .btn .animation {
+            border-radius: 100%;
+            animation: ripple 0.6s linear infinite;
+        }
+
+        @keyframes ripple {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1);
+            }
+
+            100% {
+                box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1), 0 0 0 80px rgba(255, 255, 255, 0);
+            }
+        }
     </style>
 </head>
 
 <body>
     <h1>🔗 Links (Tag &lt;a&gt;)</h1>
-    <p>A tag <code>&lt;a&gt;</code> (âncora) é usada para criar hyperlinks, que permitem navegar entre páginas ou para partes específicas de uma página.</p>
+    <p>A tag <code>&lt;a&gt;</code> (âncora) é usada para criar hyperlinks, que permitem navegar entre páginas ou para
+        partes específicas de uma página.</p>
 
     <h2>1. Link Externo</h2>
     <p>Leva o usuário para um site diferente. É importante usar o protocolo completo (<code>https://</code>).</p>
@@ -86,7 +130,8 @@
     </div>
 
     <h2>2. Link para Âncora (na mesma página)</h2>
-    <p>Leva o usuário para uma parte específica da página atual. O link aponta para o <code>id</code> de um elemento.</p>
+    <p>Leva o usuário para uma parte específica da página atual. O link aponta para o <code>id</code> de um elemento.
+    </p>
     <div class="exemplo">
         <a href="#secao-final">Ir para a seção final desta página</a>
     </div>
@@ -110,9 +155,16 @@
     <hr>
     <br>
 
-    <ul>
+    <!-- <ul>
         <li> <a href="./../index.html" class="voltar-link">Voltar Início</a></li>
-    </ul>
+    </ul> -->
+    <div>
+        <a href="./../index.html">
+            <button class="btn">
+                <i class="animation"></i>Voltar Início<i class="animation"></i>
+            </button>
+        </a>
+    </div>
 </body>
 
 </html>

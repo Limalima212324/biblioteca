@@ -15,7 +15,9 @@
             color: #333;
         }
 
-        h1, h2, h3 {
+        h1,
+        h2,
+        h3 {
             color: #4f46e5;
         }
 
@@ -35,13 +37,54 @@
             padding: 10px;
             margin-top: 15px;
         }
-        .exemplo-visual header, .exemplo-visual footer { background-color: #e2e8f0; padding: 10px; text-align: center; }
-        .exemplo-visual nav { background-color: #c7d2fe; padding: 5px; text-align: center; }
-        .exemplo-visual main { border: 1px dashed #999; padding: 10px; margin-top: 5px; }
-        .exemplo-visual section { background-color: #f0f9ff; border: 1px solid #bae6fd; padding: 10px; margin-bottom: 10px; }
-        .exemplo-visual article { background-color: #fff; border: 1px solid #ddd; padding: 10px; margin: 5px; }
-        .exemplo-visual aside { background-color: #fefce8; border: 1px solid #fde047; padding: 10px; float: right; width: 30%; margin-left: 10px; }
-        .clearfix::after { content: ""; clear: both; display: table; }
+
+        .exemplo-visual header,
+        .exemplo-visual footer {
+            background-color: #e2e8f0;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .exemplo-visual nav {
+            background-color: #c7d2fe;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .exemplo-visual main {
+            border: 1px dashed #999;
+            padding: 10px;
+            margin-top: 5px;
+        }
+
+        .exemplo-visual section {
+            background-color: #f0f9ff;
+            border: 1px solid #bae6fd;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .exemplo-visual article {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 5px;
+        }
+
+        .exemplo-visual aside {
+            background-color: #fefce8;
+            border: 1px solid #fde047;
+            padding: 10px;
+            float: right;
+            width: 30%;
+            margin-left: 10px;
+        }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
 
         /* Estilos para o link "Voltar Início" */
         :root {
@@ -71,27 +114,83 @@
             color: var(--primaria);
             text-decoration: underline;
         }
+
+        a {
+            border: none;
+            /* Remover borda padrão */
+            outline: none;
+            /* Remover borda e contorno padrão */
+        }
+
+        /* From Uiverse.io by mi-series */
+        .btn {
+            outline: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #40B3A2;
+            min-width: 200px;
+            border: 0;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+            box-sizing: border-box;
+            padding: 16px 20px;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            opacity: .95;
+        }
+
+        .btn .animation {
+            border-radius: 100%;
+            animation: ripple 0.6s linear infinite;
+        }
+
+        @keyframes ripple {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1);
+            }
+
+            100% {
+                box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1), 0 0 0 80px rgba(255, 255, 255, 0);
+            }
+        }
     </style>
 </head>
 
 <body>
     <h1>🏗️ Tags semânticas (estruturação moderna)</h1>
-    <p>Tags semânticas descrevem o significado do conteúdo para o navegador e para os desenvolvedores, melhorando a acessibilidade e o SEO (otimização para motores de busca).</p>
+    <p>Tags semânticas descrevem o significado do conteúdo para o navegador e para os desenvolvedores, melhorando a
+        acessibilidade e o SEO (otimização para motores de busca).</p>
 
     <h2>Estrutura Principal</h2>
     <ul>
-        <li><code>&lt;header&gt;</code>: Define o cabeçalho da página ou de uma seção. Geralmente contém o logo, título principal e navegação.</li>
+        <li><code>&lt;header&gt;</code>: Define o cabeçalho da página ou de uma seção. Geralmente contém o logo, título
+            principal e navegação.</li>
         <li><code>&lt;nav&gt;</code>: Define um bloco de links de navegação.</li>
-        <li><code>&lt;main&gt;</code>: Define o conteúdo principal e único da página. Só deve existir um por página.</li>
-        <li><code>&lt;footer&gt;</code>: Define o rodapé da página ou de uma seção. Geralmente contém informações de copyright, links úteis e contatos.</li>
+        <li><code>&lt;main&gt;</code>: Define o conteúdo principal e único da página. Só deve existir um por página.
+        </li>
+        <li><code>&lt;footer&gt;</code>: Define o rodapé da página ou de uma seção. Geralmente contém informações de
+            copyright, links úteis e contatos.</li>
     </ul>
 
     <h2>Estrutura de Conteúdo</h2>
     <ul>
-        <li><code>&lt;section&gt;</code>: Agrupa conteúdos relacionados, como um capítulo de um livro. Geralmente possui um título (<code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code>).</li>
-        <li><code>&lt;article&gt;</code>: Define um conteúdo independente e auto-contido, que poderia ser distribuído separadamente (ex: um post de blog, um card de produto).</li>
-        <li><code>&lt;aside&gt;</code>: Define um conteúdo complementar ou lateral ao conteúdo principal (ex: uma barra lateral com links relacionados, biografia do autor).</li>
-        <li><code>&lt;figure&gt;</code> e <code>&lt;figcaption&gt;</code>: Agrupam uma mídia (imagem, diagrama, código) e sua legenda, respectivamente.</li>
+        <li><code>&lt;section&gt;</code>: Agrupa conteúdos relacionados, como um capítulo de um livro. Geralmente possui
+            um título (<code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code>).</li>
+        <li><code>&lt;article&gt;</code>: Define um conteúdo independente e auto-contido, que poderia ser distribuído
+            separadamente (ex: um post de blog, um card de produto).</li>
+        <li><code>&lt;aside&gt;</code>: Define um conteúdo complementar ou lateral ao conteúdo principal (ex: uma barra
+            lateral com links relacionados, biografia do autor).</li>
+        <li><code>&lt;figure&gt;</code> e <code>&lt;figcaption&gt;</code>: Agrupam uma mídia (imagem, diagrama, código)
+            e sua legenda, respectivamente.</li>
     </ul>
 
     <h2>Exemplo Visual da Estrutura</h2>
@@ -115,14 +214,23 @@
     <div class="exemplo-visual">
         <figure style="margin: 0; text-align: center;">
             <img src="https://via.placeholder.com/400x150" alt="Exemplo de imagem placeholder" style="max-width: 100%;">
-            <figcaption style="padding-top: 8px; font-style: italic;">&lt;figcaption&gt;: Legenda descritiva da imagem.&lt;/figcaption&gt;
+            <figcaption style="padding-top: 8px; font-style: italic;">&lt;figcaption&gt;: Legenda descritiva da
+                imagem.&lt;/figcaption&gt;
         </figure>
     </div>
 
 
-    <ul>
+    <!-- <ul>
         <li> <a href="./../index.html">Voltar Início</a></li>
-    </ul>
+    </ul> -->
+
+    <div>
+        <a href="./../index.html">
+            <button class="btn">
+                <i class="animation"></i>Voltar Início<i class="animation"></i>
+            </button>
+        </a>
+    </div>
 </body>
 
 </html>

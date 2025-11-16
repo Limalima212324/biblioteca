@@ -15,7 +15,9 @@
             color: #333;
         }
 
-        h1, h2, h3 {
+        h1,
+        h2,
+        h3 {
             color: #4f46e5;
         }
 
@@ -29,7 +31,7 @@
         code {
             font-family: 'Courier New', Courier, monospace;
         }
-        
+
         .exemplo {
             border: 1px dashed #999;
             padding: 10px;
@@ -43,11 +45,14 @@
             border-collapse: collapse;
             margin-top: 10px;
         }
-        th, td {
+
+        th,
+        td {
             border: 1px solid #ccc;
             padding: 8px;
             text-align: left;
         }
+
         th {
             background-color: #e2e8f0;
         }
@@ -80,6 +85,54 @@
             color: var(--primaria);
             text-decoration: underline;
         }
+
+        a {
+            border: none;
+            /* Remover borda padrão */
+            outline: none;
+            /* Remover borda e contorno padrão */
+        }
+
+        /* From Uiverse.io by mi-series */
+        .btn {
+            outline: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #40B3A2;
+            min-width: 200px;
+            border: 0;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+            box-sizing: border-box;
+            padding: 16px 20px;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            opacity: .95;
+        }
+
+        .btn .animation {
+            border-radius: 100%;
+            animation: ripple 0.6s linear infinite;
+        }
+
+        @keyframes ripple {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1);
+            }
+
+            100% {
+                box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1), 0 0 0 80px rgba(255, 255, 255, 0);
+            }
+        }
     </style>
 </head>
 
@@ -88,7 +141,8 @@
     <p>Tabelas são usadas para exibir dados em formato de linhas e colunas.</p>
 
     <h2>Estrutura Básica</h2>
-    <p>Uma tabela é criada com a tag <code>&lt;table&gt;</code>. Dentro dela, <code>&lt;tr&gt;</code> cria uma linha, <code>&lt;th&gt;</code> cria uma célula de cabeçalho e <code>&lt;td&gt;</code> cria uma célula de dados.</p>
+    <p>Uma tabela é criada com a tag <code>&lt;table&gt;</code>. Dentro dela, <code>&lt;tr&gt;</code> cria uma linha,
+        <code>&lt;th&gt;</code> cria uma célula de cabeçalho e <code>&lt;td&gt;</code> cria uma célula de dados.</p>
     <div class="exemplo">
         <pre><code>&lt;table&gt;
   &lt;tr&gt;
@@ -113,7 +167,8 @@
     </div>
 
     <h2>Estrutura Semântica</h2>
-    <p>Para tabelas mais complexas, é uma boa prática usar <code>&lt;thead&gt;</code> para o cabeçalho, <code>&lt;tbody&gt;</code> para o corpo e <code>&lt;tfoot&gt;</code> para o rodapé.</p>
+    <p>Para tabelas mais complexas, é uma boa prática usar <code>&lt;thead&gt;</code> para o cabeçalho,
+        <code>&lt;tbody&gt;</code> para o corpo e <code>&lt;tfoot&gt;</code> para o rodapé.</p>
     <div class="exemplo">
         <pre><code>&lt;table&gt;
   &lt;thead&gt;...&lt;/thead&gt;
@@ -149,9 +204,16 @@
         </table>
     </div>
 
-    <ul>
+    <!-- <ul>
         <li> <a href="./../index.html">Voltar Início</a></li>
-    </ul>
+    </ul> -->
+    <div>
+        <a href="./../index.html">
+            <button class="btn">
+                <i class="animation"></i>Voltar Início<i class="animation"></i>
+            </button>
+        </a>
+    </div>
 </body>
 
 </html>

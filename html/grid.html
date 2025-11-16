@@ -21,7 +21,9 @@
             color: #333;
         }
 
-        h1, h2, h3 {
+        h1,
+        h2,
+        h3 {
             color: var(--primaria);
         }
 
@@ -76,18 +78,61 @@
             font-weight: bold;
             border-radius: 5px;
         }
+
+        .btn {
+            outline: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #40B3A2;
+            min-width: 200px;
+            border: 0;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+            box-sizing: border-box;
+            padding: 16px 20px;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            opacity: .95;
+        }
+
+        .btn .animation {
+            border-radius: 100%;
+            animation: ripple 0.6s linear infinite;
+        }
+
+        @keyframes ripple {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1);
+            }
+
+            100% {
+                box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1), 0 0 0 80px rgba(255, 255, 255, 0);
+            }
+        }
     </style>
 </head>
 
 <body>
     <h1>🏁 Grid (display: grid)</h1>
-    <p>O CSS Grid Layout é um sistema de layout bidimensional (linhas e colunas), projetado para simplificar a criação de layouts complexos. Ele transforma um elemento em um contêiner de grid e seus filhos diretos em itens de grid.</p>
+    <p>O CSS Grid Layout é um sistema de layout bidimensional (linhas e colunas), projetado para simplificar a criação
+        de layouts complexos. Ele transforma um elemento em um contêiner de grid e seus filhos diretos em itens de grid.
+    </p>
     <p>Para começar, aplique <code>display: grid;</code> ao elemento pai (o contêiner).</p>
 
     <h2>1. Propriedades do Contêiner Grid (o Pai)</h2>
 
     <h3>`grid-template-columns` e `grid-template-rows`</h3>
-    <p>Definem o número e o tamanho das colunas e linhas do grid. A unidade <code>fr</code> (fração) é muito útil para distribuir o espaço disponível de forma proporcional.</p>
+    <p>Definem o número e o tamanho das colunas e linhas do grid. A unidade <code>fr</code> (fração) é muito útil para
+        distribuir o espaço disponível de forma proporcional.</p>
     <div class="exemplo">
         <pre><code>.container {
     display: grid;
@@ -126,10 +171,12 @@
     </div>
 
     <h3>`justify-items` e `align-items`</h3>
-    <p>Alinham o conteúdo <strong>dentro</strong> de cada célula do grid. <code>justify-items</code> alinha no eixo horizontal e <code>align-items</code> no eixo vertical.</p>
+    <p>Alinham o conteúdo <strong>dentro</strong> de cada célula do grid. <code>justify-items</code> alinha no eixo
+        horizontal e <code>align-items</code> no eixo vertical.</p>
     <div class="exemplo">
         <ul>
-            <li>Valores comuns: <code>start</code>, <code>end</code>, <code>center</code>, <code>stretch</code> (padrão).</li>
+            <li>Valores comuns: <code>start</code>, <code>end</code>, <code>center</code>, <code>stretch</code>
+                (padrão).</li>
         </ul>
         <pre><code>.container {
     display: grid;
@@ -137,7 +184,8 @@
     align-items: center; /* Alinha verticalmente no centro */
     justify-items: end; /* Alinha horizontalmente no final */
 }</code></pre>
-        <div class="grid-container" style="grid-template-columns: 1fr 1fr; height: 150px; align-items: center; justify-items: end; gap: 10px;">
+        <div class="grid-container"
+            style="grid-template-columns: 1fr 1fr; height: 150px; align-items: center; justify-items: end; gap: 10px;">
             <div class="grid-item" style="padding: 10px;">Item 1</div>
             <div class="grid-item" style="padding: 10px;">Item 2</div>
         </div>
@@ -146,7 +194,8 @@
     <h2>2. Propriedades dos Itens Grid (os Filhos)</h2>
 
     <h3>`grid-column` e `grid-row`</h3>
-    <p>Permitem que um item se estenda por múltiplas colunas ou linhas. Você pode especificar a linha/coluna de início e de fim.</p>
+    <p>Permitem que um item se estenda por múltiplas colunas ou linhas. Você pode especificar a linha/coluna de início e
+        de fim.</p>
     <div class="exemplo">
         <pre><code>.item-destaque {
     /* Começa na linha de coluna 1 e vai até a 4 (ocupa 3 colunas) */
@@ -163,7 +212,8 @@
     </div>
 
     <h3>`justify-self` e `align-self`</h3>
-    <p>Alinham um item individual dentro de sua célula, sobrescrevendo o alinhamento definido no contêiner (`justify-items` e `align-items`).</p>
+    <p>Alinham um item individual dentro de sua célula, sobrescrevendo o alinhamento definido no contêiner
+        (`justify-items` e `align-items`).</p>
     <div class="exemplo">
         <pre><code>.item-especial {
     justify-self: center; /* Centraliza este item horizontalmente */
@@ -171,13 +221,22 @@
 }</code></pre>
         <div class="grid-container" style="grid-template-columns: 1fr 1fr; height: 150px; gap: 10px;">
             <div class="grid-item">Padrão</div>
-            <div class="grid-item" style="justify-self: center; align-self: start; background-color: #7c3aed; padding: 10px;">Especial</div>
+            <div class="grid-item"
+                style="justify-self: center; align-self: start; background-color: #7c3aed; padding: 10px;">Especial
+            </div>
         </div>
     </div>
 
-    <ul>
+    <!-- <ul>
         <li><a href="../index.html" class="voltar-link">Voltar Início</a></li>
-    </ul>
+    </ul> -->
+    <div>
+        <a href="./../index.html">
+            <button class="btn">
+                <i class="animation"></i>Voltar Início<i class="animation"></i>
+            </button>
+        </a>
+    </div>
 </body>
 
 </html>
