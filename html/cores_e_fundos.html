@@ -15,7 +15,9 @@
             color: #333;
         }
 
-        h1, h2, h3 {
+        h1,
+        h2,
+        h3 {
             color: #4f46e5;
         }
 
@@ -69,6 +71,53 @@
             padding: 0.3rem 0.8rem;
             display: inline-block;
         }
+
+        a {
+            border: none;
+            /* Remover borda padrão */
+            outline: none;
+            /* Remover borda e contorno padrão */
+        }
+
+        .btn {
+            outline: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #7c3aed;
+            min-width: 200px;
+            border: 0;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+            box-sizing: border-box;
+            padding: 16px 20px;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            opacity: .95;
+        }
+
+        .btn .animation {
+            border-radius: 100%;
+            animation: ripple 0.6s linear infinite;
+        }
+
+        @keyframes ripple {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1);
+            }
+
+            100% {
+                box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1), 0 0 0 80px rgba(255, 255, 255, 0);
+            }
+        }
     </style>
 </head>
 
@@ -80,10 +129,13 @@
     <p>As cores podem ser definidas de várias formas:</p>
     <div class="exemplo">
         <ul>
-            <li><strong>Nomes de Cores:</strong> <code>red</code>, <code>blue</code>, <code>green</code>, <code>tomato</code>.</li>
+            <li><strong>Nomes de Cores:</strong> <code>red</code>, <code>blue</code>, <code>green</code>,
+                <code>tomato</code>.
+            </li>
             <li><strong>HEX (Hexadecimal):</strong> <code>#RRGGBB</code> (ex: <code>#ff0000</code> para vermelho).</li>
             <li><strong>RGB (Red, Green, Blue):</strong> <code>rgb(255, 0, 0)</code>.</li>
-            <li><strong>RGBA (com transparência):</strong> <code>rgba(255, 0, 0, 0.5)</code> (50% de transparência).</li>
+            <li><strong>RGBA (com transparência):</strong> <code>rgba(255, 0, 0, 0.5)</code> (50% de transparência).
+            </li>
             <li><strong>HSL (Hue, Saturation, Lightness):</strong> <code>hsl(0, 100%, 50%)</code>.</li>
             <li><strong>HSLA (com transparência):</strong> <code>hsla(0, 100%, 50%, 0.5)</code>.</li>
         </ul>
@@ -102,7 +154,8 @@
     background-color: #e2e8f0; /* Cor --claro */
     padding: 10px;
 }</code></pre>
-        <div class="caixa" style="background-color: #e2e8f0; padding: 10px; color: #333;">Este elemento tem um fundo cinza claro.</div>
+        <div class="caixa" style="background-color: #e2e8f0; padding: 10px; color: #333;">Este elemento tem um fundo
+            cinza claro.</div>
     </div>
 
     <h2>3. Background-Image</h2>
@@ -123,10 +176,17 @@
     <h2>4. Outras Propriedades de Fundo</h2>
     <div class="exemplo">
         <ul>
-            <li><code>background-repeat</code>: Controla a repetição da imagem (<code>no-repeat</code>, <code>repeat-x</code>, <code>repeat-y</code>, <code>repeat</code>).</li>
-            <li><code>background-position</code>: Define a posição inicial da imagem (<code>center</code>, <code>top right</code>, <code>50% 50%</code>).</li>
-            <li><code>background-size</code>: Define o tamanho da imagem (<code>cover</code>, <code>contain</code>, <code>100px 50px</code>).</li>
-            <li><code>background-attachment</code>: Define se a imagem rola com a página (<code>scroll</code>) ou fica fixa (<code>fixed</code>).</li>
+            <li><code>background-repeat</code>: Controla a repetição da imagem (<code>no-repeat</code>,
+                <code>repeat-x</code>, <code>repeat-y</code>, <code>repeat</code>).
+            </li>
+            <li><code>background-position</code>: Define a posição inicial da imagem (<code>center</code>,
+                <code>top right</code>, <code>50% 50%</code>).
+            </li>
+            <li><code>background-size</code>: Define o tamanho da imagem (<code>cover</code>, <code>contain</code>,
+                <code>100px 50px</code>).
+            </li>
+            <li><code>background-attachment</code>: Define se a imagem rola com a página (<code>scroll</code>) ou fica
+                fixa (<code>fixed</code>).</li>
         </ul>
         <pre><code>.fundo-completo {
     background-image: url('https://source.unsplash.com/random/400x200');
@@ -134,25 +194,36 @@
     background-size: cover;
     background-position: center;
 }</code></pre>
-        <div class="exemplo-bg" style="background-image: url('https://source.unsplash.com/random/400x200'); background-repeat: no-repeat; background-size: cover; background-position: center;">
+        <div class="exemplo-bg"
+            style="background-image: url('https://source.unsplash.com/random/400x200'); background-repeat: no-repeat; background-size: cover; background-position: center;">
             Imagem de fundo completa
         </div>
     </div>
 
     <h2>5. Shorthand (Atalho) `background`</h2>
-    <p>É uma boa prática combinar todas as propriedades de fundo em uma única declaração, na seguinte ordem: <code>color image repeat attachment position / size</code>.</p>
+    <p>É uma boa prática combinar todas as propriedades de fundo em uma única declaração, na seguinte ordem:
+        <code>color image repeat attachment position / size</code>.
+    </p>
     <div class="exemplo">
         <pre><code>.fundo-atalho {
     background: #e2e8f0 url('https://via.placeholder.com/50') no-repeat center center;
 }</code></pre>
-        <div class="exemplo-bg" style="background: #e2e8f0 url('https://via.placeholder.com/50') no-repeat center center; color: #333;">
+        <div class="exemplo-bg"
+            style="background: #e2e8f0 url('https://via.placeholder.com/50') no-repeat center center; color: #333;">
             Fundo com atalho
         </div>
     </div>
 
-    <ul>
+    <!-- <ul>
         <li><a href="../index.html" class="voltar-link">Voltar Início</a></li>
-    </ul>
+    </ul> -->
+    <div>
+        <a href="./../index.html">
+            <button class="btn">
+                <i class="animation"></i>Voltar Início<i class="animation"></i>
+            </button>
+        </a>
+    </div>
 </body>
 
 </html>

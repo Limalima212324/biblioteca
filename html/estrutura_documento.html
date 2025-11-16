@@ -9,31 +9,42 @@
         /* Estilos globais para a página de exemplo */
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;/* Espaçamento entre linhas */
-            margin: 20px; /* Margem ao redor do conteúdo */
-            background-color: #f4f4f4; 
+            line-height: 1.6;
+            /* Espaçamento entre linhas */
+            margin: 20px;
+            /* Margem ao redor do conteúdo */
+            background-color: #f4f4f4;
             color: #333;
         }
 
-        h1, h2, h3 {
+        h1,
+        h2,
+        h3 {
             color: #4f46e5;
         }
 
         pre {
-            background-color: #eee; /* Cor de fundo para blocos de código */
-            padding: 10px; /* Espaçamento interno */ 
-            border-left: 3px solid #7c3aed; /* Barra lateral colorida lado esquerdo do paragráfo*/
+            background-color: #eee;
+            /* Cor de fundo para blocos de código */
+            padding: 10px;
+            /* Espaçamento interno */
+            border-left: 3px solid #7c3aed;
+            /* Barra lateral colorida lado esquerdo do paragráfo*/
             overflow-x: auto;
         }
 
         code {
-            font-family: 'Courier New', Courier, monospace; /* Fonte monoespaçada para código */
+            font-family: 'Courier New', Courier, monospace;
+            /* Fonte monoespaçada para código */
         }
-        
+
         .exemplo {
-            border: 1px dashed #999; /* Borda pontilhada para destacar exemplos */
-            padding: 10px; /* Espaçamento interno */
-            margin: 10px 0; /* Espaçamento externo */
+            border: 1px dashed #999;
+            /* Borda pontilhada para destacar exemplos */
+            padding: 10px;
+            /* Espaçamento interno */
+            margin: 10px 0;
+            /* Espaçamento externo */
             background-color: #fff;
         }
 
@@ -52,25 +63,82 @@
             background-color: var(--claro);
             border-radius: 3px;
             color: var(--secundaria);
-            text-decoration: none;/* Remover sublinhado padrão */
-            font-weight: bold; /* Deixar o texto em negrito */
-            margin-left: 0.5rem; /* Margem à esquerda */
-            transition: color 0.3s ease; /* Transição suave na cor ao passar o mouse */
-            width: fit-content; /* Ajusta a largura ao conteúdo */
-            padding: 0.3rem 0.8rem; /* Espaçamento interno */
-            display: inline-block; /* Permite aplicar padding e margin corretamente */ 
+            text-decoration: none;
+            /* Remover sublinhado padrão */
+            font-weight: bold;
+            /* Deixar o texto em negrito */
+            margin-left: 0.5rem;
+            /* Margem à esquerda */
+            transition: color 0.3s ease;
+            /* Transição suave na cor ao passar o mouse */
+            width: fit-content;
+            /* Ajusta a largura ao conteúdo */
+            padding: 0.3rem 0.8rem;
+            /* Espaçamento interno */
+            display: inline-block;
+            /* Permite aplicar padding e margin corretamente */
         }
 
         a:hover {
             color: var(--primaria);
-            text-decoration: underline; /* Adicionar sublinhado ao passar o mouse */
+            text-decoration: underline;
+            /* Adicionar sublinhado ao passar o mouse */
+        }
+
+        a {
+            border: none;
+            /* Remover borda padrão */
+            outline: none;
+            /* Remover borda e contorno padrão */
+        }
+
+        /* From Uiverse.io by mi-series */
+        .btn {
+            outline: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #40B3A2;
+            min-width: 200px;
+            border: 0;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+            box-sizing: border-box;
+            padding: 16px 20px;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            opacity: .95;
+        }
+
+        .btn .animation {
+            border-radius: 100%;
+            animation: ripple 0.6s linear infinite;
+        }
+
+        @keyframes ripple {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1);
+            }
+
+            100% {
+                box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1), 0 0 0 80px rgba(255, 255, 255, 0);
+            }
         }
     </style>
 </head>
 
 <body>
     <h1>📄 Estrutura do Documento (head, body)</h1>
-    <p>Todo documento HTML segue uma estrutura básica que informa ao navegador como interpretar e renderizar a página.</p>
+    <p>Todo documento HTML segue uma estrutura básica que informa ao navegador como interpretar e renderizar a página.
+    </p>
 
     <h2>Esqueleto Básico</h2>
     <div class="exemplo">
@@ -86,7 +154,7 @@
   &lt;/body&gt;
 &lt;/html&gt;</code></pre>
 
-<!-- 🧩 <pre> — “preformatted text” (texto pré-formatado)
+        <!-- 🧩 <pre> — “preformatted text” (texto pré-formatado)
 Mantém espaços, quebras de linha e tabulações exatamente como estão no HTML.
 Usa uma fonte monoespaçada (como Courier). -->
     </div>
@@ -94,18 +162,26 @@ Usa uma fonte monoespaçada (como Courier). -->
     <h2>Explicação das Tags</h2>
     <div class="exemplo">
         <ul>
-            <li><code>&lt;!DOCTYPE html&gt;</code>: Declaração que define o tipo de documento como HTML5. É a primeira linha do arquivo.</li>
-            <li><code>&lt;html&gt;</code>: A tag raiz que envolve todo o conteúdo da página. O atributo <code>lang</code> define o idioma principal do documento.</li>
-            <li><code>&lt;head&gt;</code>: Contém metadados sobre a página, como o título, codificação de caracteres e links para folhas de estilo (CSS) e scripts (JS). O conteúdo aqui não é visível na página.</li>
-            <li><code>&lt;meta charset="UTF-8"&gt;</code>: Define o conjunto de caracteres para UTF-8, que suporta a maioria dos caracteres e símbolos, incluindo acentos.</li>
-            <li><code>&lt;meta name="viewport" ...&gt;</code>: Essencial para o design responsivo, instrui o navegador a ajustar a largura da página à largura da tela do dispositivo.</li>
-            <li><code>&lt;title&gt;</code>: Define o título da página, que aparece na aba ou na barra de título do navegador.</li>
-            <li><code>&lt;body&gt;</code>: Contém todo o conteúdo visível da página, como textos, imagens, links, formulários, etc.</li>
-            
+            <li><code>&lt;!DOCTYPE html&gt;</code>: Declaração que define o tipo de documento como HTML5. É a primeira
+                linha do arquivo.</li>
+            <li><code>&lt;html&gt;</code>: A tag raiz que envolve todo o conteúdo da página. O atributo
+                <code>lang</code> define o idioma principal do documento.
+            </li>
+            <li><code>&lt;head&gt;</code>: Contém metadados sobre a página, como o título, codificação de caracteres e
+                links para folhas de estilo (CSS) e scripts (JS). O conteúdo aqui não é visível na página.</li>
+            <li><code>&lt;meta charset="UTF-8"&gt;</code>: Define o conjunto de caracteres para UTF-8, que suporta a
+                maioria dos caracteres e símbolos, incluindo acentos.</li>
+            <li><code>&lt;meta name="viewport" ...&gt;</code>: Essencial para o design responsivo, instrui o navegador a
+                ajustar a largura da página à largura da tela do dispositivo.</li>
+            <li><code>&lt;title&gt;</code>: Define o título da página, que aparece na aba ou na barra de título do
+                navegador.</li>
+            <li><code>&lt;body&gt;</code>: Contém todo o conteúdo visível da página, como textos, imagens, links,
+                formulários, etc.</li>
+
             <!-- 💻 <code> — “trecho de código”
             Indica que o conteúdo é código de computador (HTML, JS, Python, etc.).
             Usa fonte monoespaçada, mas não mantém a formatação (espaços/quebras de linha). -->
-           
+
             <!-- ✅ Usando os dois juntos
             Geralmente, para mostrar blocos de código completos, você combina assim:
             <pre><code>
@@ -117,9 +193,17 @@ Usa uma fonte monoespaçada (como Courier). -->
         </ul>
     </div>
 
-    <ul>
+    <!-- <ul>
         <li> <a href="./../index.html">Voltar Início</a></li>
-    </ul>
+    </ul> -->
+
+    <div>
+        <a href="./../index.html">
+            <button class="btn">
+                <i class="animation"></i>Voltar Início<i class="animation"></i>
+            </button>
+        </a>
+    </div>
 </body>
 
 </html>
